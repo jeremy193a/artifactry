@@ -5,10 +5,9 @@
   "author": {
     "name": "Jeremy Nguyen"
   },
-  "homepage": "https://github.com/jeremynguyen/md-export-skills",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jeremynguyen/md-export-skills"
-  },
-  "license": "MIT"
+  "homepage": "https://github.com/jeremy193a/md-to-artifacts",
+  "repository": "https://github.com/jeremy193a/md-to-artifacts",
+  "license": "MIT",
+  "skills": "./skills/",
+  "agents": ["./.claude/agents/export-designer.md"]
 }

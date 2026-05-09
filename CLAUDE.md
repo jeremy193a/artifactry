@@ -37,7 +37,7 @@ Use $md-export-suite. Ask me which output, style, and size I want first if I hav
 Claude Code plugin install:
 
 ```text
-/plugin marketplace add owner/repo
+/plugin marketplace add jeremy193a/md-to-artifacts
 /plugin install md-export-skills@md-export-skills
 ```
 
