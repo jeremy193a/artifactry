@@ -8,10 +8,7 @@
   "plugins": [
     {
       "name": "md-export-skills",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/jeremy193a/md-to-artifacts.git"
-      },
+      "source": "./",
       "description": "Export Markdown into polished DOCX, PDF, PPTX, PNG/JPG files."
     }
   ]
