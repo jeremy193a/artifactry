@@ -171,7 +171,7 @@ See [CLAUDE_CHAT.md](CLAUDE_CHAT.md) for prompts and user guidance.
 Claude Code uses plugins through marketplaces:
 
 ```text
-/plugin marketplace add jeremy193a/md-to-artifacts
+/plugin marketplace add https://github.com/jeremy193a/md-to-artifacts.git
 /plugin install md-export-skills@md-export-skills
 ```
 
