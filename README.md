@@ -1,5 +1,7 @@
 # MD Export Skills
 
+![MD To Artifacts hero](assets/md-to-artifacts-hero.png)
+
 Turn Markdown into polished documents, decks, PDFs, and social images with AI agents.
 
 MD Export Skills is a public-ready skill pack for Claude Chat, Claude Code, OpenCode, Codex, and other coding agents. It helps an AI agent take a `.md` file and export it into real deliverables:
