@@ -2,61 +2,182 @@
   {
     "id": "institutional-clarity",
     "name": "Institutional Clarity",
-    "summary": "Trustworthy, precise, white-canvas system for executive, financial, and strategy exports.",
-    "best_for": ["executive decks", "business reports", "strategy memos", "financial summaries"]
+    "summary": "Trust-first executive system with white canvas, restrained blue signal, quiet gray hierarchy, and precise financial-document rhythm.",
+    "best_for": [
+      "executive decks",
+      "business reports",
+      "strategy memos",
+      "financial summaries"
+    ],
+    "source_count": 7,
+    "source_categories": {
+      "Fintech & Crypto": 2,
+      "Media & Consumer Tech": 2,
+      "Backend, Database & DevOps": 1,
+      "Productivity & SaaS": 2
+    }
   },
   {
     "id": "warm-editorial",
     "name": "Warm Editorial",
-    "summary": "Human, thoughtful, warm reading experience for handouts, training, essays, and course material.",
-    "best_for": ["workbooks", "training handouts", "course material", "long-form docs"]
+    "summary": "Human reading system with warm paper surfaces, calm serif/sans pairing, soft earth accents, and workbook-friendly hierarchy.",
+    "best_for": [
+      "workbooks",
+      "training handouts",
+      "course material",
+      "long-form docs"
+    ],
+    "source_count": 6,
+    "source_categories": {
+      "AI & LLM Platforms": 1,
+      "Productivity & SaaS": 1,
+      "Fintech & Crypto": 1,
+      "E-commerce & Retail": 2,
+      "Uncategorized": 1
+    }
   },
   {
     "id": "monochrome-precision",
     "name": "Monochrome Precision",
-    "summary": "Black-and-white technical minimalism for developer docs, product memos, and precise decks.",
-    "best_for": ["technical decks", "developer docs", "product memos", "startup briefs"]
+    "summary": "Sharp black-white technical minimalism with exact type, hairline grids, square discipline, and almost no decoration.",
+    "best_for": [
+      "technical decks",
+      "developer docs",
+      "product memos",
+      "startup briefs"
+    ],
+    "source_count": 7,
+    "source_categories": {
+      "Developer Tools & IDEs": 1,
+      "Media & Consumer Tech": 2,
+      "AI & LLM Platforms": 2,
+      "Automotive": 1,
+      "Productivity & SaaS": 1
+    }
   },
   {
     "id": "dark-console",
     "name": "Dark Console",
-    "summary": "Terminal-native dark surfaces for code-first workflows, AI agents, APIs, and dev tooling.",
-    "best_for": ["API guides", "agent workflows", "developer presentations", "technical diagrams"]
+    "summary": "Terminal-native dark system with warm/cool black surfaces, mono labels, code panels, status accents, and command rhythm.",
+    "best_for": [
+      "API guides",
+      "agent workflows",
+      "developer presentations",
+      "technical diagrams"
+    ],
+    "source_count": 8,
+    "source_categories": {
+      "Developer Tools & IDEs": 3,
+      "Backend, Database & DevOps": 1,
+      "Productivity & SaaS": 1,
+      "AI & LLM Platforms": 3
+    }
   },
   {
     "id": "gradient-intelligence",
     "name": "Gradient Intelligence",
-    "summary": "Modern luminous AI/product launch style with controlled gradients and crisp structure.",
-    "best_for": ["AI product decks", "launch carousels", "feature announcements", "innovation briefs"]
+    "summary": "Luminous AI/product system with restrained gradients, smooth cards, low-weight display type, and modern launch energy.",
+    "best_for": [
+      "AI product decks",
+      "launch carousels",
+      "feature announcements",
+      "innovation briefs"
+    ],
+    "source_count": 10,
+    "source_categories": {
+      "Fintech & Crypto": 1,
+      "AI & LLM Platforms": 3,
+      "Design & Creative Tools": 3,
+      "Developer Tools & IDEs": 2,
+      "Automotive": 1
+    }
   },
   {
     "id": "data-command",
     "name": "Data Command",
-    "summary": "Dense analytical dashboard language for metrics, operating reviews, and performance reporting.",
-    "best_for": ["KPI reports", "ops reviews", "analytics decks", "business intelligence"]
+    "summary": "Dense operational dashboard language with metrics, tables, status systems, mono numerals, and controlled high-signal accents.",
+    "best_for": [
+      "KPI reports",
+      "ops reviews",
+      "analytics decks",
+      "business intelligence"
+    ],
+    "source_count": 8,
+    "source_categories": {
+      "Fintech & Crypto": 3,
+      "Backend, Database & DevOps": 4,
+      "Media & Consumer Tech": 1
+    }
   },
   {
     "id": "visual-lifestyle",
     "name": "Visual Lifestyle",
-    "summary": "Photo-led, friendly, consumer-facing system for campaigns, catalogs, and social stories.",
-    "best_for": ["social posts", "campaign decks", "product catalogs", "brand stories"]
+    "summary": "Photo-led consumer storytelling with friendly type, generous image zones, soft cards, and simple caption-first composition.",
+    "best_for": [
+      "social posts",
+      "campaign decks",
+      "product catalogs",
+      "brand stories"
+    ],
+    "source_count": 7,
+    "source_categories": {
+      "E-commerce & Retail": 3,
+      "Media & Consumer Tech": 4
+    }
   },
   {
     "id": "cinematic-luxury",
     "name": "Cinematic Luxury",
-    "summary": "Dramatic black-canvas, high-contrast premium style for hero decks and portfolio narratives.",
-    "best_for": ["premium pitches", "portfolio decks", "luxury product stories", "hero presentations"]
+    "summary": "Dramatic black-canvas premium system with full-bleed hero pacing, restrained metallic/red accents, and monumental display type.",
+    "best_for": [
+      "premium pitches",
+      "portfolio decks",
+      "luxury product stories",
+      "hero presentations"
+    ],
+    "source_count": 10,
+    "source_categories": {
+      "Automotive": 6,
+      "Media & Consumer Tech": 1,
+      "AI & LLM Platforms": 2,
+      "E-commerce & Retail": 1
+    }
   },
   {
     "id": "playful-productivity",
     "name": "Playful Productivity",
-    "summary": "Friendly modular SaaS language with colorful structure and approachable UI rhythm.",
-    "best_for": ["onboarding docs", "team training", "SaaS guides", "lightweight presentations"]
+    "summary": "Friendly modular SaaS system with colorful structure, rounded blocks, approachable labels, and onboarding clarity.",
+    "best_for": [
+      "onboarding docs",
+      "team training",
+      "SaaS guides",
+      "lightweight presentations"
+    ],
+    "source_count": 8,
+    "source_categories": {
+      "Design & Creative Tools": 3,
+      "Productivity & SaaS": 2,
+      "Developer Tools & IDEs": 1,
+      "Backend, Database & DevOps": 1,
+      "Uncategorized": 1
+    }
   },
   {
     "id": "broadsheet-analysis",
     "name": "Broadsheet Analysis",
-    "summary": "Editorial magazine density with serif display, mono kickers, and research-led layouts.",
-    "best_for": ["research carousels", "thought leadership", "market analysis", "editorial PDFs"]
+    "summary": "Editorial research system with dense paper grids, serif display, mono kickers, hard rules, and analytical story hierarchy.",
+    "best_for": [
+      "research carousels",
+      "thought leadership",
+      "market analysis",
+      "editorial PDFs"
+    ],
+    "source_count": 7,
+    "source_categories": {
+      "Media & Consumer Tech": 2,
+      "Backend, Database & DevOps": 1,
+      "AI & LLM Platforms": 3,
+      "Productivity & SaaS": 1
+    }
   }
 ]

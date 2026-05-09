@@ -31,6 +31,23 @@ Read `DESIGN.md` and extract:
 
 Then map to medium-specific tokens.
 
+## Generic Style Schema
+
+The bundled styles in `styles/` are not simple palettes. Treat each style as an export design system derived from the local getdesign.md corpus:
+
+- `style_dna`: philosophy, visual signature, surface logic, density.
+- `palette`: color roles, accent policy, semantic color policy.
+- `typography.scale`: display/body/label size, weight, line height, letter spacing, label casing.
+- `shape`: corner scale, default radius, border weight.
+- `layout`: grid, whitespace, image treatment.
+- `components`: buttons, cards, tables, callouts.
+- `slides`: deterministic CSS/PPTX tokens such as background, title rhythm, card shadow, border width, and accent geometry.
+- `document`: Word/PDF translation rules such as title size, margins, heading logic, table header treatment.
+- `guardrails`: do/don't rules that prevent generic model output.
+- `export_translation`: format-specific instructions for PPTX, DOCX, and carousel/image exports.
+
+When generating an artifact, inherit from the whole schema. Do not stop at `colors` and `typography`.
+
 ## Document Tokens
 
 For Word/PDF:

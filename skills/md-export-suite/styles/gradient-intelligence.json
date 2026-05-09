@@ -1,7 +1,20 @@
 {
   "id": "gradient-intelligence",
   "name": "Gradient Intelligence",
-  "mood": ["modern", "ai", "luminous", "premium"],
+  "summary": "Luminous AI/product system with restrained gradients, smooth cards, low-weight display type, and modern launch energy.",
+  "best_for": [
+    "AI product decks",
+    "launch carousels",
+    "feature announcements",
+    "innovation briefs"
+  ],
+  "mood": [
+    "modern",
+    "ai",
+    "luminous",
+    "premium",
+    "fluid"
+  ],
   "colors": {
     "background": "#ffffff",
     "ink": "#101828",
@@ -12,19 +25,171 @@
     "line": "#e9d7fe"
   },
   "typography": {
-    "display": "Arial",
-    "body": "Arial",
-    "mono": "Courier New"
+    "display": "Inter",
+    "body": "Inter",
+    "mono": "JetBrains Mono",
+    "scale": {
+      "display_px": 88,
+      "title_px": 52,
+      "body_px": 18,
+      "label_px": 12,
+      "display_weight": 300,
+      "body_weight": 400,
+      "label_weight": 600,
+      "line_height_display": 0.98,
+      "line_height_body": 1.4,
+      "letter_spacing_display": "-1.6px",
+      "letter_spacing_label": "0.3px",
+      "label_case": "uppercase"
+    }
+  },
+  "style_dna": {
+    "philosophy": "Advanced but legible: gradient energy should clarify momentum, not hide structure.",
+    "visual_signature": "Soft luminous background, glassy panels, purple/blue/aurora accent, and thin-weight hero type.",
+    "surface_logic": "White base with gradient hero wash and pale lavender panels.",
+    "density": "Polished medium-sparse."
+  },
+  "palette": {
+    "roles": [
+      "purple primary",
+      "blue secondary",
+      "aurora wash",
+      "white product surface"
+    ],
+    "accent_policy": "Use gradients as one controlled field or edge glow, not everywhere.",
+    "semantic_policy": "Avoid semantic color overload; let gradient own the emotional range."
+  },
+  "shape": {
+    "corner_scale": "16/24/30px smooth cards and pills",
+    "default_radius": 30,
+    "border_weight": "1px soft"
+  },
+  "layout": {
+    "grid": "Large hero statement with floating product evidence cards.",
+    "whitespace": "Airy, launch-page pacing with strong focal hierarchy.",
+    "image_treatment": "Abstract AI visuals, product UI cards, or generated texture as background only."
+  },
+  "components": {
+    "buttons": "Gradient or solid purple pill, soft secondary.",
+    "cards": "Light translucent panels with subtle border and roomy padding.",
+    "tables": "Use only for feature matrices; keep rows spacious.",
+    "callouts": "Luminous highlight panels with one concise claim."
   },
   "slides": {
     "headline_weight": 300,
     "card_radius": 30,
     "density": "polished",
-    "accent_rule": "Use gradients as a controlled background or hero accent, not as decoration everywhere."
+    "accent_rule": "Use gradients as a controlled background or hero accent, not as decoration everywhere.",
+    "background_css": "radial-gradient(circle at 12% 18%, rgba(124, 58, 237, 0.22), transparent 30%), radial-gradient(circle at 84% 8%, rgba(14, 165, 233, 0.16), transparent 28%), #ffffff",
+    "title_line_height": 0.98,
+    "title_letter_spacing": "-1.6px",
+    "body_line_height": 1.36,
+    "kicker_transform": "uppercase",
+    "kicker_letter_spacing": "0.3px",
+    "card_border_width": 1,
+    "card_shadow": "0 24px 70px rgba(88, 28, 135, 0.14)",
+    "accent_geometry": "glow",
+    "card_background": "rgba(255, 255, 255, 0.78)"
   },
   "document": {
-    "title_size": 26,
+    "title_size": 27,
     "heading_color": "primary",
-    "table_header": "#f5f3ff"
+    "table_header": "#f5f3ff",
+    "margins_cm": [
+      2.2,
+      2.0,
+      2.2,
+      2.2
+    ],
+    "heading_rule": "Keep documents printable; translate gradients into accent rules and pale section fills."
+  },
+  "source_inheritance": {
+    "method": "Synthesized from local getdesign.md working corpus.",
+    "source_count": 10,
+    "source_categories": {
+      "Fintech & Crypto": 1,
+      "AI & LLM Platforms": 3,
+      "Design & Creative Tools": 3,
+      "Developer Tools & IDEs": 2,
+      "Automotive": 1
+    },
+    "total_source_words": 33437,
+    "dominant_color_samples": [
+      "#ffffff",
+      "#000000",
+      "#0a0a0a",
+      "#0d0d0d",
+      "#242728",
+      "#146ef5",
+      "#07080a",
+      "#121212",
+      "#292827",
+      "#fffaf0",
+      "#e5e7eb",
+      "#f2f2f2"
+    ],
+    "font_samples": [
+      "Inter",
+      "sohne-var",
+      "DM Sans",
+      "NouvelR",
+      "Unica77 Cohere Web",
+      "Inter Variable",
+      "PP Editorial Old",
+      "Plain Black",
+      "GT Walsheim Medium",
+      "CohereText"
+    ],
+    "radius_observed_px": {
+      "min_px": 0.0,
+      "median_px": 16.0,
+      "max_px": 9999.0
+    },
+    "component_vocabulary": [
+      "caption",
+      "text-input",
+      "button-secondary",
+      "button-primary",
+      "button-md",
+      "micro",
+      "text-input-focused",
+      "heading-lg",
+      "button-primary-pressed",
+      "heading-md",
+      "heading-sm",
+      "hero-display",
+      "button",
+      "footer",
+      "pill-tab",
+      "pill-tab-active",
+      "subtitle",
+      "button-primary-disabled"
+    ]
+  },
+  "guardrails": {
+    "do": [
+      "Anchor luminous effects to hierarchy.",
+      "Use thin-weight display type with structured panels.",
+      "Keep gradients behind content, not inside body text."
+    ],
+    "dont": [
+      "Do not make every surface gradient.",
+      "Do not sacrifice readability for glow.",
+      "Do not use generic purple blobs."
+    ]
+  },
+  "export_translation": {
+    "pptx": [
+      "Use deterministic HTML/CSS or PPTX text boxes for final text.",
+      "Keep one core idea per slide and validate rendered PNG dimensions."
+    ],
+    "docx": [
+      "Translate visual style into Word typography, margins, heading hierarchy, tables, and callouts.",
+      "Keep documents printable unless the user explicitly requests PDF-only visual art direction."
+    ],
+    "carousel": [
+      "Use high-resolution fixed canvas, mobile-readable text, and safe margins.",
+      "Make each frame complete enough to stand alone."
+    ]
   }
 }

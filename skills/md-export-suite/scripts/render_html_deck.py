@@ -127,29 +127,38 @@ BASE_CSS = """
   --body-font: __BODY_FONT__;
   --mono-font: __MONO_FONT__;
   --card-radius: __CARD_RADIUS__px;
+  --card-bg: __CARD_BACKGROUND__;
+  --card-border-width: __CARD_BORDER_WIDTH__px;
+  --card-shadow: __CARD_SHADOW__;
   --headline-weight: __HEADLINE_WEIGHT__;
+  --title-line-height: __TITLE_LINE_HEIGHT__;
+  --title-letter-spacing: __TITLE_LETTER_SPACING__;
+  --body-line-height: __BODY_LINE_HEIGHT__;
+  --kicker-transform: __KICKER_TRANSFORM__;
+  --kicker-letter-spacing: __KICKER_LETTER_SPACING__;
+  --slide-bg: __SLIDE_BACKGROUND__;
 }
 * { box-sizing: border-box; }
 html, body { margin: 0; font-family: var(--body-font), Arial, sans-serif; color: var(--ink); background: #d8dde6; }
-body.single { width: var(--w); height: var(--h); overflow: hidden; background: var(--canvas); }
+body.single { width: var(--w); height: var(--h); overflow: hidden; background: var(--slide-bg); }
 body.deck { padding: 40px; }
 .deck-wrap { display: grid; gap: 40px; justify-content: center; }
 body.single .deck-wrap { width: var(--w); height: var(--h); display: block; overflow: hidden; }
-.slide { position: relative; width: var(--w); height: var(--h); overflow: hidden; background: var(--canvas); box-shadow: 0 12px 48px rgba(10,11,13,.16); }
+.slide { position: relative; width: var(--w); height: var(--h); overflow: hidden; background: var(--slide-bg); box-shadow: 0 12px 48px rgba(10,11,13,.16); }
 body.single .slide { position: absolute; inset: 0; box-shadow: none; }
 .pad { position: absolute; inset: var(--pad-y) var(--pad-x); }
 .header, .footer { position: absolute; left: var(--pad-x); right: var(--pad-x); display: flex; justify-content: space-between; color: var(--muted); font-weight: 650; font-size: var(--meta); }
 .header { top: var(--pad-y); }
 .footer { bottom: var(--footer-y); }
-.kicker { display: flex; align-items: center; gap: 14px; }
-.dot { width: 13px; height: 13px; border-radius: 50%; background: var(--primary); }
+.kicker { display: flex; align-items: center; gap: 14px; font-family: var(--mono-font), monospace; text-transform: var(--kicker-transform); letter-spacing: var(--kicker-letter-spacing); }
+.dot { width: 13px; height: 13px; border-radius: 50%; background: var(--primary); __ACCENT_MARK_CSS__ }
 .content { position: absolute; left: var(--pad-x); right: var(--pad-x); top: var(--content-top); bottom: var(--footer-y); display: grid; align-content: center; }
-.title { max-width: var(--title-width); margin: 0; font-family: var(--display-font), Arial, sans-serif; font-size: var(--title); line-height: .98; letter-spacing: -1px; font-weight: var(--headline-weight); }
+.title { max-width: var(--title-width); margin: 0; font-family: var(--display-font), Arial, sans-serif; font-size: var(--title); line-height: var(--title-line-height); letter-spacing: var(--title-letter-spacing); font-weight: var(--headline-weight); }
 .blue { color: var(--primary); }
-.body { margin-top: var(--gap); max-width: var(--body-width); color: var(--body); font-size: var(--copy); line-height: 1.28; }
+.body { margin-top: var(--gap); max-width: var(--body-width); color: var(--body); font-size: var(--copy); line-height: var(--body-line-height); }
 .body p { margin: 0 0 .7em; }
 .body ul { margin: 0; padding: 0; list-style: none; display: grid; gap: var(--bullet-gap); }
-.body li { padding: var(--bullet-pad); border: 1px solid var(--line); border-radius: var(--card-radius); background: var(--soft); font-weight: 650; color: var(--ink); }
+.body li { padding: var(--bullet-pad); border: var(--card-border-width) solid var(--line); border-radius: var(--card-radius); background: var(--card-bg); box-shadow: var(--card-shadow); font-weight: 650; color: var(--ink); }
 body.wide { --w: 1920px; --h: 1080px; --pad-x: 92px; --pad-y: 76px; --footer-y: 52px; --content-top: 150px; --title: 82px; --copy: 30px; --meta: 22px; --gap: 34px; --bullet-gap: 18px; --bullet-pad: 24px 28px; --radius: 24px; --title-width: 1320px; --body-width: 980px; }
 body.portrait { --w: 1638px; --h: 2048px; --pad-x: 132px; --pad-y: 132px; --footer-y: 96px; --content-top: 260px; --title: 104px; --copy: 40px; --meta: 26px; --gap: 48px; --bullet-gap: 24px; --bullet-pad: 34px 40px; --radius: 38px; --title-width: 1220px; --body-width: 1180px; }
 body.square { --w: 1800px; --h: 1800px; --pad-x: 120px; --pad-y: 110px; --footer-y: 88px; --content-top: 230px; --title: 98px; --copy: 38px; --meta: 25px; --gap: 44px; --bullet-gap: 22px; --bullet-pad: 32px 38px; --radius: 34px; --title-width: 1240px; --body-width: 1120px; }
@@ -161,6 +170,15 @@ def css_for_style(style: dict) -> str:
     colors = style["colors"]
     typography = style["typography"]
     slides = style.get("slides", {})
+    accent_geometry = slides.get("accent_geometry", "dot")
+    accent_css = {
+        "dot": "",
+        "pill": "width: 42px; height: 13px; border-radius: 999px;",
+        "rule": "width: 56px; height: 4px; border-radius: 0;",
+        "prompt": "width: 18px; height: 18px; border-radius: 3px; transform: rotate(45deg);",
+        "glow": "box-shadow: 0 0 28px var(--primary);",
+        "status": "width: 30px; height: 13px; border-radius: 999px;",
+    }.get(str(accent_geometry), "")
     replacements = {
         "__PRIMARY__": colors["primary"],
         "__INK__": colors["ink"],
@@ -173,7 +191,17 @@ def css_for_style(style: dict) -> str:
         "__BODY_FONT__": typography.get("body", "Arial"),
         "__MONO_FONT__": typography.get("mono", "Courier New"),
         "__CARD_RADIUS__": str(slides.get("card_radius", 24)),
+        "__CARD_BACKGROUND__": slides.get("card_background", colors["surface"]),
+        "__CARD_BORDER_WIDTH__": str(slides.get("card_border_width", 1)),
+        "__CARD_SHADOW__": slides.get("card_shadow", "none"),
         "__HEADLINE_WEIGHT__": str(slides.get("headline_weight", 500)),
+        "__TITLE_LINE_HEIGHT__": str(slides.get("title_line_height", 0.98)),
+        "__TITLE_LETTER_SPACING__": str(slides.get("title_letter_spacing", "-1px")),
+        "__BODY_LINE_HEIGHT__": str(slides.get("body_line_height", 1.28)),
+        "__KICKER_TRANSFORM__": slides.get("kicker_transform", "none"),
+        "__KICKER_LETTER_SPACING__": str(slides.get("kicker_letter_spacing", "0px")),
+        "__SLIDE_BACKGROUND__": slides.get("background_css", colors["background"]),
+        "__ACCENT_MARK_CSS__": accent_css,
     }
     css = BASE_CSS
     for key, value in replacements.items():

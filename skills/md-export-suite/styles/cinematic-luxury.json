@@ -1,7 +1,20 @@
 {
   "id": "cinematic-luxury",
   "name": "Cinematic Luxury",
-  "mood": ["dramatic", "premium", "cinematic", "high contrast"],
+  "summary": "Dramatic black-canvas premium system with full-bleed hero pacing, restrained metallic/red accents, and monumental display type.",
+  "best_for": [
+    "premium pitches",
+    "portfolio decks",
+    "luxury product stories",
+    "hero presentations"
+  ],
+  "mood": [
+    "dramatic",
+    "premium",
+    "cinematic",
+    "high contrast",
+    "sparse"
+  ],
   "colors": {
     "background": "#050505",
     "ink": "#f8f7f4",
@@ -12,19 +25,171 @@
     "line": "#2a2926"
   },
   "typography": {
-    "display": "Georgia",
-    "body": "Arial",
-    "mono": "Courier New"
+    "display": "Inter",
+    "body": "Inter",
+    "mono": "IBM Plex Mono",
+    "scale": {
+      "display_px": 96,
+      "title_px": 58,
+      "body_px": 18,
+      "label_px": 11,
+      "display_weight": 500,
+      "body_weight": 400,
+      "label_weight": 700,
+      "line_height_display": 0.96,
+      "line_height_body": 1.36,
+      "letter_spacing_display": "-1.2px",
+      "letter_spacing_label": "1.4px",
+      "label_case": "uppercase"
+    }
+  },
+  "style_dna": {
+    "philosophy": "Premium restraint: fewer elements, stronger contrast, more intentional silence.",
+    "visual_signature": "Near-black canvas, large white display type, cinematic imagery, and one scarce premium accent.",
+    "surface_logic": "Black hero, elevated dark panels, occasional light editorial insert.",
+    "density": "Dramatic sparse."
+  },
+  "palette": {
+    "roles": [
+      "near-black stage",
+      "warm white type",
+      "metallic or red signal",
+      "deep gray surfaces"
+    ],
+    "accent_policy": "One accent moment per slide, preferably as a rule, number, or small CTA.",
+    "semantic_policy": "Avoid generic status colors; premium systems use fewer signals."
+  },
+  "shape": {
+    "corner_scale": "0/4/8/12px with square media preferred",
+    "default_radius": 8,
+    "border_weight": "1px dark"
+  },
+  "layout": {
+    "grid": "Hero-first layouts, asymmetry, oversized type, large negative space.",
+    "whitespace": "Sparse and theatrical; do not fill the black canvas.",
+    "image_treatment": "Full-bleed cinematic photography, hard crops, no stock-like blur."
+  },
+  "components": {
+    "buttons": "Square or low-radius uppercase CTAs.",
+    "cards": "Dark panels, thin borders, no soft SaaS feel.",
+    "tables": "Spec grids with large numbers and sparse rows.",
+    "callouts": "Monumental numbers, chapter bands, and image-caption pairs."
   },
   "slides": {
     "headline_weight": 500,
     "card_radius": 8,
     "density": "dramatic sparse",
-    "accent_rule": "Use gold/metal accent sparingly against black canvas."
+    "accent_rule": "Use gold/metal accent sparingly against black canvas.",
+    "background_css": "radial-gradient(circle at 72% 18%, rgba(214, 168, 79, 0.14), transparent 28%), #050505",
+    "title_line_height": 0.96,
+    "title_letter_spacing": "-1.2px",
+    "body_line_height": 1.32,
+    "kicker_transform": "uppercase",
+    "kicker_letter_spacing": "1.4px",
+    "card_border_width": 1,
+    "card_shadow": "0 24px 80px rgba(0, 0, 0, 0.55)",
+    "accent_geometry": "rule",
+    "card_background": "#121212"
   },
   "document": {
-    "title_size": 27,
+    "title_size": 28,
     "heading_color": "primary",
-    "table_header": "#f5efe1"
+    "table_header": "#f2ead7",
+    "margins_cm": [
+      2.4,
+      2.2,
+      2.4,
+      2.4
+    ],
+    "heading_rule": "Documents become premium editorial on white paper, not black Word pages unless PDF-only."
+  },
+  "source_inheritance": {
+    "method": "Synthesized from local getdesign.md working corpus.",
+    "source_count": 10,
+    "source_categories": {
+      "Automotive": 6,
+      "Media & Consumer Tech": 1,
+      "AI & LLM Platforms": 2,
+      "E-commerce & Retail": 1
+    },
+    "total_source_words": 31699,
+    "dominant_color_samples": [
+      "#ffffff",
+      "#000000",
+      "#181818",
+      "#1c69d4",
+      "#202020",
+      "#1a1a1a",
+      "#3e6ae1",
+      "#0c0a09",
+      "#ffc000",
+      "#262626",
+      "#303030",
+      "#e6e6e6"
+    ],
+    "font_samples": [
+      "BMWTypeNextLatin",
+      "NeueHaasGrotesk Display",
+      "Bugatti Display",
+      "Inter Variable",
+      "D-DIN",
+      "Bugatti Monospace",
+      "D-DIN-Bold",
+      "Bugatti Text Regular",
+      "BMWTypeNextLatin Light",
+      "ui-monospace"
+    ],
+    "radius_observed_px": {
+      "min_px": 0.0,
+      "median_px": 16.0,
+      "max_px": 9999.0
+    },
+    "component_vocabulary": [
+      "caption",
+      "text-input",
+      "button",
+      "nav-link",
+      "button-primary",
+      "spec-cell",
+      "top-nav",
+      "footer",
+      "caption-uppercase",
+      "button-primary-active",
+      "footer-dark",
+      "text-link",
+      "hero-photo-band",
+      "cta-band-photo",
+      "button-outline-on-dark",
+      "button-outline-on-light",
+      "button-tertiary-text",
+      "badge-pill"
+    ]
+  },
+  "guardrails": {
+    "do": [
+      "Use fewer, larger elements.",
+      "Let black canvas and image crops create drama.",
+      "Keep accent moments scarce."
+    ],
+    "dont": [
+      "Do not fill the page with cards.",
+      "Do not use friendly SaaS pills everywhere.",
+      "Do not brighten the palette unnecessarily."
+    ]
+  },
+  "export_translation": {
+    "pptx": [
+      "Use deterministic HTML/CSS or PPTX text boxes for final text.",
+      "Keep one core idea per slide and validate rendered PNG dimensions."
+    ],
+    "docx": [
+      "Translate visual style into Word typography, margins, heading hierarchy, tables, and callouts.",
+      "Keep documents printable unless the user explicitly requests PDF-only visual art direction."
+    ],
+    "carousel": [
+      "Use high-resolution fixed canvas, mobile-readable text, and safe margins.",
+      "Make each frame complete enough to stand alone.",
+      "Reserve a large image or cinematic negative-space zone before adding text."
+    ]
   }
 }

@@ -1,7 +1,20 @@
 {
   "id": "data-command",
   "name": "Data Command",
-  "mood": ["analytical", "dense", "operational", "dashboard"],
+  "summary": "Dense operational dashboard language with metrics, tables, status systems, mono numerals, and controlled high-signal accents.",
+  "best_for": [
+    "KPI reports",
+    "ops reviews",
+    "analytics decks",
+    "business intelligence"
+  ],
+  "mood": [
+    "analytical",
+    "dense",
+    "operational",
+    "dashboard",
+    "decisive"
+  ],
   "colors": {
     "background": "#f8fafc",
     "ink": "#0f172a",
@@ -12,19 +25,171 @@
     "line": "#cbd5e1"
   },
   "typography": {
-    "display": "Arial",
-    "body": "Arial",
-    "mono": "Courier New"
+    "display": "Inter",
+    "body": "Inter",
+    "mono": "JetBrains Mono",
+    "scale": {
+      "display_px": 72,
+      "title_px": 44,
+      "body_px": 17,
+      "label_px": 11,
+      "display_weight": 650,
+      "body_weight": 400,
+      "label_weight": 700,
+      "line_height_display": 1.02,
+      "line_height_body": 1.32,
+      "letter_spacing_display": "-0.6px",
+      "letter_spacing_label": "0.7px",
+      "label_case": "uppercase"
+    }
+  },
+  "style_dna": {
+    "philosophy": "Operating-room clarity: show state, trend, risk, and next action quickly.",
+    "visual_signature": "Metric cards, dense tables, status chips, thin dividers, and mono numbers.",
+    "surface_logic": "Light dashboard canvas with white modules and status-coded accents.",
+    "density": "Data dense."
+  },
+  "palette": {
+    "roles": [
+      "blue analytical primary",
+      "green up",
+      "red down",
+      "amber warning",
+      "neutral grid"
+    ],
+    "accent_policy": "Accent colors belong to metrics, status, and comparison only.",
+    "semantic_policy": "Every semantic color must map to a label or legend."
+  },
+  "shape": {
+    "corner_scale": "8/12/14px utilitarian modules",
+    "default_radius": 14,
+    "border_weight": "1px"
+  },
+  "layout": {
+    "grid": "Dashboard modules, KPI strips, table-first slide bodies, right-side insight rail.",
+    "whitespace": "Tight but scannable; group by decision layer.",
+    "image_treatment": "Charts, tables, UI captures, and system diagrams over decorative imagery."
+  },
+  "components": {
+    "buttons": "Small operational controls, status chips, tabs.",
+    "cards": "Metric cards with label, value, delta, and tiny context line.",
+    "tables": "Header bands, row dividers, mono numeric columns, status badges.",
+    "callouts": "Risk/decision panels with clear severity."
   },
   "slides": {
     "headline_weight": 650,
     "card_radius": 14,
     "density": "data dense",
-    "accent_rule": "Use accent colors only for metrics, status, and comparison."
+    "accent_rule": "Use accent colors only for metrics, status, and comparison.",
+    "background_css": "linear-gradient(180deg, #f8fafc 0%, #eef6ff 100%)",
+    "title_line_height": 1.02,
+    "title_letter_spacing": "-0.6px",
+    "body_line_height": 1.26,
+    "kicker_transform": "uppercase",
+    "kicker_letter_spacing": "0.7px",
+    "card_border_width": 1,
+    "card_shadow": "0 10px 30px rgba(15, 23, 42, 0.07)",
+    "accent_geometry": "status",
+    "card_background": "#ffffff"
   },
   "document": {
     "title_size": 24,
-    "heading_color": "ink",
-    "table_header": "#e0f2fe"
+    "heading_color": "primary",
+    "table_header": "#e0f2fe",
+    "margins_cm": [
+      1.8,
+      1.7,
+      1.8,
+      1.8
+    ],
+    "heading_rule": "Dense headings, strong tables, mono numerals, status labels."
+  },
+  "source_inheritance": {
+    "method": "Synthesized from local getdesign.md working corpus.",
+    "source_count": 8,
+    "source_categories": {
+      "Fintech & Crypto": 3,
+      "Backend, Database & DevOps": 4,
+      "Media & Consumer Tech": 1
+    },
+    "total_source_words": 27551,
+    "dominant_color_samples": [
+      "#ffffff",
+      "#000000",
+      "#1a1a1a",
+      "#0a0a0a",
+      "#7132f5",
+      "#faff69",
+      "#fcd535",
+      "#181a20",
+      "#eaecef",
+      "#5741d8",
+      "#1f1633",
+      "#3b82f6"
+    ],
+    "font_samples": [
+      "Inter",
+      "NVIDIA-EMEA",
+      "Euclid Circular A",
+      "BinanceNova",
+      "Rubik",
+      "Aeonik Pro",
+      "BinancePlex",
+      "Sentri Display",
+      "Monaco",
+      "JetBrains Mono"
+    ],
+    "radius_observed_px": {
+      "min_px": 0.0,
+      "median_px": 16.0,
+      "max_px": 9999.0
+    },
+    "component_vocabulary": [
+      "button-primary",
+      "caption",
+      "text-input",
+      "button-primary-active",
+      "text-input-focused",
+      "button",
+      "nav-link",
+      "button-primary-disabled",
+      "hero-band-dark",
+      "heading-lg",
+      "heading-md",
+      "heading-sm",
+      "code",
+      "button-primary-pressed",
+      "code-block",
+      "button-md",
+      "hero-display",
+      "button-secondary-on-dark"
+    ]
+  },
+  "guardrails": {
+    "do": [
+      "Map every color to a metric or status.",
+      "Use mono numerals.",
+      "Expose trend, risk, and action together."
+    ],
+    "dont": [
+      "Do not use status colors without labels.",
+      "Do not make dashboards sparse like brand slides.",
+      "Do not hide tables in screenshots."
+    ]
+  },
+  "export_translation": {
+    "pptx": [
+      "Use deterministic HTML/CSS or PPTX text boxes for final text.",
+      "Keep one core idea per slide and validate rendered PNG dimensions.",
+      "Use tables, numbered evidence, and source notes instead of vague decorative cards."
+    ],
+    "docx": [
+      "Translate visual style into Word typography, margins, heading hierarchy, tables, and callouts.",
+      "Keep documents printable unless the user explicitly requests PDF-only visual art direction."
+    ],
+    "carousel": [
+      "Use high-resolution fixed canvas, mobile-readable text, and safe margins.",
+      "Make each frame complete enough to stand alone."
+    ]
   }
 }

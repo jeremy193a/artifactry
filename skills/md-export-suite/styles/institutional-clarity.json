@@ -1,11 +1,24 @@
 {
   "id": "institutional-clarity",
   "name": "Institutional Clarity",
-  "mood": ["trustworthy", "precise", "calm", "executive"],
+  "summary": "Trust-first executive system with white canvas, restrained blue signal, quiet gray hierarchy, and precise financial-document rhythm.",
+  "best_for": [
+    "executive decks",
+    "business reports",
+    "strategy memos",
+    "financial summaries"
+  ],
+  "mood": [
+    "trustworthy",
+    "precise",
+    "calm",
+    "executive",
+    "institutional"
+  ],
   "colors": {
     "background": "#ffffff",
     "ink": "#0a0b0d",
-    "body": "#5b616e",
+    "body": "#4f5663",
     "muted": "#7c828a",
     "primary": "#0052ff",
     "surface": "#f7f7f7",
@@ -14,17 +27,164 @@
   "typography": {
     "display": "Inter",
     "body": "Inter",
-    "mono": "JetBrains Mono"
+    "mono": "JetBrains Mono",
+    "scale": {
+      "display_px": 80,
+      "title_px": 52,
+      "body_px": 18,
+      "label_px": 12,
+      "display_weight": 400,
+      "body_weight": 400,
+      "label_weight": 600,
+      "line_height_display": 1.0,
+      "line_height_body": 1.45,
+      "letter_spacing_display": "-1.2px",
+      "letter_spacing_label": "0.4px",
+      "label_case": "uppercase"
+    }
+  },
+  "style_dna": {
+    "philosophy": "Financial-services calm: information feels reviewed, audited, and ready for a boardroom.",
+    "visual_signature": "Pure white page, one blue voltage, gray elevation bands, mono numerals, and rounded product-card layers.",
+    "surface_logic": "Rotate white canvas, soft gray bands, and occasional dark editorial chapter slides.",
+    "density": "Medium sparse with strong alignment and measured whitespace."
+  },
+  "palette": {
+    "roles": [
+      "single primary signal",
+      "soft gray surfaces",
+      "high-contrast ink",
+      "muted compliance metadata"
+    ],
+    "accent_policy": "Use blue on one decisive marker, number, route, or callout per page.",
+    "semantic_policy": "Green/red only for measured data deltas, never for decoration."
+  },
+  "shape": {
+    "corner_scale": "8/12/16/24px with pill CTAs",
+    "default_radius": 24,
+    "border_weight": "1px"
+  },
+  "layout": {
+    "grid": "12-column, wide safe margins, aligned metrics, restrained card stacking.",
+    "whitespace": "Generous but not luxury-sparse; leave enough room for numbers to breathe.",
+    "image_treatment": "Product UI or abstract finance diagrams in clean framed panels."
+  },
+  "components": {
+    "buttons": "Pill primary, gray secondary, text tertiary.",
+    "cards": "White or gray cards with subtle border, no loud shadow.",
+    "tables": "Dense but breathable rows, mono numerals, blue selected state.",
+    "callouts": "Blue left rail or small blue dot, not full blue panels."
   },
   "slides": {
     "headline_weight": 400,
-    "card_radius": 28,
+    "card_radius": 24,
     "density": "medium sparse",
-    "accent_rule": "Use primary blue rarely for one key number, route, marker, or action."
+    "accent_rule": "Use primary blue rarely for one key number, route, marker, or action.",
+    "background_css": "#ffffff",
+    "title_line_height": 1.0,
+    "title_letter_spacing": "-1.2px",
+    "body_line_height": 1.32,
+    "kicker_transform": "uppercase",
+    "kicker_letter_spacing": "0.4px",
+    "card_border_width": 1,
+    "card_shadow": "0 12px 36px rgba(10, 11, 13, 0.06)",
+    "accent_geometry": "dot",
+    "card_background": "#f7f7f7"
   },
   "document": {
     "title_size": 26,
     "heading_color": "primary",
-    "table_header": "#eef2ff"
+    "table_header": "#eef2ff",
+    "margins_cm": [
+      2.2,
+      2.0,
+      2.2,
+      2.2
+    ],
+    "heading_rule": "Blue H1, black lower headings, mono metadata."
+  },
+  "source_inheritance": {
+    "method": "Synthesized from local getdesign.md working corpus.",
+    "source_count": 7,
+    "source_categories": {
+      "Fintech & Crypto": 2,
+      "Media & Consumer Tech": 2,
+      "Backend, Database & DevOps": 1,
+      "Productivity & SaaS": 2
+    },
+    "total_source_words": 24961,
+    "dominant_color_samples": [
+      "#ffffff",
+      "#e60000",
+      "#25282b",
+      "#9fe870",
+      "#0a0b0d",
+      "#111111",
+      "#161616",
+      "#163300",
+      "#101010",
+      "#0e0f0c",
+      "#0052ff",
+      "#000000"
+    ],
+    "font_samples": [
+      "Inter",
+      "IBM Plex Sans",
+      "hashicorpSans",
+      "Cal Sans",
+      "Geist Mono",
+      "JetBrains Mono"
+    ],
+    "radius_observed_px": {
+      "min_px": 0.0,
+      "median_px": 16.0,
+      "max_px": 9999.0
+    },
+    "component_vocabulary": [
+      "caption",
+      "button-primary",
+      "text-input",
+      "button",
+      "feature-card",
+      "button-secondary",
+      "text-input-focused",
+      "button-primary-disabled",
+      "button-primary-pressed",
+      "top-nav",
+      "footer",
+      "nav-link",
+      "button-primary-active",
+      "hero-band-dark",
+      "pricing-tier-card",
+      "badge-pill",
+      "footer-link",
+      "headline"
+    ]
+  },
+  "guardrails": {
+    "do": [
+      "Use one blue signal per artifact page.",
+      "Align numbers and decisions on a visible grid.",
+      "Keep finance or executive claims calm and auditable."
+    ],
+    "dont": [
+      "Do not add decorative gradients.",
+      "Do not make every heading blue.",
+      "Do not use playful icon clutter."
+    ]
+  },
+  "export_translation": {
+    "pptx": [
+      "Use deterministic HTML/CSS or PPTX text boxes for final text.",
+      "Keep one core idea per slide and validate rendered PNG dimensions."
+    ],
+    "docx": [
+      "Translate visual style into Word typography, margins, heading hierarchy, tables, and callouts.",
+      "Keep documents printable unless the user explicitly requests PDF-only visual art direction."
+    ],
+    "carousel": [
+      "Use high-resolution fixed canvas, mobile-readable text, and safe margins.",
+      "Make each frame complete enough to stand alone."
+    ]
   }
 }

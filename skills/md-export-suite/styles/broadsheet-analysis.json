@@ -1,7 +1,20 @@
 {
   "id": "broadsheet-analysis",
   "name": "Broadsheet Analysis",
-  "mood": ["editorial", "analytical", "dense", "print-like"],
+  "summary": "Editorial research system with dense paper grids, serif display, mono kickers, hard rules, and analytical story hierarchy.",
+  "best_for": [
+    "research carousels",
+    "thought leadership",
+    "market analysis",
+    "editorial PDFs"
+  ],
+  "mood": [
+    "editorial",
+    "analytical",
+    "dense",
+    "print-like",
+    "opinionated"
+  ],
   "colors": {
     "background": "#fbfaf7",
     "ink": "#111111",
@@ -12,19 +25,165 @@
     "line": "#d6d3d1"
   },
   "typography": {
-    "display": "Georgia",
-    "body": "Georgia",
-    "mono": "Courier New"
+    "display": "Source Serif 4",
+    "body": "Source Serif 4",
+    "mono": "IBM Plex Mono",
+    "scale": {
+      "display_px": 86,
+      "title_px": 48,
+      "body_px": 17,
+      "label_px": 11,
+      "display_weight": 700,
+      "body_weight": 400,
+      "label_weight": 700,
+      "line_height_display": 0.96,
+      "line_height_body": 1.48,
+      "letter_spacing_display": "-0.5px",
+      "letter_spacing_label": "1.1px",
+      "label_case": "uppercase"
+    }
+  },
+  "style_dna": {
+    "philosophy": "Analysis should feel edited, argued, and typeset, not merely summarized.",
+    "visual_signature": "Paper-white field, serif headlines, mono uppercase kickers, hairline rules, dense story modules.",
+    "surface_logic": "Flat print surfaces; depth comes from rule weight and typographic hierarchy.",
+    "density": "Editorial dense."
+  },
+  "palette": {
+    "roles": [
+      "ink",
+      "paper",
+      "hairline",
+      "one link/accent blue"
+    ],
+    "accent_policy": "Use one blue for links, references, or the strongest analytical highlight.",
+    "semantic_policy": "Prefer labels and rules to traffic-light colors."
+  },
+  "shape": {
+    "corner_scale": "0/2/4px; square by default",
+    "default_radius": 2,
+    "border_weight": "1-2px"
+  },
+  "layout": {
+    "grid": "Magazine grid, columns, numbered lists, pull quotes, and section ribbons.",
+    "whitespace": "Dense but disciplined; whitespace acts like page margin.",
+    "image_treatment": "Hard-cropped editorial images or charts with captions."
+  },
+  "components": {
+    "buttons": "Hard-outline rectangles or underlined text links.",
+    "cards": "No floating cards; use story blocks separated by rules.",
+    "tables": "Report-style tables with hairline dividers and strong headers.",
+    "callouts": "Pull quotes, source notes, and numbered evidence blocks."
   },
   "slides": {
     "headline_weight": 700,
-    "card_radius": 4,
+    "card_radius": 2,
     "density": "editorial dense",
-    "accent_rule": "Use mono kickers, hairline dividers, and one ink-blue accent."
+    "accent_rule": "Use mono kickers, hairline dividers, and one ink-blue accent.",
+    "background_css": "#fbfaf7",
+    "title_line_height": 0.96,
+    "title_letter_spacing": "-0.5px",
+    "body_line_height": 1.4,
+    "kicker_transform": "uppercase",
+    "kicker_letter_spacing": "1.1px",
+    "card_border_width": 1,
+    "card_shadow": "none",
+    "accent_geometry": "rule",
+    "card_background": "#ffffff"
   },
   "document": {
-    "title_size": 28,
+    "title_size": 29,
     "heading_color": "ink",
-    "table_header": "#f5f5f4"
+    "table_header": "#ece7df",
+    "margins_cm": [
+      1.9,
+      1.8,
+      1.9,
+      1.9
+    ],
+    "heading_rule": "Serif display, mono kickers, hairline rules, dense evidence blocks."
+  },
+  "source_inheritance": {
+    "method": "Synthesized from local getdesign.md working corpus.",
+    "source_count": 7,
+    "source_categories": {
+      "Media & Consumer Tech": 2,
+      "Backend, Database & DevOps": 1,
+      "AI & LLM Platforms": 3,
+      "Productivity & SaaS": 1
+    },
+    "total_source_words": 23667,
+    "dominant_color_samples": [
+      "#ffffff",
+      "#000000",
+      "#0b0b0b",
+      "#212121",
+      "#131313",
+      "#3cffd0",
+      "#1a1a1a",
+      "#b9b9b9",
+      "#0052ef",
+      "#5200ff",
+      "#010120",
+      "#057dbc"
+    ],
+    "font_samples": [
+      "Notion Sans",
+      "StyreneB",
+      "Copernicus",
+      "JetBrains Mono"
+    ],
+    "radius_observed_px": {
+      "min_px": 0.0,
+      "median_px": 12.0,
+      "max_px": 99999.0
+    },
+    "component_vocabulary": [
+      "caption",
+      "button-primary",
+      "button-primary-disabled",
+      "button-secondary",
+      "button-secondary-on-dark",
+      "text-input",
+      "text-input-focused",
+      "caption-uppercase",
+      "code",
+      "button",
+      "nav-link",
+      "button-primary-active",
+      "button-text-link",
+      "button-icon-circular",
+      "text-link",
+      "top-nav",
+      "hero-band",
+      "hero-illustration-card"
+    ]
+  },
+  "guardrails": {
+    "do": [
+      "Use mono kickers and rules.",
+      "Make argument structure visible.",
+      "Prefer pull quotes, sources, and numbered evidence."
+    ],
+    "dont": [
+      "Do not use rounded SaaS cards.",
+      "Do not add glow or glass effects.",
+      "Do not make editorial layouts too sparse."
+    ]
+  },
+  "export_translation": {
+    "pptx": [
+      "Use deterministic HTML/CSS or PPTX text boxes for final text.",
+      "Keep one core idea per slide and validate rendered PNG dimensions.",
+      "Use tables, numbered evidence, and source notes instead of vague decorative cards."
+    ],
+    "docx": [
+      "Translate visual style into Word typography, margins, heading hierarchy, tables, and callouts.",
+      "Keep documents printable unless the user explicitly requests PDF-only visual art direction."
+    ],
+    "carousel": [
+      "Use high-resolution fixed canvas, mobile-readable text, and safe margins.",
+      "Make each frame complete enough to stand alone."
+    ]
   }
 }

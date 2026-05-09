@@ -1,7 +1,20 @@
 {
   "id": "monochrome-precision",
   "name": "Monochrome Precision",
-  "mood": ["minimal", "technical", "sharp", "controlled"],
+  "summary": "Sharp black-white technical minimalism with exact type, hairline grids, square discipline, and almost no decoration.",
+  "best_for": [
+    "technical decks",
+    "developer docs",
+    "product memos",
+    "startup briefs"
+  ],
+  "mood": [
+    "minimal",
+    "technical",
+    "sharp",
+    "controlled",
+    "precise"
+  ],
   "colors": {
     "background": "#ffffff",
     "ink": "#000000",
@@ -12,19 +25,168 @@
     "line": "#d4d4d8"
   },
   "typography": {
-    "display": "Arial",
-    "body": "Arial",
-    "mono": "Courier New"
+    "display": "Inter",
+    "body": "Inter",
+    "mono": "Geist Mono",
+    "scale": {
+      "display_px": 84,
+      "title_px": 48,
+      "body_px": 17,
+      "label_px": 11,
+      "display_weight": 500,
+      "body_weight": 400,
+      "label_weight": 600,
+      "line_height_display": 0.98,
+      "line_height_body": 1.38,
+      "letter_spacing_display": "-1px",
+      "letter_spacing_label": "0.9px",
+      "label_case": "uppercase"
+    }
+  },
+  "style_dna": {
+    "philosophy": "Radical subtraction: every visible element must carry information or structure.",
+    "visual_signature": "Black text, white field, hairline rules, square or low-radius panels, mono labels.",
+    "surface_logic": "Flat white and pale gray only; depth comes from alignment and rule weight.",
+    "density": "Precise, compact, and grid-led."
+  },
+  "palette": {
+    "roles": [
+      "pure ink",
+      "paper canvas",
+      "gray utility states"
+    ],
+    "accent_policy": "No accent color unless the source content requires semantic data color.",
+    "semantic_policy": "Use semantic color only in charts or pass/fail states."
+  },
+  "shape": {
+    "corner_scale": "0/4/8/12px, with square preferred",
+    "default_radius": 8,
+    "border_weight": "1px"
+  },
+  "layout": {
+    "grid": "Strict modular grid, strong left alignment, visible dividers.",
+    "whitespace": "Whitespace acts as structure, not decoration.",
+    "image_treatment": "Screenshots or diagrams in square frames, no soft lifestyle crops."
+  },
+  "components": {
+    "buttons": "Outline or black-fill rectangles with direct labels.",
+    "cards": "Flat panels, hairline borders, no decorative shadow.",
+    "tables": "Compact rows, mono code/data columns, crisp dividers.",
+    "callouts": "Rule-led blocks with mono labels."
   },
   "slides": {
     "headline_weight": 500,
-    "card_radius": 12,
+    "card_radius": 8,
     "density": "precise",
-    "accent_rule": "Use black, white, and gray only unless data semantics require color."
+    "accent_rule": "Use black, white, and gray only unless data semantics require color.",
+    "background_css": "#ffffff",
+    "title_line_height": 0.98,
+    "title_letter_spacing": "-1px",
+    "body_line_height": 1.28,
+    "kicker_transform": "uppercase",
+    "kicker_letter_spacing": "0.9px",
+    "card_border_width": 1,
+    "card_shadow": "none",
+    "accent_geometry": "rule",
+    "card_background": "#f4f4f5"
   },
   "document": {
     "title_size": 25,
     "heading_color": "ink",
-    "table_header": "#f4f4f5"
+    "table_header": "#f4f4f5",
+    "margins_cm": [
+      2.0,
+      1.8,
+      2.0,
+      2.0
+    ],
+    "heading_rule": "Black headings, hairline section rules, compact code blocks."
+  },
+  "source_inheritance": {
+    "method": "Synthesized from local getdesign.md working corpus.",
+    "source_count": 7,
+    "source_categories": {
+      "Developer Tools & IDEs": 1,
+      "Media & Consumer Tech": 2,
+      "AI & LLM Platforms": 2,
+      "Automotive": 1,
+      "Productivity & SaaS": 1
+    },
+    "total_source_words": 23393,
+    "dominant_color_samples": [
+      "#ffffff",
+      "#000000",
+      "#171717",
+      "#1f2228",
+      "#3e6ae1",
+      "#fafafa",
+      "#171a20",
+      "#ea2804",
+      "#202020",
+      "#0066cc",
+      "#010102",
+      "#4d4d4d"
+    ],
+    "font_samples": [
+      "SF Pro Text",
+      "basier-square",
+      "Linear Display",
+      "Linear Text",
+      "rb-freigeist-neue",
+      "SF Pro Display",
+      "jetbrains-mono",
+      "Linear Mono"
+    ],
+    "radius_observed_px": {
+      "min_px": 0.0,
+      "median_px": 14.0,
+      "max_px": 9999.0
+    },
+    "component_vocabulary": [
+      "caption",
+      "button-primary",
+      "footer",
+      "body",
+      "button-primary-pressed",
+      "text-input",
+      "hero-display",
+      "lead",
+      "lead-airy",
+      "tagline",
+      "dense-link",
+      "caption-strong",
+      "button-large",
+      "button-utility",
+      "fine-print",
+      "micro-legal",
+      "nav-link",
+      "button-primary-focus"
+    ]
+  },
+  "guardrails": {
+    "do": [
+      "Use line, spacing, and weight as the design system.",
+      "Prefer square or low-radius surfaces.",
+      "Make labels exact and short."
+    ],
+    "dont": [
+      "Do not add accent colors for energy.",
+      "Do not use soft shadows.",
+      "Do not round every module."
+    ]
+  },
+  "export_translation": {
+    "pptx": [
+      "Use deterministic HTML/CSS or PPTX text boxes for final text.",
+      "Keep one core idea per slide and validate rendered PNG dimensions."
+    ],
+    "docx": [
+      "Translate visual style into Word typography, margins, heading hierarchy, tables, and callouts.",
+      "Keep documents printable unless the user explicitly requests PDF-only visual art direction."
+    ],
+    "carousel": [
+      "Use high-resolution fixed canvas, mobile-readable text, and safe margins.",
+      "Make each frame complete enough to stand alone."
+    ]
   }
 }

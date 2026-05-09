@@ -1,10 +1,23 @@
 {
   "id": "warm-editorial",
   "name": "Warm Editorial",
-  "mood": ["human", "thoughtful", "warm", "readable"],
+  "summary": "Human reading system with warm paper surfaces, calm serif/sans pairing, soft earth accents, and workbook-friendly hierarchy.",
+  "best_for": [
+    "workbooks",
+    "training handouts",
+    "course material",
+    "long-form docs"
+  ],
+  "mood": [
+    "human",
+    "thoughtful",
+    "warm",
+    "readable",
+    "editorial"
+  ],
   "colors": {
     "background": "#f7f1e8",
-    "ink": "#1f1a17",
+    "ink": "#211b17",
     "body": "#5f5750",
     "muted": "#8a8178",
     "primary": "#b65c3b",
@@ -12,19 +25,167 @@
     "line": "#e5d8ca"
   },
   "typography": {
-    "display": "Georgia",
-    "body": "Arial",
-    "mono": "Courier New"
+    "display": "Source Serif 4",
+    "body": "Inter",
+    "mono": "IBM Plex Mono",
+    "scale": {
+      "display_px": 72,
+      "title_px": 44,
+      "body_px": 18,
+      "label_px": 12,
+      "display_weight": 500,
+      "body_weight": 400,
+      "label_weight": 600,
+      "line_height_display": 1.08,
+      "line_height_body": 1.55,
+      "letter_spacing_display": "-0.4px",
+      "letter_spacing_label": "0.8px",
+      "label_case": "uppercase"
+    }
+  },
+  "style_dna": {
+    "philosophy": "A calm editorial workbook: approachable, careful, and designed for reflection.",
+    "visual_signature": "Warm canvas, terracotta accents, soft panels, reading-first paragraphs, and quiet section rhythm.",
+    "surface_logic": "Paper base with slightly lighter cards and occasional warm tinted chapter bands.",
+    "density": "Comfortable reading density."
+  },
+  "palette": {
+    "roles": [
+      "paper canvas",
+      "earth accent",
+      "soft linework",
+      "muted annotations"
+    ],
+    "accent_policy": "Terracotta marks section rhythm, examples, and teacher notes.",
+    "semantic_policy": "Keep semantic colors low saturation so they do not fight the reading surface."
+  },
+  "shape": {
+    "corner_scale": "12/18/24px soft cards plus full pills",
+    "default_radius": 22,
+    "border_weight": "1px"
+  },
+  "layout": {
+    "grid": "Single or two-column editorial layout, wide text measure, frequent note blocks.",
+    "whitespace": "Comfortable vertical rhythm with room for exercises and handwritten answers.",
+    "image_treatment": "Soft framed illustrations or warm photography, never cold stock panels."
+  },
+  "components": {
+    "buttons": "Soft pill labels and understated primary actions.",
+    "cards": "Cream cards with thin warm border and generous padding.",
+    "tables": "Readable workbook tables with tinted headers and roomy rows.",
+    "callouts": "Teacher notes, exercises, and reflection boxes with warm side rail."
   },
   "slides": {
     "headline_weight": 500,
     "card_radius": 22,
     "density": "comfortable",
-    "accent_rule": "Use terracotta for emphasis and section rhythm, not for every heading."
+    "accent_rule": "Use terracotta for emphasis and section rhythm, not for every heading.",
+    "background_css": "linear-gradient(180deg, #f7f1e8 0%, #fffaf2 100%)",
+    "title_line_height": 1.06,
+    "title_letter_spacing": "-0.4px",
+    "body_line_height": 1.42,
+    "kicker_transform": "uppercase",
+    "kicker_letter_spacing": "0.8px",
+    "card_border_width": 1,
+    "card_shadow": "0 16px 40px rgba(80, 55, 35, 0.08)",
+    "accent_geometry": "pill",
+    "card_background": "#fffaf2"
   },
   "document": {
-    "title_size": 26,
-    "heading_color": "ink",
-    "table_header": "#f2e5d8"
+    "title_size": 28,
+    "heading_color": "primary",
+    "table_header": "#f1dfcf",
+    "margins_cm": [
+      2.4,
+      2.2,
+      2.4,
+      2.4
+    ],
+    "heading_rule": "Serif title, warm H1, body-first paragraph rhythm."
+  },
+  "source_inheritance": {
+    "method": "Synthesized from local getdesign.md working corpus.",
+    "source_count": 6,
+    "source_categories": {
+      "AI & LLM Platforms": 1,
+      "Productivity & SaaS": 1,
+      "Fintech & Crypto": 1,
+      "E-commerce & Retail": 2,
+      "Uncategorized": 1
+    },
+    "total_source_words": 24736,
+    "dominant_color_samples": [
+      "#ffffff",
+      "#00754a",
+      "#141413",
+      "#1e3932",
+      "#000000",
+      "#f3f0ee",
+      "#f2f0eb",
+      "#cc785c",
+      "#faf9f5",
+      "#cba258",
+      "#ff385c",
+      "#222222"
+    ],
+    "font_samples": [
+      "Notion Sans",
+      "StyreneB",
+      "Salesforce-Sans",
+      "Salesforce-Avant-Garde",
+      "Copernicus",
+      "JetBrains Mono"
+    ],
+    "radius_observed_px": {
+      "min_px": 0.0,
+      "median_px": 16.0,
+      "max_px": 9999.0
+    },
+    "component_vocabulary": [
+      "caption",
+      "text-input",
+      "button-primary",
+      "button-primary-disabled",
+      "button-secondary",
+      "button-md",
+      "nav-link",
+      "button-primary-active",
+      "button-secondary-on-dark",
+      "top-nav",
+      "text-input-focused",
+      "category-tab-active",
+      "card-feature-cream",
+      "footer-link",
+      "caption-uppercase",
+      "code",
+      "button",
+      "button-text-link"
+    ]
+  },
+  "guardrails": {
+    "do": [
+      "Prioritize reading rhythm.",
+      "Use warm note blocks for exercises and reflections.",
+      "Let headings feel human rather than salesy."
+    ],
+    "dont": [
+      "Do not overuse colored panels.",
+      "Do not compress long paragraphs into dashboard cards.",
+      "Do not use cold gray SaaS chrome."
+    ]
+  },
+  "export_translation": {
+    "pptx": [
+      "Use deterministic HTML/CSS or PPTX text boxes for final text.",
+      "Keep one core idea per slide and validate rendered PNG dimensions."
+    ],
+    "docx": [
+      "Translate visual style into Word typography, margins, heading hierarchy, tables, and callouts.",
+      "Keep documents printable unless the user explicitly requests PDF-only visual art direction."
+    ],
+    "carousel": [
+      "Use high-resolution fixed canvas, mobile-readable text, and safe margins.",
+      "Make each frame complete enough to stand alone."
+    ]
   }
 }

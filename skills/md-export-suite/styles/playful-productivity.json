@@ -1,7 +1,20 @@
 {
   "id": "playful-productivity",
   "name": "Playful Productivity",
-  "mood": ["friendly", "modular", "colorful", "approachable"],
+  "summary": "Friendly modular SaaS system with colorful structure, rounded blocks, approachable labels, and onboarding clarity.",
+  "best_for": [
+    "onboarding docs",
+    "team training",
+    "SaaS guides",
+    "lightweight presentations"
+  ],
+  "mood": [
+    "friendly",
+    "modular",
+    "colorful",
+    "approachable",
+    "productive"
+  ],
   "colors": {
     "background": "#ffffff",
     "ink": "#172033",
@@ -12,19 +25,170 @@
     "line": "#d9e0ea"
   },
   "typography": {
-    "display": "Arial",
-    "body": "Arial",
-    "mono": "Courier New"
+    "display": "Inter",
+    "body": "Inter",
+    "mono": "JetBrains Mono",
+    "scale": {
+      "display_px": 80,
+      "title_px": 50,
+      "body_px": 18,
+      "label_px": 12,
+      "display_weight": 700,
+      "body_weight": 400,
+      "label_weight": 700,
+      "line_height_display": 1.0,
+      "line_height_body": 1.38,
+      "letter_spacing_display": "-1.1px",
+      "letter_spacing_label": "0.3px",
+      "label_case": "uppercase"
+    }
+  },
+  "style_dna": {
+    "philosophy": "Make complex workflows feel learnable through modular color, friendly containers, and clear labels.",
+    "visual_signature": "Rounded cards, colorful chips, structured boards, and approachable product rhythm.",
+    "surface_logic": "White canvas, pale modular blocks, color used for grouping.",
+    "density": "Modular friendly."
+  },
+  "palette": {
+    "roles": [
+      "primary product accent",
+      "secondary category colors",
+      "soft neutral board"
+    ],
+    "accent_policy": "Use color for organization and affordance, not random decoration.",
+    "semantic_policy": "Semantic states may be colorful but must stay labeled."
+  },
+  "shape": {
+    "corner_scale": "12/18/24px rounded modules",
+    "default_radius": 24,
+    "border_weight": "1px playful"
+  },
+  "layout": {
+    "grid": "Board, card, and checklist patterns with obvious groupings.",
+    "whitespace": "Friendly and scannable; keep modules distinct.",
+    "image_treatment": "Product UI snapshots, icons, simple diagrams, and light illustrations."
+  },
+  "components": {
+    "buttons": "Rounded primary, outlined secondary, compact icon chips.",
+    "cards": "Task cards, checklist modules, tabs, and color-coded groups.",
+    "tables": "Turn tables into cards when social/deck output benefits.",
+    "callouts": "Friendly tips, steps, and templates."
   },
   "slides": {
     "headline_weight": 700,
     "card_radius": 24,
     "density": "modular friendly",
-    "accent_rule": "Use color blocks for organization, not random decoration."
+    "accent_rule": "Use color blocks for organization, not random decoration.",
+    "background_css": "linear-gradient(180deg, #ffffff 0%, #f6f8fb 100%)",
+    "title_line_height": 1.0,
+    "title_letter_spacing": "-1.1px",
+    "body_line_height": 1.32,
+    "kicker_transform": "uppercase",
+    "kicker_letter_spacing": "0.3px",
+    "card_border_width": 1,
+    "card_shadow": "0 18px 48px rgba(23, 32, 51, 0.09)",
+    "accent_geometry": "pill",
+    "card_background": "#f6f8fb"
   },
   "document": {
-    "title_size": 25,
+    "title_size": 26,
     "heading_color": "primary",
-    "table_header": "#eef0ff"
+    "table_header": "#eef2ff",
+    "margins_cm": [
+      2.1,
+      1.9,
+      2.1,
+      2.1
+    ],
+    "heading_rule": "Use steps, checklists, and modular callouts."
+  },
+  "source_inheritance": {
+    "method": "Synthesized from local getdesign.md working corpus.",
+    "source_count": 8,
+    "source_categories": {
+      "Design & Creative Tools": 3,
+      "Productivity & SaaS": 2,
+      "Developer Tools & IDEs": 1,
+      "Backend, Database & DevOps": 1,
+      "Uncategorized": 1
+    },
+    "total_source_words": 29248,
+    "dominant_color_samples": [
+      "#ffffff",
+      "#201515",
+      "#1c1c1c",
+      "#eceae4",
+      "#fffefb",
+      "#c5c0b1",
+      "#f7f4ed",
+      "#ff4f00",
+      "#36342e",
+      "#181d26",
+      "#000000",
+      "#23251d"
+    ],
+    "font_samples": [
+      "Roobert PRO",
+      "IBM Plex Sans Variable",
+      "Saans",
+      "figmaSans",
+      "Salesforce-Sans",
+      "Haas",
+      "Salesforce-Avant-Garde",
+      "Haas Groot Disp",
+      "Inter Display",
+      "figmaMono"
+    ],
+    "radius_observed_px": {
+      "min_px": 0.0,
+      "median_px": 16.0,
+      "max_px": 9999.0
+    },
+    "component_vocabulary": [
+      "text-input",
+      "caption",
+      "button-primary",
+      "button-secondary",
+      "button-primary-pressed",
+      "text-input-focused",
+      "button",
+      "button-icon-circular",
+      "top-nav",
+      "footer",
+      "pricing-card",
+      "button-md",
+      "pricing-tier-card",
+      "headline",
+      "subhead",
+      "card-title",
+      "body",
+      "eyebrow"
+    ]
+  },
+  "guardrails": {
+    "do": [
+      "Use color to organize workflows.",
+      "Build modular steps and cards.",
+      "Keep instructions approachable and scannable."
+    ],
+    "dont": [
+      "Do not scatter colors without grouping logic.",
+      "Do not over-densify onboarding content.",
+      "Do not use luxury black-canvas drama."
+    ]
+  },
+  "export_translation": {
+    "pptx": [
+      "Use deterministic HTML/CSS or PPTX text boxes for final text.",
+      "Keep one core idea per slide and validate rendered PNG dimensions."
+    ],
+    "docx": [
+      "Translate visual style into Word typography, margins, heading hierarchy, tables, and callouts.",
+      "Keep documents printable unless the user explicitly requests PDF-only visual art direction."
+    ],
+    "carousel": [
+      "Use high-resolution fixed canvas, mobile-readable text, and safe margins.",
+      "Make each frame complete enough to stand alone."
+    ]
   }
 }

@@ -1,7 +1,20 @@
 {
   "id": "dark-console",
   "name": "Dark Console",
-  "mood": ["developer", "terminal", "dark", "code-first"],
+  "summary": "Terminal-native dark system with warm/cool black surfaces, mono labels, code panels, status accents, and command rhythm.",
+  "best_for": [
+    "API guides",
+    "agent workflows",
+    "developer presentations",
+    "technical diagrams"
+  ],
+  "mood": [
+    "developer",
+    "terminal",
+    "dark",
+    "code-first",
+    "focused"
+  ],
   "colors": {
     "background": "#080a0f",
     "ink": "#f8fafc",
@@ -12,19 +25,170 @@
     "line": "#263244"
   },
   "typography": {
-    "display": "Arial",
-    "body": "Arial",
-    "mono": "Courier New"
+    "display": "Inter",
+    "body": "Inter",
+    "mono": "JetBrains Mono",
+    "scale": {
+      "display_px": 80,
+      "title_px": 48,
+      "body_px": 18,
+      "label_px": 12,
+      "display_weight": 500,
+      "body_weight": 400,
+      "label_weight": 500,
+      "line_height_display": 1.02,
+      "line_height_body": 1.36,
+      "letter_spacing_display": "-0.8px",
+      "letter_spacing_label": "0.6px",
+      "label_case": "uppercase"
+    }
+  },
+  "style_dna": {
+    "philosophy": "A working console, not a generic dark theme: every panel should feel executable.",
+    "visual_signature": "Dark canvas, command blocks, mono captions, status green, and subtle bordered layers.",
+    "surface_logic": "Stack void, panel, elevated command, and active status states.",
+    "density": "Technical, medium-dense."
+  },
+  "palette": {
+    "roles": [
+      "void background",
+      "panel surface",
+      "terminal accent",
+      "muted log text"
+    ],
+    "accent_policy": "Green marks execution, current state, success, or selected path only.",
+    "semantic_policy": "Add amber/red only for warnings/errors in operational content."
+  },
+  "shape": {
+    "corner_scale": "8/12/16px terminal panels",
+    "default_radius": 16,
+    "border_weight": "1px translucent"
+  },
+  "layout": {
+    "grid": "Panel-based command layout with code blocks, split panes, and status rows.",
+    "whitespace": "Compact groups with clear command/output separation.",
+    "image_treatment": "Product UI, terminal screenshots, and code frames."
+  },
+  "components": {
+    "buttons": "Dark pills or command-line prompts with active accent.",
+    "cards": "Code panels with hairline borders and subtle inner contrast.",
+    "tables": "Log-like rows with mono IDs and status chips.",
+    "callouts": "Command snippets, warnings, and runbooks."
   },
   "slides": {
     "headline_weight": 500,
     "card_radius": 16,
     "density": "technical",
-    "accent_rule": "Use green for active command, status, and terminal highlights."
+    "accent_rule": "Use green for active command, status, and terminal highlights.",
+    "background_css": "radial-gradient(circle at 80% 10%, rgba(34, 197, 94, 0.12), transparent 32%), #080a0f",
+    "title_line_height": 1.02,
+    "title_letter_spacing": "-0.8px",
+    "body_line_height": 1.32,
+    "kicker_transform": "uppercase",
+    "kicker_letter_spacing": "0.6px",
+    "card_border_width": 1,
+    "card_shadow": "0 18px 48px rgba(0, 0, 0, 0.35)",
+    "accent_geometry": "prompt",
+    "card_background": "#111827"
   },
   "document": {
     "title_size": 25,
     "heading_color": "primary",
-    "table_header": "#111827"
+    "table_header": "#e8fff1",
+    "margins_cm": [
+      2.0,
+      1.9,
+      2.0,
+      2.0
+    ],
+    "heading_rule": "Printable docs stay light, but code blocks carry dark-console rhythm."
+  },
+  "source_inheritance": {
+    "method": "Synthesized from local getdesign.md working corpus.",
+    "source_count": 8,
+    "source_categories": {
+      "Developer Tools & IDEs": 3,
+      "Backend, Database & DevOps": 1,
+      "Productivity & SaaS": 1,
+      "AI & LLM Platforms": 3
+    },
+    "total_source_words": 26876,
+    "dominant_color_samples": [
+      "#ffffff",
+      "#000000",
+      "#3d3a39",
+      "#171717",
+      "#00d992",
+      "#faf9f6",
+      "#353534",
+      "#fdfcfc",
+      "#201d1d",
+      "#050507",
+      "#101010",
+      "#868584"
+    ],
+    "font_samples": [
+      "Circular",
+      "Berkeley Mono",
+      "ui-sans-serif",
+      "Inter",
+      "ABC Favorit",
+      "ui-monospace",
+      "SF Pro Rounded",
+      "Domaine Display",
+      "Geist Mono"
+    ],
+    "radius_observed_px": {
+      "min_px": 0.0,
+      "median_px": 16.0,
+      "max_px": 9999.0
+    },
+    "component_vocabulary": [
+      "text-input",
+      "button-primary",
+      "caption",
+      "button-primary-active",
+      "button-secondary",
+      "heading-md",
+      "button-md",
+      "code",
+      "feature-card",
+      "code-block",
+      "pricing-tier-featured",
+      "badge-pill",
+      "caption-uppercase",
+      "button",
+      "nav-link",
+      "top-nav",
+      "button-tertiary-text",
+      "hero-band"
+    ]
+  },
+  "guardrails": {
+    "do": [
+      "Make panels feel executable.",
+      "Use mono labels for commands, states, and IDs.",
+      "Keep contrast accessible on dark surfaces."
+    ],
+    "dont": [
+      "Do not use random neon colors.",
+      "Do not make long Word docs dark by default.",
+      "Do not fake code screenshots for final text."
+    ]
+  },
+  "export_translation": {
+    "pptx": [
+      "Use deterministic HTML/CSS or PPTX text boxes for final text.",
+      "Keep one core idea per slide and validate rendered PNG dimensions."
+    ],
+    "docx": [
+      "Translate visual style into Word typography, margins, heading hierarchy, tables, and callouts.",
+      "Keep documents printable unless the user explicitly requests PDF-only visual art direction.",
+      "For DOCX, keep page white but render code blocks with console-inspired styling."
+    ],
+    "carousel": [
+      "Use high-resolution fixed canvas, mobile-readable text, and safe margins.",
+      "Make each frame complete enough to stand alone."
+    ]
   }
 }

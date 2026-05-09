@@ -59,6 +59,7 @@ python skills/md-export-suite/scripts/list_styles.py
    - If the repo has a `DESIGN.md`, read it and translate it into export tokens.
    - If the user names a getdesign.md style, run or ask to run `npx getdesign@latest add <style>` when network/tooling is available.
    - Use [design-md-adapter.md](references/design-md-adapter.md) to translate web/UI style rules into document, slide, and image systems.
+   - Bundled generic styles are corpus-derived design systems, not simple themes. Apply `style_dna`, `palette`, `typography.scale`, `shape`, `layout`, `components`, `slides`, `document`, `guardrails`, and `export_translation`.
    - Search local export patterns when route/style is unclear:
 
 ```bash

@@ -1,7 +1,20 @@
 {
   "id": "visual-lifestyle",
   "name": "Visual Lifestyle",
-  "mood": ["friendly", "consumer", "photo-led", "warm"],
+  "summary": "Photo-led consumer storytelling with friendly type, generous image zones, soft cards, and simple caption-first composition.",
+  "best_for": [
+    "social posts",
+    "campaign decks",
+    "product catalogs",
+    "brand stories"
+  ],
+  "mood": [
+    "friendly",
+    "consumer",
+    "photo-led",
+    "warm",
+    "campaign"
+  ],
   "colors": {
     "background": "#fff7ed",
     "ink": "#1c1917",
@@ -12,19 +25,168 @@
     "line": "#fed7aa"
   },
   "typography": {
-    "display": "Arial",
-    "body": "Arial",
-    "mono": "Courier New"
+    "display": "Inter",
+    "body": "Inter",
+    "mono": "IBM Plex Mono",
+    "scale": {
+      "display_px": 88,
+      "title_px": 54,
+      "body_px": 19,
+      "label_px": 12,
+      "display_weight": 700,
+      "body_weight": 400,
+      "label_weight": 700,
+      "line_height_display": 0.96,
+      "line_height_body": 1.38,
+      "letter_spacing_display": "-1.4px",
+      "letter_spacing_label": "0.4px",
+      "label_case": "uppercase"
+    }
+  },
+  "style_dna": {
+    "philosophy": "Let the product, person, place, or image carry emotion; UI should frame the story.",
+    "visual_signature": "Large image blocks, warm accent, friendly captions, rounded media, and direct headlines.",
+    "surface_logic": "Warm or white background with full-bleed visual moments.",
+    "density": "Spacious visual."
+  },
+  "palette": {
+    "roles": [
+      "warm campaign canvas",
+      "friendly CTA accent",
+      "photo-derived secondary colors"
+    ],
+    "accent_policy": "Use accent color to orient the viewer; let images provide most color.",
+    "semantic_policy": "Avoid dashboard semantics unless catalog content requires availability or price states."
+  },
+  "shape": {
+    "corner_scale": "18/28/36px soft consumer cards",
+    "default_radius": 36,
+    "border_weight": "1px soft"
+  },
+  "layout": {
+    "grid": "Image-first layouts, large hero crop plus short copy blocks.",
+    "whitespace": "Generous, mobile-readable, and caption-friendly.",
+    "image_treatment": "Full-bleed or large rounded photography with clear safe overlays."
+  },
+  "components": {
+    "buttons": "Friendly pills, simple labels.",
+    "cards": "Image cards with short caption and soft border.",
+    "tables": "Avoid unless catalog specs are necessary.",
+    "callouts": "Caption panels, testimonial cards, and product notes."
   },
   "slides": {
     "headline_weight": 700,
     "card_radius": 36,
     "density": "spacious visual",
-    "accent_rule": "Pair friendly accent color with generous image areas and simple captions."
+    "accent_rule": "Pair friendly accent color with generous image areas and simple captions.",
+    "background_css": "linear-gradient(180deg, #fff7ed 0%, #ffffff 100%)",
+    "title_line_height": 0.98,
+    "title_letter_spacing": "-1.4px",
+    "body_line_height": 1.34,
+    "kicker_transform": "uppercase",
+    "kicker_letter_spacing": "0.4px",
+    "card_border_width": 1,
+    "card_shadow": "0 22px 60px rgba(124, 45, 18, 0.12)",
+    "accent_geometry": "pill",
+    "card_background": "#ffffff"
   },
   "document": {
-    "title_size": 26,
+    "title_size": 27,
     "heading_color": "primary",
-    "table_header": "#ffedd5"
+    "table_header": "#ffedd5",
+    "margins_cm": [
+      2.3,
+      2.0,
+      2.3,
+      2.3
+    ],
+    "heading_rule": "Use image captions and soft section markers; keep long docs light."
+  },
+  "source_inheritance": {
+    "method": "Synthesized from local getdesign.md working corpus.",
+    "source_count": 7,
+    "source_categories": {
+      "E-commerce & Retail": 3,
+      "Media & Consumer Tech": 4
+    },
+    "total_source_words": 29611,
+    "dominant_color_samples": [
+      "#ffffff",
+      "#000000",
+      "#181818",
+      "#1f1f1f",
+      "#121212",
+      "#b3b3b3",
+      "#1ed760",
+      "#0070d1",
+      "#0064b7",
+      "#cccccc",
+      "#0066cc",
+      "#111111"
+    ],
+    "font_samples": [
+      "Optimistic VF",
+      "Pin Sans",
+      "PlayStation SST",
+      "SF Pro Text",
+      "Helvetica Now Text Medium",
+      "Helvetica Now Display Medium",
+      "SF Pro Display",
+      "Helvetica Now Text",
+      "Nike Futura ND",
+      "Helvetica Neue"
+    ],
+    "radius_observed_px": {
+      "min_px": 0.0,
+      "median_px": 16.0,
+      "max_px": 9999.0
+    },
+    "component_vocabulary": [
+      "button-primary",
+      "button-md",
+      "heading-lg",
+      "heading-md",
+      "link-md",
+      "button-secondary",
+      "button-icon-circular",
+      "text-input",
+      "caption-sm",
+      "caption",
+      "button-primary-pressed",
+      "text-input-focused",
+      "heading-xl",
+      "button-sm",
+      "caption-md",
+      "button-primary-active",
+      "primary-nav",
+      "hero-display"
+    ]
+  },
+  "guardrails": {
+    "do": [
+      "Reserve large safe areas for imagery.",
+      "Use short captions.",
+      "Let photography or product visuals provide color range."
+    ],
+    "dont": [
+      "Do not overlay small text on busy images.",
+      "Do not build text-heavy slides in this mode.",
+      "Do not use abstract stock visuals when real product/place imagery is needed."
+    ]
+  },
+  "export_translation": {
+    "pptx": [
+      "Use deterministic HTML/CSS or PPTX text boxes for final text.",
+      "Keep one core idea per slide and validate rendered PNG dimensions."
+    ],
+    "docx": [
+      "Translate visual style into Word typography, margins, heading hierarchy, tables, and callouts.",
+      "Keep documents printable unless the user explicitly requests PDF-only visual art direction."
+    ],
+    "carousel": [
+      "Use high-resolution fixed canvas, mobile-readable text, and safe margins.",
+      "Make each frame complete enough to stand alone.",
+      "Reserve a large image or cinematic negative-space zone before adding text."
+    ]
   }
 }
