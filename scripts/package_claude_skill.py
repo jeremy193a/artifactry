@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Package md-export-suite as a Claude Chat custom Skill ZIP."""
+"""Package artifactry as a Claude Chat custom Skill ZIP."""
 
 from __future__ import annotations
 
@@ -8,9 +8,9 @@ from zipfile import ZIP_DEFLATED, ZipFile
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SKILL_DIR = ROOT / "skills" / "md-export-suite"
+SKILL_DIR = ROOT / "skills" / "artifactry"
 DIST = ROOT / "dist"
-ZIP_PATH = DIST / "md-export-suite.zip"
+ZIP_PATH = DIST / "artifactry.zip"
 
 
 def main() -> None:
@@ -23,6 +23,8 @@ def main() -> None:
             if path.is_dir():
                 continue
             if "__pycache__" in path.parts:
+                continue
+            if path.name == ".DS_Store" or path.suffix == ".pyc":
                 continue
             arcname = Path(SKILL_DIR.name) / path.relative_to(SKILL_DIR)
             zf.write(path, arcname)

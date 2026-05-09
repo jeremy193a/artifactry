@@ -133,7 +133,7 @@ def build(output: Path, company: str, style_id: str, style_token: str | None = N
 def main() -> None:
     parser = argparse.ArgumentParser(description="Build a reference.docx for Pandoc.")
     parser.add_argument("--output", "-o", default="build/reference.docx", help="Output .docx path.")
-    parser.add_argument("--company", default="MD Export Suite", help="Header label.")
+    parser.add_argument("--company", default="Artifactry", help="Header label.")
     parser.add_argument("--style", default="institutional-clarity", help="Generic style ID.")
     parser.add_argument("--style-token", help="Optional primary accent hex override.")
     args = parser.parse_args()

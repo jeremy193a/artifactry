@@ -3,13 +3,13 @@
   "owner": {
     "name": "Jeremy Nguyen"
   },
-  "description": "Claude Code marketplace for Markdown export skills.",
-  "version": "0.2.0",
+  "description": "Claude Code marketplace for Artifactry Markdown export skills.",
+  "version": "0.3.0",
   "plugins": [
     {
       "name": "md-export-skills",
       "source": "./",
-      "description": "Export Markdown into polished DOCX, PDF, PPTX, PNG/JPG files."
+      "description": "Artifactry converts Markdown into polished DOCX, PDF, PPTX, PNG/JPG files."
     }
   ]
 }

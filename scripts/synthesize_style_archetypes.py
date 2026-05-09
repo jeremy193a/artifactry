@@ -12,7 +12,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 WORK_ROOT = ROOT / ".work" / "getdesign-md"
 INDEX_PATH = WORK_ROOT / "index.json"
-STYLE_DIR = ROOT / "skills" / "md-export-suite" / "styles"
+STYLE_DIR = ROOT / "skills" / "artifactry" / "styles"
 SOURCE_AUDIT = WORK_ROOT / "style-source-map.json"
 
 HEX_RE = re.compile(r"#[0-9a-fA-F]{6}\b")

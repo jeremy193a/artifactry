@@ -1,11 +1,11 @@
 ---
-description: Convert Markdown into DOCX, PDF, PPTX, PNG, JPG, or multi-format bundles using MD Export Suite.
+description: Convert Markdown into DOCX, PDF, PPTX, PNG, JPG, or multi-format bundles using Artifactry.
 argument-hint: "[markdown file or export request]"
 ---
 
 # MD Artifacts
 
-Use the `export-designer` agent if it is available. Use the `md-export-suite` skill and its scripts for the actual export workflow.
+Use the `export-designer` agent if it is available. Use the `artifactry` skill and its scripts for the actual export workflow.
 
 User request:
 
@@ -18,6 +18,14 @@ Follow this operating loop:
 ```text
 diagnose -> ask -> route -> style -> render -> validate -> deliver
 ```
+
+Run preflight when tools may be missing:
+
+```bash
+python scripts/check_requirements.py
+```
+
+If requirements are missing, ask for permission before installing them.
 
 If output type, style, or size is missing, ask one concise export brief:
 
@@ -41,10 +49,10 @@ When enough details are present:
 Prefer these scripts from the installed skill when available:
 
 ```bash
-python skills/md-export-suite/scripts/normalize_markdown.py
-python skills/md-export-suite/scripts/build_reference_docx.py
-python skills/md-export-suite/scripts/render_html_deck.py
-python skills/md-export-suite/scripts/render_images_chrome.py
-python skills/md-export-suite/scripts/build_pptx_from_images.py
-python skills/md-export-suite/scripts/validate_exports.py
+python skills/artifactry/scripts/normalize_markdown.py
+python skills/artifactry/scripts/build_reference_docx.py
+python skills/artifactry/scripts/render_html_deck.py
+python skills/artifactry/scripts/render_images_chrome.py
+python skills/artifactry/scripts/build_pptx_from_images.py
+python skills/artifactry/scripts/validate_exports.py
 ```

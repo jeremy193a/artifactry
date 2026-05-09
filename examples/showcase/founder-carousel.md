@@ -1,5 +1,5 @@
 ---
-title: "Markdown To Artifacts"
+title: "Artifactry"
 doctype: "carousel"
 outputs: ["png", "pptx"]
 style: "broadsheet-analysis"
@@ -7,24 +7,24 @@ tone: "founder memo"
 aspect: "4:5"
 ---
 
-# Markdown To Artifacts
+# Artifactry
 
-## Slide 1: The Shift
+## Slide 1: The Promise
 
-Markdown is no longer just a writing format. It is becoming a production source.
+Markdown in. Polished artifacts out.
 
-## Slide 2: The Problem
+## Slide 2: The User
 
-Raw conversion makes generic files. A good artifact needs layout, hierarchy, ratio, and validation.
+Claude Chat users upload Markdown and ask for a file they can share.
 
-## Slide 3: The Skill Layer
+## Slide 3: The Agent
 
-An AI agent can read frontmatter, choose the route, apply style, render, inspect, and repair.
+The agent asks for output, style, and size before creating anything.
 
-## Slide 4: The Style Layer
+## Slide 4: The Style
 
-DESIGN.md gives the agent atmosphere, color roles, typography, components, spacing, and guardrails.
+The style system inherits from detailed DESIGN.md patterns, not shallow colors.
 
-## Slide 5: The Result
+## Slide 5: The Artifact
 
-One Markdown file can become a DOCX, PPTX, PDF, PNG carousel, or a full artifact bundle.
+The result is validated: DOCX, PPTX, PDF, PNG, JPG, or a full bundle.

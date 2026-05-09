@@ -1,5 +1,5 @@
 ---
-title: "Agent Command Center"
+title: "Artifactry In Claude Code"
 doctype: "slides"
 outputs: ["pptx", "png"]
 style: "dark-console"
@@ -7,30 +7,28 @@ tone: "technical product demo"
 aspect: "16:9"
 ---
 
-# Agent Command Center
+# Artifactry In Claude Code
 
-## Slide 1: Route The Work
+## Slide 1: Install Once
 
-The agent should identify the artifact before touching the renderer.
+Claude Code installs Artifactry as a plugin marketplace package.
 
-- doctype: slides | document | carousel | docs
-- outputs: pptx | docx | pdf | png | jpg
-- aspect: 16:9 | 4:5 | 1:1 | 9:16
+- Add marketplace from GitHub
+- Install the plugin
+- Restart Claude Code
 
-## Slide 2: Execute With Tools
+## Slide 2: Use A Slash Command
 
-The skill gives the agent a deterministic path from source Markdown to final files.
+The user can start an export without remembering script paths.
 
-- Normalize Markdown
-- Render fixed-canvas HTML
-- Capture images with Chrome
-- Assemble PPTX from verified frames
+- /artifactry
+- /md-artifacts
+- export-designer agent
 
-## Slide 3: Validate Before Delivery
+## Slide 3: Update When Published
 
-Every artifact should pass checks before the final answer.
+Installed users can pull the latest version from the marketplace.
 
-- Correct file count
-- Correct dimensions
-- No clipped text
-- Editable source preserved
+- marketplace update
+- plugin update
+- restart to apply

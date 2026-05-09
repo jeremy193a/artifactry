@@ -1,9 +1,9 @@
 ---
-name: md-export-suite
+name: artifactry
 description: Convert Markdown into polished DOCX, PDF, PPTX, PNG/JPG exports with style, aspect ratio, DESIGN.md guidance, and validation.
 ---
 
-# MD Export Suite
+# Artifactry
 
 ## Core Rule
 
@@ -17,6 +17,14 @@ Do not do blind format conversion when the user asks for a polished deliverable.
 Final text-heavy artifacts must use deterministic text rendering. Do not ask an image model to render final text.
 
 ## Workflow
+
+Run preflight when the environment is new or an export route needs external tools:
+
+```bash
+python scripts/check_requirements.py
+```
+
+If Python packages are missing, install from `requirements.txt`. If system tools are missing, ask the user for approval before installing them. Install only tools required by the requested output route.
 
 0. Start with an export brief gate:
    - If the user already gave output format, style, and aspect/page target, proceed.
@@ -37,7 +45,7 @@ Before I export, choose the target:
 List available styles with:
 
 ```bash
-python skills/md-export-suite/scripts/list_styles.py
+python skills/artifactry/scripts/list_styles.py
 ```
 
 1. Inspect the Markdown:
@@ -63,7 +71,7 @@ python skills/md-export-suite/scripts/list_styles.py
    - Search local export patterns when route/style is unclear:
 
 ```bash
-python skills/md-export-suite/scripts/search_references.py "institutional clarity 16:9 presentation"
+python skills/artifactry/scripts/search_references.py "institutional clarity 16:9 presentation"
 ```
 
    - Do not average unrelated brands. Pick one dominant style mode.
@@ -136,10 +144,10 @@ Use includes to compose large projects:
 Use for reports, worksheets, handouts, SOPs, proposals, and internal docs.
 
 ```bash
-python skills/md-export-suite/scripts/normalize_markdown.py input.md --output build/input.normalized.md --worksheet-lines
-python skills/md-export-suite/scripts/build_reference_docx.py --output build/reference.docx --style institutional-clarity
+python skills/artifactry/scripts/normalize_markdown.py input.md --output build/input.normalized.md --worksheet-lines
+python skills/artifactry/scripts/build_reference_docx.py --output build/reference.docx --style institutional-clarity
 pandoc build/input.normalized.md --from=markdown --to=docx --reference-doc=build/reference.docx --output output/document.docx
-python skills/md-export-suite/scripts/validate_exports.py output/document.docx
+python skills/artifactry/scripts/validate_exports.py output/document.docx
 ```
 
 ### Route B: Markdown -> Designed Slides/Images/PPTX
@@ -153,10 +161,10 @@ Use for premium decks and social carousels.
 5. Validate dimensions and slide count.
 
 ```bash
-python skills/md-export-suite/scripts/render_html_deck.py input.md --aspect 16:9 --style institutional-clarity --output-dir build/deck
-python skills/md-export-suite/scripts/render_images_chrome.py build/deck/slides-html --aspect 16:9 --output-dir output/png
-python skills/md-export-suite/scripts/build_pptx_from_images.py output/png --output output/deck.pptx --aspect 16:9
-python skills/md-export-suite/scripts/validate_exports.py output/deck.pptx output/png
+python skills/artifactry/scripts/render_html_deck.py input.md --aspect 16:9 --style institutional-clarity --output-dir build/deck
+python skills/artifactry/scripts/render_images_chrome.py build/deck/slides-html --aspect 16:9 --output-dir output/png
+python skills/artifactry/scripts/build_pptx_from_images.py output/png --output output/deck.pptx --aspect 16:9
+python skills/artifactry/scripts/validate_exports.py output/deck.pptx output/png
 ```
 
 ### Route C: Quick Pandoc Export

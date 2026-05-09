@@ -11,15 +11,15 @@ Claude Chat/Desktop does not use Claude Code slash commands like `/plugin market
 3. Go to `Customize` -> `Skills`.
 4. Click `+` -> `Create skill`.
 5. Choose `Upload a skill`.
-6. Upload `dist/md-export-suite.zip`.
+6. Upload `dist/artifactry.zip`.
 7. Toggle the skill on.
-8. Start a new chat and ask Claude to use the MD Export Suite skill.
+8. Start a new chat and ask Claude to use the Artifactry skill.
 
 The ZIP must contain the skill folder at the root:
 
 ```text
-md-export-suite.zip
-└── md-export-suite/
+artifactry.zip
+└── artifactry/
     ├── SKILL.md
     ├── references/
     └── scripts/
@@ -36,19 +36,19 @@ python scripts/package_claude_skill.py
 Then upload:
 
 ```text
-dist/md-export-suite.zip
+dist/artifactry.zip
 ```
 
 Tell an agent to prepare the ZIP:
 
 ```text
-Clone https://github.com/jeremy193a/md-to-artifacts, run python scripts/package_claude_skill.py, and tell me the generated dist/md-export-suite.zip path. I will upload it in Claude Desktop under Customize -> Skills -> Create skill -> Upload a skill.
+Clone https://github.com/jeremy193a/md-to-artifacts, run python scripts/package_claude_skill.py, and tell me the generated dist/artifactry.zip path. I will upload it in Claude Desktop under Customize -> Skills -> Create skill -> Upload a skill.
 ```
 
 ## Recommended User Prompt
 
 ```text
-Use the MD Export Suite skill. I have a Markdown file and want to export it. First ask me which output format, visual style, and size I want. Then create the files and validate them.
+Use the Artifactry skill. I have a Markdown file and want to export it. First ask me which output format, visual style, and size I want. Then create the files and validate them.
 ```
 
 ## Style Question Claude Should Ask
@@ -66,15 +66,15 @@ Before I export, choose the target:
 ## Prompt Examples
 
 ```text
-Use MD Export Suite to turn this Markdown into a polished DOCX. Ask me which document style I want first.
+Use Artifactry to turn this Markdown into a polished DOCX. Ask me which document style I want first.
 ```
 
 ```text
-Use MD Export Suite to create a 4:5 social carousel from this Markdown. Ask me which getdesign.md style to use.
+Use Artifactry to create a 4:5 social carousel from this Markdown. Ask me which getdesign.md style to use.
 ```
 
 ```text
-Use MD Export Suite to export this training Markdown into both a 16:9 presentation and an A4 handout.
+Use Artifactry to export this training Markdown into both a 16:9 presentation and an A4 handout.
 ```
 
 ## Notes For Users

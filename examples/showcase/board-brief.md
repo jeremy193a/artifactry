@@ -1,5 +1,5 @@
 ---
-title: "AI Operating Brief"
+title: "Artifactry Brief"
 doctype: "slides"
 outputs: ["pptx", "png"]
 style: "institutional-clarity"
@@ -7,28 +7,28 @@ tone: "executive board brief"
 aspect: "16:9"
 ---
 
-# AI Operating Brief
+# Artifactry Brief
 
-## Slide 1: Decision Layer
+## Slide 1: Markdown Is The Source
 
-AI work should be measured by decisions improved, not prompts written.
+Artifactry starts with a Markdown file and turns it into real deliverables.
 
-- Decision owner
-- Source evidence
-- Review checkpoint
+- DOCX for documents
+- PPTX for presentations
+- PNG/JPG for social carousels
 
-## Slide 2: Operating Model
+## Slide 2: The Agent Asks First
 
-Treat AI as a workflow layer across strategy, operations, and communication.
+The skill teaches the agent to clarify the artifact before rendering.
 
-- Intake: define the outcome and constraints
-- Build: create a first usable artifact
-- Review: verify facts, tone, and risk
+- Output format
+- Visual style
+- Aspect ratio or page size
 
-## Slide 3: What Changes
+## Slide 3: Validated Outputs
 
-Teams move from ad hoc prompting to reusable export systems.
+The agent renders, checks dimensions, validates files, and returns paths.
 
-- Markdown becomes the source
-- Style systems guide presentation quality
-- Validation becomes part of delivery
+- Editable source preserved
+- Final files generated
+- Validation summary included

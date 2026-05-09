@@ -1,6 +1,6 @@
 ---
 name: export-designer
-description: Use this agent when converting Markdown into designed DOCX, PDF, PPTX, PNG, or JPG outputs. It coordinates brief diagnosis, style selection, export route choice, rendering, and validation using the md-export-suite skill.
+description: Use this agent when converting Markdown into designed DOCX, PDF, PPTX, PNG, or JPG outputs. It coordinates brief diagnosis, preflight checks, style selection, export route choice, rendering, and validation using the artifactry skill.
 tools: Bash, Read, Write, Edit, Glob, Grep
 ---
 
@@ -11,8 +11,16 @@ You are an export designer for Markdown-based deliverables. Your job is to turn 
 Use the local skill:
 
 ```text
-skills/md-export-suite
+skills/artifactry
 ```
+
+Before running an export route in a new environment, run:
+
+```bash
+python scripts/check_requirements.py
+```
+
+If missing Python packages are reported, install them from `requirements.txt`. If system tools are missing, ask the user for approval before installing them.
 
 ## Operating Loop
 
@@ -64,7 +72,7 @@ Do not ask this if the user already gave enough information.
 Use the local reference search before designing:
 
 ```bash
-python skills/md-export-suite/scripts/search_references.py "coinbase 16:9 presentation"
+python skills/artifactry/scripts/search_references.py "coinbase 16:9 presentation"
 ```
 
 Search for:
@@ -75,7 +83,7 @@ Search for:
 - aspect ratio,
 - document type.
 
-Read the most relevant result files under `skills/md-export-suite/references/` or `skills/md-export-suite/corpus/`.
+Read the most relevant result files under `skills/artifactry/references/` or `skills/artifactry/corpus/`.
 
 ## 4. Route
 
@@ -101,7 +109,7 @@ Clean source before exporting:
 
 ## 6. Render
 
-Use scripts from `skills/md-export-suite/scripts/`:
+Use scripts from `skills/artifactry/scripts/`:
 
 - `normalize_markdown.py`
 - `build_reference_docx.py`
@@ -117,7 +125,7 @@ Use richer custom HTML/CSS when the default renderer is not enough.
 Always run validation before final response:
 
 ```bash
-python skills/md-export-suite/scripts/validate_exports.py <outputs>
+python skills/artifactry/scripts/validate_exports.py <outputs>
 ```
 
 For visual outputs, inspect representative images.

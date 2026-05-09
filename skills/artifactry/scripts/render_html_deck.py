@@ -222,7 +222,7 @@ def render_slide(deck_title: str, slide: dict[str, object], index: int, total: i
     <div class="body">{slide_body(slide)}</div>
   </main>
   <div class="footer">
-    <span>MD Export Suite</span>
+    <span>Artifactry</span>
     <span>designed from markdown</span>
   </div>
 </section>

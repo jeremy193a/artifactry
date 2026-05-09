@@ -1,6 +1,6 @@
 # Agent Instructions
 
-Use `$md-export-suite` when the user asks to convert Markdown into Word, PDF, PPTX, PNG, JPG, or a bundle of these files.
+Use `$artifactry` when the user asks to convert Markdown into Word, PDF, PPTX, PNG, JPG, or a bundle of these files.
 
 For Claude Code, prefer the bundled `export-designer` agent for complex export jobs:
 
@@ -17,7 +17,7 @@ For Claude Code, prefer the bundled `export-designer` agent for complex export j
 - Search local reference patterns before choosing a route:
 
 ```bash
-python skills/md-export-suite/scripts/search_references.py "institutional clarity 16:9 presentation"
+python skills/artifactry/scripts/search_references.py "institutional clarity 16:9 presentation"
 ```
 
 - If the user names a style from getdesign.md, install/read that style when possible.

@@ -5,7 +5,7 @@ Use this repository as a local skill/reference pack for Markdown export work.
 Recommended instruction:
 
 ```text
-Use the skill in skills/md-export-suite. Convert Markdown into polished output files, using DESIGN.md/getdesign.md style guidance when available, and run validation scripts before delivery.
+Use the skill in skills/artifactry. Convert Markdown into polished output files, using DESIGN.md/getdesign.md style guidance when available, and run validation scripts before delivery.
 ```
 
 For image/deck work, prefer:
