@@ -97,7 +97,7 @@ def check() -> dict:
             {
                 "kind": "system",
                 "missing": ["Google Chrome or Chromium"],
-                "purpose": "PNG/JPG rendering from fixed-canvas HTML",
+                "purpose": "PNG/JPG rendering and Chrome-based PDF export",
                 "command": {
                     "macos": "brew install --cask google-chrome",
                     "linux": "sudo apt-get update && sudo apt-get install -y chromium-browser",
@@ -115,6 +115,12 @@ def check() -> dict:
         },
         "system": {
             "missing_tools": missing_tools + (["chrome"] if chrome_missing else []),
+        },
+        "pdf_engines": {
+            "chrome": not chrome_missing,
+            "soffice": shutil.which("soffice") is not None or shutil.which("libreoffice") is not None,
+            "xelatex": shutil.which("xelatex") is not None,
+            "typst": shutil.which("typst") is not None,
         },
         "install_steps": install_steps,
     }

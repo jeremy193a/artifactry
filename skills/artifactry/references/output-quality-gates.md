@@ -12,12 +12,15 @@ Check:
 - Title and key Vietnamese text appear in XML.
 - Tables exist when expected.
 - Headings use heading styles.
+- Header/footer, code blocks, lists, block quotes, and table styles are not raw Pandoc defaults.
+- Style-guide IDs resolve to a token fallback through `style_resolver.py`.
 
 Repair:
 
-- If style is raw Pandoc default, regenerate or pass `--reference-doc`.
+- If style is raw Pandoc default, use `build_document.py` or regenerate with `build_reference_docx.py` and `--reference-doc`.
 - If worksheet lines disappear, normalize with `--worksheet-lines`.
 - If tables are too wide, convert long cells into bullets or split table.
+- If the user asked for a public-facing document, export DOCX and PDF together so visual fidelity can be checked.
 
 ## PPTX
 
@@ -60,7 +63,9 @@ Check:
 
 Repair:
 
-- For document PDFs, export from DOCX or Pandoc LaTeX.
+- For styled document PDFs, prefer `build_document.py --pdf-route chrome`; it uses print CSS and does not require LaTeX.
+- For PDFs that must match DOCX closely, use `build_document.py --pdf-route soffice`.
+- For LaTeX-ready environments, use `build_document.py --pdf-route pandoc`.
 - For image/deck PDFs, assemble rendered images to preserve design.
 
 ## Final Delivery

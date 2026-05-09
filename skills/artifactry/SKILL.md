@@ -83,7 +83,8 @@ python skills/artifactry/scripts/search_references.py "institutional clarity 16:
    - For slides/carousels, create a slide plan before rendering. Use [markdown-input-contract.md](references/markdown-input-contract.md).
 
 5. Export:
-   - For DOCX, use Pandoc with a reference docx. Generate one with `scripts/build_reference_docx.py` if needed.
+   - For DOCX/PDF documents, prefer `scripts/build_document.py`; it normalizes Markdown, builds a styled reference DOCX, renders print HTML, and can produce PDF through Chrome, soffice, or Pandoc/XeLaTeX.
+   - For low-level DOCX control, use Pandoc with a reference docx. Generate one with `scripts/build_reference_docx.py` if needed.
    - For PPTX or image decks, prefer HTML/CSS fixed-canvas rendering, then assemble images into PPTX with `scripts/build_pptx_from_images.py`.
    - For quick plain PPTX, Pandoc is acceptable only when the user wants a simple editable outline deck.
 
@@ -146,11 +147,30 @@ Use includes to compose large projects:
 Use for reports, worksheets, handouts, SOPs, proposals, and internal docs.
 
 ```bash
+python skills/artifactry/scripts/build_document.py input.md \
+  --style regulated-ledger \
+  --outputs docx pdf html \
+  --output-dir output/document
+
+python skills/artifactry/scripts/validate_exports.py \
+  output/document/input.docx \
+  output/document/input.pdf
+```
+
+Lower-level DOCX route:
+
+```bash
 python skills/artifactry/scripts/normalize_markdown.py input.md --output build/input.normalized.md --worksheet-lines
 python skills/artifactry/scripts/build_reference_docx.py --output build/reference.docx --style institutional-clarity
 pandoc build/input.normalized.md --from=markdown --to=docx --reference-doc=build/reference.docx --output output/document.docx
 python skills/artifactry/scripts/validate_exports.py output/document.docx
 ```
+
+PDF route guidance:
+
+- `--pdf-route chrome`: best default for styled document PDFs using print CSS and Chrome.
+- `--pdf-route soffice`: best when the PDF must match the generated DOCX closely.
+- `--pdf-route pandoc`: useful when a LaTeX/XeLaTeX pipeline is already available.
 
 ### Route B: Markdown -> Designed Slides/Images/PPTX
 

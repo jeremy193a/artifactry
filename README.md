@@ -176,8 +176,9 @@ What Artifactry may need:
 
 - Python packages from `requirements.txt` for DOCX/PPTX/image handling.
 - Pandoc for DOCX/PDF/PPTX conversion routes.
-- Google Chrome or Chromium for PNG/JPG rendering.
+- Google Chrome or Chromium for PNG/JPG rendering and styled PDF export.
 - Node/npm only when fetching external `DESIGN.md` styles with `npx getdesign@latest add <style>`.
+- LibreOffice/soffice only when converting DOCX to PDF with Office fidelity.
 - LaTeX/XeLaTeX only for Pandoc PDF routes that require LaTeX.
 
 ## Markdown Conventions
@@ -231,10 +232,11 @@ The scripts expand includes before exporting. This lets one master Markdown file
 - Markdown frontmatter routing with `doctype`
 - Include/partial expansion with `{{ include: path.md }}`
 - DOCX export with generated `reference.docx`
+- Styled DOCX/HTML/PDF document route through `build_document.py`
 - HTML/CSS fixed-canvas slide rendering
 - PNG/JPG export through Chrome/Chromium
 - PPTX assembly from rendered images
-- PDF-ready document/deck workflows
+- PDF routes through Chrome print CSS, DOCX-to-PDF via soffice, or Pandoc/XeLaTeX
 - `DESIGN.md` and getdesign.md style adaptation
 - Aspect ratios: `16:9`, `4:5`, `1:1`, `9:16`, `A4`, `Letter`, custom
 - Vietnamese-friendly deterministic text rendering
@@ -340,33 +342,6 @@ These previews are built from the 15 Markdown style guides. Each guide gets its 
 |---|---|---|
 | <img src="assets/showcase/signature/commerce-editorial/slide-01.png" alt="Commerce Editorial showcase" width="260"> | <img src="assets/showcase/signature/motion-premiere/slide-01.png" alt="Motion Premiere showcase" width="260"> | <img src="assets/showcase/signature/performance-machine/slide-01.png" alt="Performance Machine showcase" width="260"> |
 
-### Token Preview Gallery
-
-These previews exercise the deterministic JSON token fallback renderer.
-
-| Style | Preview |
-|---|---|
-| Institutional Clarity | <img src="assets/showcase/styles/institutional-clarity/slide-01.png" alt="Institutional Clarity showcase" width="320"> |
-| Warm Editorial | <img src="assets/showcase/styles/warm-editorial/slide-01.png" alt="Warm Editorial showcase" width="320"> |
-| Monochrome Precision | <img src="assets/showcase/styles/monochrome-precision/slide-01.png" alt="Monochrome Precision showcase" width="320"> |
-| Dark Console | <img src="assets/showcase/styles/dark-console/slide-01.png" alt="Dark Console showcase" width="320"> |
-| Gradient Intelligence | <img src="assets/showcase/styles/gradient-intelligence/slide-01.png" alt="Gradient Intelligence showcase" width="320"> |
-| Data Command | <img src="assets/showcase/styles/data-command/slide-01.png" alt="Data Command showcase" width="320"> |
-| Visual Lifestyle | <img src="assets/showcase/styles/visual-lifestyle/slide-01.png" alt="Visual Lifestyle showcase" width="320"> |
-| Cinematic Luxury | <img src="assets/showcase/styles/cinematic-luxury/slide-01.png" alt="Cinematic Luxury showcase" width="320"> |
-| Playful Productivity | <img src="assets/showcase/styles/playful-productivity/slide-01.png" alt="Playful Productivity showcase" width="320"> |
-| Broadsheet Analysis | <img src="assets/showcase/styles/broadsheet-analysis/slide-01.png" alt="Broadsheet Analysis showcase" width="320"> |
-
-Showcase Markdown input:
-
-- [examples/showcase/artifactry-carousel.md](examples/showcase/artifactry-carousel.md)
-
-Build a single style manually:
-
-```bash
-python scripts/build_showcase.py --styles institutional-clarity
-```
-
 ## Additional Examples
 
 These examples are kept for route testing beyond the project showcase.
@@ -378,6 +353,21 @@ Input:
 [examples/training-handout/worksheet.md](examples/training-handout/worksheet.md)
 
 Command:
+
+```bash
+python skills/artifactry/scripts/build_document.py \
+  examples/training-handout/worksheet.md \
+  --style human-workshop \
+  --outputs docx pdf html \
+  --worksheet-lines \
+  --output-dir output/worksheet
+
+python skills/artifactry/scripts/validate_exports.py \
+  output/worksheet/worksheet.docx \
+  output/worksheet/worksheet.pdf
+```
+
+Lower-level DOCX-only route:
 
 ```bash
 python skills/artifactry/scripts/normalize_markdown.py \
@@ -402,8 +392,15 @@ python skills/artifactry/scripts/validate_exports.py output/worksheet.docx
 Output:
 
 ```text
-OK output/worksheet.docx
+OK output/worksheet/worksheet.docx
+OK output/worksheet/worksheet.pdf
 ```
+
+PDF routes:
+
+- Chrome print PDF: `--pdf-route chrome`, best default for styled PDF without LaTeX.
+- Office PDF: `--pdf-route soffice`, best when PDF should match generated DOCX.
+- Pandoc/XeLaTeX PDF: `--pdf-route pandoc`, useful in LaTeX-ready environments.
 
 ### Markdown To 16:9 PPTX
 
