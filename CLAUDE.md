@@ -41,6 +41,39 @@ Claude Code plugin install:
 /plugin install md-export-skills@md-export-skills
 ```
 
+Restart Claude Code after installing.
+
+Use the bundled slash command:
+
+```text
+/md-artifacts examples/showcase/board-brief.md as a 16:9 PPTX and PNG deck using Institutional Clarity
+```
+
+Update an installed version:
+
+```text
+/plugin marketplace update md-export-skills
+/plugin update md-export-skills@md-export-skills
+```
+
+Terminal equivalent:
+
+```bash
+claude plugin marketplace update md-export-skills
+claude plugin update md-export-skills@md-export-skills
+```
+
+Restart Claude Code after updating.
+
+Tell an agent to install it:
+
+```text
+Install MD Export Skills for Claude Code. Run:
+claude plugin marketplace add https://github.com/jeremy193a/md-to-artifacts.git
+claude plugin install md-export-skills@md-export-skills
+Then restart Claude Code and verify /md-artifacts appears in /help.
+```
+
 Local development:
 
 ```bash

@@ -123,6 +123,7 @@ The scripts expand includes before exporting. This lets one master Markdown file
 
 - Claude Chat custom Skill ZIP support
 - Claude Code plugin structure
+- Claude Code `/md-artifacts` slash command
 - Claude Code `export-designer` agent operating loop
 - Local searchable export-pattern corpus
 - Local skill support for Codex/OpenCode-style agents
@@ -142,7 +143,7 @@ The scripts expand includes before exporting. This lets one master Markdown file
 
 ### Claude Chat
 
-Claude Chat is the primary user path.
+Claude Chat/Desktop is the primary user path for non-developers.
 
 Package the skill:
 
@@ -156,13 +157,34 @@ Upload the generated ZIP:
 dist/md-export-suite.zip
 ```
 
-In Claude Chat:
+In Claude Chat or Claude Desktop:
 
-1. Go to `Customize` -> `Skills`.
-2. Click `+` -> `Create skill`.
-3. Choose `Upload a skill`.
-4. Upload `dist/md-export-suite.zip`.
-5. Toggle the skill on.
+1. Open Claude Chat or Claude Desktop.
+2. Make sure code execution is enabled in `Settings` -> `Capabilities` if Skills are not visible.
+3. Go to `Customize` -> `Skills`.
+4. Click `+` -> `Create skill`.
+5. Choose `Upload a skill`.
+6. Upload `dist/md-export-suite.zip`.
+7. Toggle the skill on.
+8. Start a new chat and ask Claude to use the MD Export Suite skill.
+
+If you cloned the repo locally, the full upload path is:
+
+```text
+clone repo -> run package script -> upload dist/md-export-suite.zip -> toggle skill on
+```
+
+Example Claude Chat prompt:
+
+```text
+Use the MD Export Suite skill. I uploaded a Markdown file. Ask me which output format, style, and size I want, then export and validate the files.
+```
+
+Ask an agent to install/package it for you:
+
+```text
+Clone https://github.com/jeremy193a/md-to-artifacts, run python scripts/package_claude_skill.py, then tell me the path to dist/md-export-suite.zip so I can upload it in Claude Chat/Desktop under Customize -> Skills -> Create skill -> Upload a skill.
+```
 
 See [CLAUDE_CHAT.md](CLAUDE_CHAT.md) for prompts and user guidance.
 
@@ -173,6 +195,37 @@ Claude Code uses plugins through marketplaces:
 ```text
 /plugin marketplace add https://github.com/jeremy193a/md-to-artifacts.git
 /plugin install md-export-skills@md-export-skills
+```
+
+After installing, restart Claude Code, then use:
+
+```text
+/md-artifacts examples/showcase/board-brief.md as a 16:9 PPTX and PNG deck using Institutional Clarity
+```
+
+Update an installed version after this repo publishes a new commit:
+
+```text
+/plugin marketplace update md-export-skills
+/plugin update md-export-skills@md-export-skills
+```
+
+Terminal equivalent:
+
+```bash
+claude plugin marketplace update md-export-skills
+claude plugin update md-export-skills@md-export-skills
+```
+
+Restart Claude Code after updating so new commands, agents, and skills are loaded.
+
+Ask an agent to install it for you:
+
+```text
+Install MD Export Skills for Claude Code. Run:
+claude plugin marketplace add https://github.com/jeremy193a/md-to-artifacts.git
+claude plugin install md-export-skills@md-export-skills
+Then restart Claude Code and verify /md-artifacts appears in /help.
 ```
 
 For local development:
@@ -220,7 +273,7 @@ Optional:
 
 ## Style Database
 
-The project includes 10 generic style archetypes derived from research across the getdesign.md directory. These are not brand names:
+The project includes 10 generic style archetypes derived from the full local getdesign.md corpus. These are not brand names:
 
 - **Institutional Clarity** (`institutional-clarity`): trustworthy, precise, white-canvas system for executive, financial, and strategy exports.
 - **Warm Editorial** (`warm-editorial`): human, thoughtful reading experience for handouts, training, essays, and course material.
@@ -245,6 +298,12 @@ List styles from the command line:
 python skills/md-export-suite/scripts/list_styles.py
 ```
 
+### Why 10 styles, not 71?
+
+The 71 crawled `DESIGN.md` files are the inheritance corpus. They teach the project style DNA: typography, palette logic, components, spacing, density, image treatment, and guardrails. The public interface stays at 10 generic archetypes so users can choose quickly without copying brand names or exposing 71 near-brand presets.
+
+Each style JSON includes `source_inheritance` showing which corpus groups informed it. Future versions can add variants or source aliases, but the default UX should stay focused.
+
 ## getdesign.md Support
 
 This project can use [getdesign.md](https://getdesign.md/) to bring in reusable style systems.
@@ -262,6 +321,25 @@ The skill can read a local `DESIGN.md` and translate the mood into export tokens
 - Image styles: ratio, safe margin, text scale, color, compression
 
 ## Showcase
+
+### Visual Previews
+
+| Institutional Clarity | Dark Console | Broadsheet Analysis |
+|---|---|---|
+| ![Institutional Clarity showcase](assets/showcase/board-brief/slide-01.png) | ![Dark Console showcase](assets/showcase/agent-command-center/slide-01.png) | ![Broadsheet Analysis showcase](assets/showcase/founder-carousel/slide-01.png) |
+
+Showcase Markdown inputs:
+
+- [examples/showcase/board-brief.md](examples/showcase/board-brief.md)
+- [examples/showcase/agent-command-center.md](examples/showcase/agent-command-center.md)
+- [examples/showcase/founder-carousel.md](examples/showcase/founder-carousel.md)
+
+Generate the first preview:
+
+```bash
+python skills/md-export-suite/scripts/render_html_deck.py examples/showcase/board-brief.md --aspect 16:9 --style institutional-clarity --output-dir build/showcase/board-brief
+python skills/md-export-suite/scripts/render_images_chrome.py build/showcase/board-brief/slides-html --aspect 16:9 --output-dir assets/showcase/board-brief
+```
 
 ### 1. Worksheet To DOCX
 
@@ -361,6 +439,8 @@ md-export-skills/
 │   ├── references/
 │   └── scripts/
 ├── examples/
+├── assets/showcase/
+├── commands/md-artifacts.md
 ├── tests/
 ├── .claude/agents/export-designer.md
 ├── .claude-plugin/
@@ -379,3 +459,7 @@ Public alpha. The DOCX, HTML-slide, PNG/JPG render, PPTX-from-images, include ex
 ## License
 
 MIT
+
+## Credits
+
+This project is inspired by [getdesign.md](https://getdesign.md/) and the public [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md) collection. Their detailed `DESIGN.md` files helped shape the style inheritance model used by MD Export Skills.
