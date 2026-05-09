@@ -295,7 +295,13 @@ npx getdesign@latest add <style-name>
 
 Artifactry uses its own project story as the showcase source. This keeps the examples honest: the DOCX showcase is this README converted to Word, and the PPTX showcase is a carousel explaining Artifactry itself.
 
-Build every showcase:
+Build the signature style gallery:
+
+```bash
+python scripts/build_signature_showcase.py
+```
+
+Build the token fallback route showcase:
 
 ```bash
 python scripts/build_showcase.py
@@ -303,13 +309,40 @@ python scripts/build_showcase.py
 
 What it creates:
 
+- `scripts/build_signature_showcase.py` -> `assets/showcase/signature/<style>/slide-01.png`
 - `README.md` -> `output/showcase/docx/artifactry-readme-<style>.docx`
 - `examples/showcase/artifactry-carousel.md` -> `assets/showcase/styles/<style>/slide-*.png`
 - `assets/showcase/styles/<style>/slide-*.png` -> `output/showcase/pptx/artifactry-<style>.pptx`
 
 The `output/` folder is intentionally gitignored because generated Office files are large. The PNG previews below are checked in so people can inspect the visual range quickly.
 
+### Signature Style Gallery
+
+These previews are built from the 15 Markdown style guides. Each guide gets its own composition pattern instead of reusing one generic template.
+
+| Regulated Ledger | Human Workshop | Swiss Protocol |
+|---|---|---|
+| <img src="assets/showcase/signature/regulated-ledger/slide-01.png" alt="Regulated Ledger showcase" width="260"> | <img src="assets/showcase/signature/human-workshop/slide-01.png" alt="Human Workshop showcase" width="260"> | <img src="assets/showcase/signature/swiss-protocol/slide-01.png" alt="Swiss Protocol showcase" width="260"> |
+
+| Terminal Operator | Aurora Product | Metrics Command |
+|---|---|---|
+| <img src="assets/showcase/signature/terminal-operator/slide-01.png" alt="Terminal Operator showcase" width="260"> | <img src="assets/showcase/signature/aurora-product/slide-01.png" alt="Aurora Product showcase" width="260"> | <img src="assets/showcase/signature/metrics-command/slide-01.png" alt="Metrics Command showcase" width="260"> |
+
+| Broadsheet Intelligence | Black Label Cinema | Playful Systems |
+|---|---|---|
+| <img src="assets/showcase/signature/broadsheet-intelligence/slide-01.png" alt="Broadsheet Intelligence showcase" width="260"> | <img src="assets/showcase/signature/black-label-cinema/slide-01.png" alt="Black Label Cinema showcase" width="260"> | <img src="assets/showcase/signature/playful-systems/slide-01.png" alt="Playful Systems showcase" width="260"> |
+
+| Image Market | Spatial Canvas | Blueprint Infra |
+|---|---|---|
+| <img src="assets/showcase/signature/image-market/slide-01.png" alt="Image Market showcase" width="260"> | <img src="assets/showcase/signature/spatial-canvas/slide-01.png" alt="Spatial Canvas showcase" width="260"> | <img src="assets/showcase/signature/blueprint-infra/slide-01.png" alt="Blueprint Infra showcase" width="260"> |
+
+| Commerce Editorial | Motion Premiere | Performance Machine |
+|---|---|---|
+| <img src="assets/showcase/signature/commerce-editorial/slide-01.png" alt="Commerce Editorial showcase" width="260"> | <img src="assets/showcase/signature/motion-premiere/slide-01.png" alt="Motion Premiere showcase" width="260"> | <img src="assets/showcase/signature/performance-machine/slide-01.png" alt="Performance Machine showcase" width="260"> |
+
 ### Token Preview Gallery
+
+These previews exercise the deterministic JSON token fallback renderer.
 
 | Style | Preview |
 |---|---|
