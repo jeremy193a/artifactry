@@ -13,7 +13,7 @@ This repo includes a Claude Code agent:
 Use it when the task is more than a simple conversion:
 
 ```text
-Use the export-designer agent to turn this Markdown into a 16:9 presentation and 4:5 carousel using Institutional Clarity style.
+Use the export-designer agent to turn this Markdown into a 16:9 presentation and 4:5 carousel using Regulated Ledger style.
 ```
 
 The agent follows:
@@ -37,7 +37,7 @@ Use $artifactry. Ask me which output, style, and size I want first if I have not
 Claude Code plugin install:
 
 ```text
-/plugin marketplace add https://github.com/jeremy193a/md-to-artifacts.git
+/plugin marketplace add https://github.com/jeremy193a/artifactry.git
 /plugin install md-export-skills@md-export-skills
 ```
 
@@ -46,7 +46,7 @@ Restart Claude Code after installing.
 Use the bundled slash command:
 
 ```text
-/artifactry examples/showcase/board-brief.md as a 16:9 PPTX and PNG deck using Institutional Clarity
+/artifactry examples/showcase/board-brief.md as a 16:9 PPTX and PNG deck using Regulated Ledger
 ```
 
 `/md-artifacts` is also available as an alias.
@@ -71,7 +71,7 @@ Tell an agent to install it:
 
 ```text
 Install Artifactry for Claude Code. Run:
-claude plugin marketplace add https://github.com/jeremy193a/md-to-artifacts.git
+claude plugin marketplace add https://github.com/jeremy193a/artifactry.git
 claude plugin install md-export-skills@md-export-skills
 Then restart Claude Code and verify /artifactry appears in /help.
 ```
@@ -89,5 +89,5 @@ Use $artifactry to convert examples/training-handout/worksheet.md into a DOCX us
 ```
 
 ```text
-Use $artifactry to create a 4:5 social carousel from examples/social-carousel/ai-agent-export.md using Broadsheet Analysis style.
+Use $artifactry to create a 4:5 social carousel from examples/social-carousel/ai-agent-export.md using Broadsheet Intelligence style.
 ```

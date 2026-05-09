@@ -4,7 +4,7 @@ Install the skill locally:
 
 ```bash
 mkdir -p ~/.codex/skills
-ln -s /path/to/md-export-skills/skills/artifactry ~/.codex/skills/artifactry
+ln -s /path/to/artifactry/skills/artifactry ~/.codex/skills/artifactry
 ```
 
 Use prompt:
@@ -16,7 +16,7 @@ Use $artifactry to convert this Markdown into the requested export files. Read D
 Good requests:
 
 ```text
-Use $artifactry to turn bootcamp.md into a 16:9 PPTX and PNG slides using Institutional Clarity style.
+Use $artifactry to turn bootcamp.md into a 16:9 PPTX and PNG slides using Terminal Operator style.
 ```
 
 ```text

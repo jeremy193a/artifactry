@@ -5,8 +5,8 @@
   "author": {
     "name": "Jeremy Nguyen"
   },
-  "homepage": "https://github.com/jeremy193a/md-to-artifacts",
-  "repository": "https://github.com/jeremy193a/md-to-artifacts",
+  "homepage": "https://github.com/jeremy193a/artifactry",
+  "repository": "https://github.com/jeremy193a/artifactry",
   "license": "MIT",
   "skills": "./skills/",
   "agents": ["./.claude/agents/export-designer.md"]

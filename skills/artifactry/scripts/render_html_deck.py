@@ -39,9 +39,14 @@ def expand_includes(path: Path, seen: set[Path] | None = None) -> str:
     seen.add(source)
 
     expanded: list[str] = []
+    in_fence = False
     for raw in source.read_text(encoding="utf-8").splitlines():
+        if raw.lstrip().startswith("```"):
+            in_fence = not in_fence
+            expanded.append(raw)
+            continue
         match = INCLUDE_RE.match(raw)
-        if not match:
+        if in_fence or not match:
             expanded.append(raw)
             continue
         include_path = (source.parent / match.group(1).strip()).resolve()

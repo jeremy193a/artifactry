@@ -42,7 +42,7 @@ dist/artifactry.zip
 Tell an agent to prepare the ZIP:
 
 ```text
-Clone https://github.com/jeremy193a/md-to-artifacts, run python scripts/package_claude_skill.py, and tell me the generated dist/artifactry.zip path. I will upload it in Claude Desktop under Customize -> Skills -> Create skill -> Upload a skill.
+Clone https://github.com/jeremy193a/artifactry, run python scripts/package_claude_skill.py, and tell me the generated dist/artifactry.zip path. I will upload it in Claude Desktop under Customize -> Skills -> Create skill -> Upload a skill.
 ```
 
 ## Recommended User Prompt
@@ -58,7 +58,7 @@ Whenever the user has not specified enough detail, Claude should ask:
 ```text
 Before I export, choose the target:
 1. Output: DOCX, PDF, PPTX, PNG/JPG carousel, or bundle?
-2. Style: Institutional Clarity, Warm Editorial, Monochrome Precision, Dark Console, Gradient Intelligence, Data Command, Visual Lifestyle, Cinematic Luxury, Playful Productivity, Broadsheet Analysis, or local DESIGN.md?
+2. Style: one of Artifactry's 15 styles (Regulated Ledger, Human Workshop, Swiss Protocol, Terminal Operator, Aurora Product, Metrics Command, Broadsheet Intelligence, Black Label Cinema, Playful Systems, Image Market, Spatial Canvas, Blueprint Infra, Commerce Editorial, Motion Premiere, Performance Machine), or local DESIGN.md?
 3. Size: A4/Letter, 16:9, 4:5, 1:1, 9:16, or custom?
 4. Priority: editable file, final polished visual, or both?
 ```
@@ -81,5 +81,5 @@ Use Artifactry to export this training Markdown into both a 16:9 presentation an
 
 - Upload the Markdown file into the chat.
 - If you have a `DESIGN.md`, upload it too.
-- Choose one of the 10 generic styles, or upload a local `DESIGN.md` if you want the agent to adapt a custom visual system.
+- Choose one of the 15 generic styles, or upload a local `DESIGN.md` if you want the agent to adapt a custom visual system.
 - For best results, keep one Markdown file per deliverable.

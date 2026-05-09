@@ -32,7 +32,7 @@ If output type, style, or size is missing, ask one concise export brief:
 ```text
 Before I export, choose the target:
 1. Output: DOCX, PDF, PPTX, PNG/JPG carousel, or bundle?
-2. Style: Institutional Clarity, Warm Editorial, Monochrome Precision, Dark Console, Gradient Intelligence, Data Command, Visual Lifestyle, Cinematic Luxury, Playful Productivity, Broadsheet Analysis, or local DESIGN.md?
+2. Style: one of Artifactry's 15 styles (Regulated Ledger, Human Workshop, Swiss Protocol, Terminal Operator, Aurora Product, Metrics Command, Broadsheet Intelligence, Black Label Cinema, Playful Systems, Image Market, Spatial Canvas, Blueprint Infra, Commerce Editorial, Motion Premiere, Performance Machine), or local DESIGN.md?
 3. Size: A4/Letter, 16:9, 4:5, 1:1, 9:16, or custom?
 4. Priority: editable file, final polished visual, or both?
 ```

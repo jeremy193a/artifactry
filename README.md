@@ -4,288 +4,162 @@
 
 Markdown in, polished artifacts out.
 
-Artifactry turns Markdown into polished documents, decks, PDFs, and social images with AI agents using `DESIGN.md`-inspired style systems.
+Artifactry is an AI-agent skill pack that turns Markdown into designed deliverables: DOCX, PDF, PPTX, PNG/JPG carousels, and multi-format content bundles. It is built for Claude Chat/Desktop, Claude Code, Codex, OpenCode, and other agentic coding environments.
 
-Artifactry is a public-ready skill pack for Claude Chat, Claude Desktop, Claude Code, OpenCode, Codex, and other coding agents. It helps an AI agent take a `.md` file and convert it into real deliverables:
+The core idea is simple: Markdown stays the source of truth, while Artifactry gives the agent an export workflow, style system, render scripts, and validation checks so the final files look intentional enough to present, publish, print, or send to a client.
 
-- Word documents (`.docx`)
-- PDFs (`.pdf`)
-- PowerPoint decks (`.pptx`)
-- Social carousel images (`.png`, `.jpg`)
-- Multi-format bundles from the same Markdown source
+## What It Does
 
-The project is built around a simple idea: Markdown should be the source file, but the output should look intentional to share with stakeholders, print, or post online. The skill pack teaches agents to ask the right questions about output format, style, and size, then choose the right export route and validate the final files.
+- Converts `.md` files into Word documents, PDFs, decks, social images, and bundles.
+- Guides the agent to ask for output type, style, size, and editability before rendering.
+- Uses detailed Markdown style guides inspired by `DESIGN.md`, plus script-friendly JSON token fallbacks.
+- Supports frontmatter routing with `doctype: document | slides | carousel | docs`.
+- Supports includes/partials with `{{ include: sections/module-1.md }}`.
+- Renders slide/carousel images through HTML/CSS and Chrome, then assembles PPTX from those images.
+- Builds DOCX with generated `reference.docx` files and validates DOCX, PDF, PPTX, PNG, and JPG outputs.
 
-It also includes a Claude Code agent profile, `export-designer`, that runs an operating loop inspired by high-quality media-generation skill packs:
+Artifactry includes a Claude Code slash command and agent profile:
+
+```text
+/artifactry
+/md-artifacts
+export-designer
+```
+
+The operating loop is:
 
 ```text
 diagnose -> ask -> search -> route -> refactor -> render -> validate -> deliver
 ```
 
-## What Is It Used For?
-
-Use this project when you want to turn Markdown into:
-
-- Training handouts and worksheets
-- Business reports and internal memos
-- SOPs, documentation, and knowledge-base pages
-- Pitch decks and workshop presentations
-- LinkedIn or Instagram-style carousels
-- PDF handouts for sharing or printing
-- Multi-format content packs from one source
-
-Example requests:
-
-```text
-Use Artifactry to turn this Markdown into a polished DOCX and PDF.
-```
-
-```text
-Use Artifactry to create a 16:9 presentation and PNG slide images from this bootcamp outline.
-```
-
-```text
-Use Artifactry with Broadsheet Analysis style to create a 4:5 social carousel from this Markdown.
-```
-
 ## Install
-
-### Ask An Agent
-
-```text
-Install Artifactry for Claude Code. Run:
-claude plugin marketplace add https://github.com/jeremy193a/md-to-artifacts.git
-claude plugin install md-export-skills@md-export-skills
-Then restart Claude Code and verify /artifactry appears in /help.
-```
-
-For an export task, tell the agent:
-
-```text
-Run python scripts/check_requirements.py. If anything is missing, ask before installing system tools. Then use Artifactry to export my Markdown into the requested files and validate the outputs.
-```
-
-### Claude Chat/Desktop
-
-1. Open Claude Chat or Claude Desktop.
-2. Make sure code execution is enabled in `Settings` -> `Capabilities` if Skills are not visible.
-3. Go to `Customize` -> `Skills`.
-4. Click `+` -> `Create skill`.
-5. Choose `Upload a skill`.
-6. Upload `dist/artifactry.zip`.
-7. Toggle the skill on.
-8. Start a new chat and ask Claude to use the Artifactry skill.
-
-If you cloned the repo locally, the full upload path is:
-
-```text
-clone repo -> run package script -> upload dist/artifactry.zip -> toggle skill on
-```
-
-Package command:
-
-```bash
-python scripts/package_claude_skill.py
-```
-
-Example Claude Chat prompt:
-
-```text
-Use the Artifactry skill. I uploaded a Markdown file. Ask me which output format, style, and size I want, then export and validate the files.
-```
 
 ### Claude Code
 
-Claude Code uses plugins through marketplaces:
+Use the HTTPS repo URL exactly:
 
 ```text
-/plugin marketplace add https://github.com/jeremy193a/md-to-artifacts.git
+/plugin marketplace add https://github.com/jeremy193a/artifactry.git
 /plugin install md-export-skills@md-export-skills
 ```
 
-After installing, restart Claude Code, then use:
+Restart Claude Code, then verify `/artifactry` appears in `/help`.
+
+Example:
 
 ```text
-/artifactry examples/showcase/board-brief.md as a 16:9 PPTX and PNG deck using Institutional Clarity
+/artifactry examples/showcase/board-brief.md as a 16:9 PPTX and PNG deck using Regulated Ledger
 ```
 
-Alias:
-
-```text
-/md-artifacts examples/showcase/board-brief.md as a 16:9 PPTX and PNG deck using Institutional Clarity
-```
-
-Update an installed version after this repo publishes a new commit:
+Update after a new release:
 
 ```text
 /plugin marketplace update md-export-skills
 /plugin update md-export-skills@md-export-skills
 ```
 
-Terminal equivalent:
+Agent install prompt:
 
-```bash
-claude plugin marketplace update md-export-skills
-claude plugin update md-export-skills@md-export-skills
+```text
+Install Artifactry for Claude Code. Use:
+claude plugin marketplace add https://github.com/jeremy193a/artifactry.git
+claude plugin install md-export-skills@md-export-skills
+Then restart Claude Code and confirm /artifactry is available.
 ```
 
-Restart Claude Code after updating so new commands, agents, and skills are loaded.
+### Claude Chat / Desktop
 
-For local development:
+Claude Chat/Desktop uses a Skill ZIP, not Claude Code plugins.
+
+1. Clone this repo.
+2. Run:
 
 ```bash
-claude --plugin-dir .
+python scripts/package_claude_skill.py
 ```
 
-See [CLAUDE.md](CLAUDE.md).
+3. Open Claude.
+4. Go to `Customize` -> `Skills`.
+5. Click `+` -> `Create skill`.
+6. Choose `Upload a skill`.
+7. Upload `dist/artifactry.zip`.
+8. Toggle the skill on and start a new chat.
 
-### Codex / Local Skills
+Recommended Claude prompt:
 
-Symlink the skill folder:
+```text
+Use the Artifactry skill. I uploaded a Markdown file. Ask me which output format, style, and size I want, then export and validate the files.
+```
+
+### Codex / OpenCode
+
+Install the local skill folder in the agent's skill directory:
 
 ```bash
 mkdir -p ~/.codex/skills
-ln -s /path/to/md-export-skills/skills/artifactry ~/.codex/skills/artifactry
-```
-
-Or copy it:
-
-```bash
-cp -R /path/to/md-export-skills/skills/artifactry ~/.codex/skills/
+ln -s /path/to/artifactry/skills/artifactry ~/.codex/skills/artifactry
 ```
 
 See [CODEX.md](CODEX.md) and [OPENCODE.md](OPENCODE.md).
 
-## Requirements
+## Agent Preflight
 
-Users should not have to manually reason through dependencies. Ask the agent to run the preflight first:
+Users should not need to manually reason through system packages. Tell the agent to run the preflight first:
 
 ```bash
 python scripts/check_requirements.py
 ```
 
-The script tells the agent which packages or system tools are missing and prints install commands. The agent should ask for approval before installing system tools.
+If anything is missing, the script prints the purpose and install command. The agent should ask for approval before installing system tools.
 
-Agent install prompt:
+Recommended setup prompt:
 
 ```text
-Run python scripts/check_requirements.py. If Python packages are missing, install them with python3 -m pip install -r requirements.txt. If system tools are missing, ask me for approval, then install only the tools required for my requested output.
+Run python scripts/check_requirements.py. If Python packages are missing, install them with python3 -m pip install -r requirements.txt. If system tools are missing, ask for approval before installing only what this export needs.
 ```
 
-What Artifactry may need:
+Artifactry may use:
 
-- Python packages from `requirements.txt` for DOCX/PPTX/image handling.
-- Pandoc for DOCX/PDF/PPTX conversion routes.
-- Google Chrome or Chromium for PNG/JPG rendering and styled PDF export.
-- Node/npm only when fetching external `DESIGN.md` styles with `npx getdesign@latest add <style>`.
-- LibreOffice/soffice only when converting DOCX to PDF with Office fidelity.
-- LaTeX/XeLaTeX only for Pandoc PDF routes that require LaTeX.
+- Python packages from `requirements.txt`
+- Pandoc for conversion routes
+- Google Chrome or Chromium for PNG/JPG and styled PDF rendering
+- Node/npm for `npx getdesign@latest add <style>`
+- LibreOffice for DOCX-to-PDF fidelity
+- XeLaTeX only for Pandoc PDF routes that need LaTeX
 
-## Markdown Conventions
+## Style System
 
-### Doctype
-
-Use `doctype` in frontmatter to tell the agent what the Markdown should become:
-
-```yaml
----
-title: "AI Training Bootcamp"
-doctype: "slides"
-outputs: ["pptx", "png"]
-style: "institutional-clarity"
-aspect: "16:9"
----
-```
-
-Supported doctypes:
-
-- `document`: Word/PDF reports, worksheets, proposals, SOPs, handouts
-- `slides`: presentation decks
-- `carousel`: social image sequences
-- `docs`: documentation or knowledge-base content
-
-### Includes / Partials
-
-Split large projects into smaller files:
-
-```markdown
-# AI Training Bootcamp
-
-{{ include: sections/module-1.md }}
-
-{{ include: sections/module-2.md }}
-
-{{ include: sections/workshop.md }}
-```
-
-The scripts expand includes before exporting. This lets one master Markdown file control a full course, deck, or document while each section stays editable.
-
-## Features
-
-- Claude Chat custom Skill ZIP support
-- Claude Code plugin structure
-- Claude Code `/artifactry` slash command plus `/md-artifacts` alias
-- Claude Code `export-designer` agent operating loop
-- Agent preflight for Python packages and system tools
-- Local searchable export-pattern corpus
-- Local skill support for Codex/OpenCode-style agents
-- Markdown frontmatter routing with `doctype`
-- Include/partial expansion with `{{ include: path.md }}`
-- DOCX export with generated `reference.docx`
-- Styled DOCX/HTML/PDF document route through `build_document.py`
-- HTML/CSS fixed-canvas slide rendering
-- PNG/JPG export through Chrome/Chromium
-- PPTX assembly from rendered images
-- PDF routes through Chrome print CSS, DOCX-to-PDF via soffice, or Pandoc/XeLaTeX
-- `DESIGN.md` and getdesign.md style adaptation
-- Aspect ratios: `16:9`, `4:5`, `1:1`, `9:16`, `A4`, `Letter`, custom
-- Vietnamese-friendly deterministic text rendering
-- Output validation for DOCX, PPTX, PDF, PNG, and JPG
-
-## Style Database
-
-Artifactry now has two style layers:
-
-- Markdown style guides: detailed creative direction for agents.
-- JSON token fallbacks: deterministic tokens for scripts and simple rendering routes.
-
-The primary public style guides live in:
+The primary style guides live in:
 
 ```text
 skills/artifactry/references/style-guides/
 ```
 
-These 15 guides are synthesized from the local getdesign.md corpus. They are not brand names:
+They are generic archetypes synthesized from a local getdesign.md corpus. Artifactry does not expose copied brand names as public styles.
 
-- **Regulated Ledger** (`regulated-ledger`): trust-first executive, finance, board, and risk artifacts.
-- **Human Workshop** (`human-workshop`): training, education, workbooks, and practical enablement.
-- **Swiss Protocol** (`swiss-protocol`): strict monochrome technical memos, specs, and founder briefs.
-- **Terminal Operator** (`terminal-operator`): agent workflows, API guides, code-first decks, and automation playbooks.
-- **Aurora Product** (`aurora-product`): luminous AI/product launches and feature announcements.
-- **Metrics Command** (`metrics-command`): KPI reviews, analytics, dashboards, and operating reports.
-- **Broadsheet Intelligence** (`broadsheet-intelligence`): research, market analysis, thought leadership, and editorial carousels.
-- **Black Label Cinema** (`black-label-cinema`): premium dark hero decks, portfolio stories, and high-stakes pitches.
-- **Playful Systems** (`playful-systems`): SaaS onboarding, internal tools, friendly workflow explainers.
-- **Image Market** (`image-market`): photo-led social stories, campaigns, catalogs, and product narratives.
-- **Spatial Canvas** (`spatial-canvas`): workshop maps, brainstorms, process maps, and collaboration boards.
-- **Blueprint Infra** (`blueprint-infra`): architecture, infrastructure, API maps, and engineering strategy.
-- **Commerce Editorial** (`commerce-editorial`): retail, catalog, offer, product, and brand explainers.
-- **Motion Premiere** (`motion-premiere`): creative AI, media launches, trailer-like decks, and storyboard narratives.
-- **Performance Machine** (`performance-machine`): automotive, hardware, sport, industrial, and high-performance demos.
+| Style | Best For |
+|---|---|
+| Regulated Ledger | Finance, board, compliance, risk, executive artifacts |
+| Human Workshop | Training, education, worksheets, enablement |
+| Swiss Protocol | Technical memos, specs, founder briefs, strict monochrome docs |
+| Terminal Operator | Agent workflows, API guides, automation playbooks |
+| Aurora Product | AI/product launches, feature narratives, luminous product decks |
+| Metrics Command | KPI reviews, analytics, dashboards, operating reports |
+| Broadsheet Intelligence | Research, market analysis, editorial carousels |
+| Black Label Cinema | Premium dark decks, portfolios, high-stakes pitches |
+| Playful Systems | SaaS onboarding, workflow explainers, internal tools |
+| Image Market | Photo-led campaigns, catalogs, product narratives |
+| Spatial Canvas | Workshop maps, brainstorms, process diagrams |
+| Blueprint Infra | Architecture, infrastructure, API maps, engineering strategy |
+| Commerce Editorial | Retail, offers, catalogs, product explainers |
+| Motion Premiere | Creative AI, media launches, storyboard narratives |
+| Performance Machine | Hardware, automotive, sport, industrial demos |
 
-Style token fallback files live in:
-
-```text
-skills/artifactry/styles/
-```
-
-List guides and token fallbacks from the command line:
+List available styles:
 
 ```bash
 python skills/artifactry/scripts/list_styles.py
 ```
-
-The crawled `DESIGN.md` files are used as an inheritance corpus, not as public brand style names. Artifactry exposes generic archetypes so users can choose by mood, artifact type, and communication goal without copying brand names.
 
 Artifactry can also adapt a local `DESIGN.md` or fetch one with:
 
@@ -295,32 +169,15 @@ npx getdesign@latest add <style-name>
 
 ## Showcase
 
-Artifactry uses its own project story as the showcase source. This keeps the examples honest: the DOCX showcase is this README converted to Word, and the PPTX showcase is a carousel explaining Artifactry itself.
+The showcase uses Artifactry's own project story as source material, so the examples are honest: the DOCX files are README/worksheet exports, and the visual gallery is generated from the signature style guides.
 
-Build the signature style gallery:
+### Signature Style Gallery
+
+Built with:
 
 ```bash
 python scripts/build_signature_showcase.py
 ```
-
-Build the token fallback route showcase:
-
-```bash
-python scripts/build_showcase.py
-```
-
-What it creates:
-
-- `scripts/build_signature_showcase.py` -> `assets/showcase/signature/<style>/slide-01.png`
-- `README.md` -> `output/showcase/docx/artifactry-readme-<style>.docx`
-- `examples/showcase/artifactry-carousel.md` -> `assets/showcase/styles/<style>/slide-*.png`
-- `assets/showcase/styles/<style>/slide-*.png` -> `output/showcase/pptx/artifactry-<style>.pptx`
-
-The `output/` folder is intentionally gitignored because generated Office files are large. The PNG previews below are checked in so people can inspect the visual range quickly.
-
-### Signature Style Gallery
-
-These previews are built from the 15 Markdown style guides. Each guide gets its own composition pattern instead of reusing one generic template.
 
 | Regulated Ledger | Human Workshop | Swiss Protocol |
 |---|---|---|
@@ -342,147 +199,79 @@ These previews are built from the 15 Markdown style guides. Each guide gets its 
 |---|---|---|
 | <img src="assets/showcase/signature/commerce-editorial/slide-01.png" alt="Commerce Editorial showcase" width="260"> | <img src="assets/showcase/signature/motion-premiere/slide-01.png" alt="Motion Premiere showcase" width="260"> | <img src="assets/showcase/signature/performance-machine/slide-01.png" alt="Performance Machine showcase" width="260"> |
 
-## Additional Examples
+### DOCX Showcase
 
-These examples are kept for route testing beyond the project showcase.
+Five distinct document styles are checked in for direct download:
 
-### Worksheet To DOCX
+| Style | Source | Download |
+|---|---|---|
+| Regulated Ledger | `README.md` | [Download DOCX](assets/showcase/docx/regulated-ledger-readme.docx?raw=1) |
+| Human Workshop | `examples/training-handout/worksheet.md` | [Download DOCX](assets/showcase/docx/human-workshop-worksheet.docx?raw=1) |
+| Swiss Protocol | `README.md` | [Download DOCX](assets/showcase/docx/swiss-protocol-readme.docx?raw=1) |
+| Terminal Operator | `README.md` | [Download DOCX](assets/showcase/docx/terminal-operator-readme.docx?raw=1) |
+| Broadsheet Intelligence | `README.md` | [Download DOCX](assets/showcase/docx/broadsheet-intelligence-readme.docx?raw=1) |
 
-Input:
-
-[examples/training-handout/worksheet.md](examples/training-handout/worksheet.md)
-
-Command:
-
-```bash
-python skills/artifactry/scripts/build_document.py \
-  examples/training-handout/worksheet.md \
-  --style human-workshop \
-  --outputs docx pdf html \
-  --worksheet-lines \
-  --output-dir output/worksheet
-
-python skills/artifactry/scripts/validate_exports.py \
-  output/worksheet/worksheet.docx \
-  output/worksheet/worksheet.pdf
-```
-
-Lower-level DOCX-only route:
+Rebuild a DOCX showcase file:
 
 ```bash
-python skills/artifactry/scripts/normalize_markdown.py \
-  examples/training-handout/worksheet.md \
-  --worksheet-lines \
-  --output build/worksheet.normalized.md
-
-python skills/artifactry/scripts/build_reference_docx.py \
-  --output build/reference.docx \
-  --company "AI Training" \
-  --style warm-editorial
-
-pandoc build/worksheet.normalized.md \
-  --from=markdown \
-  --to=docx \
-  --reference-doc=build/reference.docx \
-  --output output/worksheet.docx
-
-python skills/artifactry/scripts/validate_exports.py output/worksheet.docx
+python skills/artifactry/scripts/build_document.py README.md --style regulated-ledger --outputs docx --output-dir output/showcase/docx/regulated-ledger
 ```
 
-Output:
+## Core Commands
 
-```text
-OK output/worksheet/worksheet.docx
-OK output/worksheet/worksheet.pdf
-```
-
-PDF routes:
-
-- Chrome print PDF: `--pdf-route chrome`, best default for styled PDF without LaTeX.
-- Office PDF: `--pdf-route soffice`, best when PDF should match generated DOCX.
-- Pandoc/XeLaTeX PDF: `--pdf-route pandoc`, useful in LaTeX-ready environments.
-
-### Markdown To 16:9 PPTX
-
-Input:
-
-[examples/presentation/bootcamp-outline.md](examples/presentation/bootcamp-outline.md)
-
-Command:
+Build the Claude Skill ZIP:
 
 ```bash
-python skills/artifactry/scripts/render_html_deck.py \
-  examples/presentation/bootcamp-outline.md \
-  --aspect 16:9 \
-  --style institutional-clarity \
-  --output-dir build/bootcamp-16x9
-
-python skills/artifactry/scripts/render_images_chrome.py \
-  build/bootcamp-16x9/slides-html \
-  --aspect 16:9 \
-  --output-dir output/bootcamp-16x9/png
-
-python skills/artifactry/scripts/build_pptx_from_images.py \
-  output/bootcamp-16x9/png \
-  --aspect 16:9 \
-  --output output/bootcamp-16x9/bootcamp.pptx
-
-python skills/artifactry/scripts/validate_exports.py \
-  output/bootcamp-16x9/png \
-  output/bootcamp-16x9/bootcamp.pptx
+python scripts/package_claude_skill.py
 ```
 
-Output:
+Build a styled document:
 
-```text
-OK output/bootcamp-16x9/png
-OK output/bootcamp-16x9/bootcamp.pptx
+```bash
+python skills/artifactry/scripts/build_document.py input.md --style human-workshop --outputs docx pdf html --output-dir output/document
 ```
 
-### Modular Deck With Includes
+Build slide images:
 
-Input:
+```bash
+python skills/artifactry/scripts/render_html_deck.py input.md --style terminal-operator --aspect 16:9 --output-dir output/deck
+```
 
-[tests/fixtures/master-with-includes.md](tests/fixtures/master-with-includes.md)
+Validate exports:
+
+```bash
+python skills/artifactry/scripts/validate_exports.py output/document/document.docx output/deck
+```
+
+## Markdown Conventions
+
+Use frontmatter to route the export:
+
+```yaml
+---
+title: "AI Training Bootcamp"
+doctype: "slides"
+outputs: ["pptx", "png"]
+style: "terminal-operator"
+aspect: "16:9"
+---
+```
+
+Use includes to split large projects:
 
 ```markdown
-# Include Test Deck
+# AI Training Bootcamp
 
-{{ include: sections/slide-one.md }}
+{{ include: sections/module-1.md }}
 
-{{ include: sections/slide-two.md }}
+{{ include: sections/module-2.md }}
 ```
 
-The renderer expands both partials before creating the slide deck.
-
-## Project Structure
-
-```text
-md-export-skills/
-├── skills/artifactry/
-│   ├── SKILL.md
-│   ├── agents/openai.yaml
-│   ├── corpus/
-│   ├── references/
-│   └── scripts/
-├── examples/
-├── assets/showcase/
-├── commands/artifactry.md
-├── commands/md-artifacts.md
-├── tests/
-├── .claude/agents/export-designer.md
-├── .claude-plugin/
-├── AGENTS.md
-├── CLAUDE.md
-├── CLAUDE_CHAT.md
-├── CODEX.md
-├── OPENCODE.md
-└── README.md
-```
+Includes are expanded before rendering. Include syntax inside fenced code blocks is left untouched.
 
 ## Status
 
-Public alpha. The DOCX, HTML-slide, PNG/JPG render, PPTX-from-images, include expansion, and validation routes are working. Agents can replace the default HTML renderer with richer project-specific layouts while keeping the same validation and assembly pipeline.
+Public alpha. The DOCX, styled HTML/PDF, HTML slide, PNG/JPG, PPTX-from-images, include expansion, package, and validation routes are working. Agents can still replace the default layouts with richer project-specific compositions while keeping the same pipeline.
 
 ## License
 
@@ -490,4 +279,4 @@ MIT
 
 ## Credits
 
-This project is inspired by [getdesign.md](https://getdesign.md/) and the public [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md) collection. Their detailed `DESIGN.md` files helped shape the style inheritance model used by Artifactry.
+Artifactry is inspired by [getdesign.md](https://getdesign.md/) and the public [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md) collection. Their detailed `DESIGN.md` examples helped shape the style inheritance model used here.
