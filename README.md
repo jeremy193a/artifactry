@@ -277,23 +277,45 @@ npx getdesign@latest add <style-name>
 
 ## Showcase
 
-### Visual Previews
+Artifactry uses its own project story as the showcase source. This keeps the examples honest: the DOCX showcase is this README converted to Word, and the PPTX showcase is a carousel explaining Artifactry itself.
 
-| Institutional Clarity | Dark Console | Broadsheet Analysis |
-|---|---|---|
-| ![Institutional Clarity showcase](assets/showcase/board-brief/slide-01.png) | ![Dark Console showcase](assets/showcase/agent-command-center/slide-01.png) | ![Broadsheet Analysis showcase](assets/showcase/founder-carousel/slide-01.png) |
-
-Showcase Markdown inputs:
-
-- [examples/showcase/board-brief.md](examples/showcase/board-brief.md)
-- [examples/showcase/agent-command-center.md](examples/showcase/agent-command-center.md)
-- [examples/showcase/founder-carousel.md](examples/showcase/founder-carousel.md)
-
-Generate the first preview:
+Build every showcase:
 
 ```bash
-python skills/artifactry/scripts/render_html_deck.py examples/showcase/board-brief.md --aspect 16:9 --style institutional-clarity --output-dir build/showcase/board-brief
-python skills/artifactry/scripts/render_images_chrome.py build/showcase/board-brief/slides-html --aspect 16:9 --output-dir assets/showcase/board-brief
+python scripts/build_showcase.py
+```
+
+What it creates:
+
+- `README.md` -> `output/showcase/docx/artifactry-readme-<style>.docx`
+- `examples/showcase/artifactry-carousel.md` -> `assets/showcase/styles/<style>/slide-*.png`
+- `assets/showcase/styles/<style>/slide-*.png` -> `output/showcase/pptx/artifactry-<style>.pptx`
+
+The `output/` folder is intentionally gitignored because generated Office files are large. The PNG previews below are checked in so people can inspect the visual range quickly.
+
+### All 10 Styles
+
+| Style | Preview |
+|---|---|
+| Institutional Clarity | <img src="assets/showcase/styles/institutional-clarity/slide-01.png" alt="Institutional Clarity showcase" width="320"> |
+| Warm Editorial | <img src="assets/showcase/styles/warm-editorial/slide-01.png" alt="Warm Editorial showcase" width="320"> |
+| Monochrome Precision | <img src="assets/showcase/styles/monochrome-precision/slide-01.png" alt="Monochrome Precision showcase" width="320"> |
+| Dark Console | <img src="assets/showcase/styles/dark-console/slide-01.png" alt="Dark Console showcase" width="320"> |
+| Gradient Intelligence | <img src="assets/showcase/styles/gradient-intelligence/slide-01.png" alt="Gradient Intelligence showcase" width="320"> |
+| Data Command | <img src="assets/showcase/styles/data-command/slide-01.png" alt="Data Command showcase" width="320"> |
+| Visual Lifestyle | <img src="assets/showcase/styles/visual-lifestyle/slide-01.png" alt="Visual Lifestyle showcase" width="320"> |
+| Cinematic Luxury | <img src="assets/showcase/styles/cinematic-luxury/slide-01.png" alt="Cinematic Luxury showcase" width="320"> |
+| Playful Productivity | <img src="assets/showcase/styles/playful-productivity/slide-01.png" alt="Playful Productivity showcase" width="320"> |
+| Broadsheet Analysis | <img src="assets/showcase/styles/broadsheet-analysis/slide-01.png" alt="Broadsheet Analysis showcase" width="320"> |
+
+Showcase Markdown input:
+
+- [examples/showcase/artifactry-carousel.md](examples/showcase/artifactry-carousel.md)
+
+Build a single style manually:
+
+```bash
+python scripts/build_showcase.py --styles institutional-clarity
 ```
 
 ## Additional Examples
