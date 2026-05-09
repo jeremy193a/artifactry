@@ -242,32 +242,48 @@ The scripts expand includes before exporting. This lets one master Markdown file
 
 ## Style Database
 
-The project includes 10 generic style archetypes derived from the full local getdesign.md corpus. These are not brand names:
+Artifactry now has two style layers:
 
-- **Institutional Clarity** (`institutional-clarity`): trustworthy, precise, white-canvas system for executive, financial, and strategy exports.
-- **Warm Editorial** (`warm-editorial`): human, thoughtful reading experience for handouts, training, essays, and course material.
-- **Monochrome Precision** (`monochrome-precision`): black-and-white technical minimalism for developer docs and precise decks.
-- **Dark Console** (`dark-console`): terminal-native dark surfaces for code-first workflows, APIs, and dev tooling.
-- **Gradient Intelligence** (`gradient-intelligence`): luminous AI/product launch style with controlled gradients.
-- **Data Command** (`data-command`): dense analytical dashboard language for metrics and operating reviews.
-- **Visual Lifestyle** (`visual-lifestyle`): photo-led, friendly, consumer-facing system for campaigns and social stories.
-- **Cinematic Luxury** (`cinematic-luxury`): dramatic black-canvas premium style for hero decks and portfolio narratives.
-- **Playful Productivity** (`playful-productivity`): friendly modular SaaS language with approachable UI rhythm.
-- **Broadsheet Analysis** (`broadsheet-analysis`): editorial magazine density with serif display and research-led layouts.
+- Markdown style guides: detailed creative direction for agents.
+- JSON token fallbacks: deterministic tokens for scripts and simple rendering routes.
 
-Style token files live in:
+The primary public style guides live in:
+
+```text
+skills/artifactry/references/style-guides/
+```
+
+These 15 guides are synthesized from the local getdesign.md corpus. They are not brand names:
+
+- **Regulated Ledger** (`regulated-ledger`): trust-first executive, finance, board, and risk artifacts.
+- **Human Workshop** (`human-workshop`): training, education, workbooks, and practical enablement.
+- **Swiss Protocol** (`swiss-protocol`): strict monochrome technical memos, specs, and founder briefs.
+- **Terminal Operator** (`terminal-operator`): agent workflows, API guides, code-first decks, and automation playbooks.
+- **Aurora Product** (`aurora-product`): luminous AI/product launches and feature announcements.
+- **Metrics Command** (`metrics-command`): KPI reviews, analytics, dashboards, and operating reports.
+- **Broadsheet Intelligence** (`broadsheet-intelligence`): research, market analysis, thought leadership, and editorial carousels.
+- **Black Label Cinema** (`black-label-cinema`): premium dark hero decks, portfolio stories, and high-stakes pitches.
+- **Playful Systems** (`playful-systems`): SaaS onboarding, internal tools, friendly workflow explainers.
+- **Image Market** (`image-market`): photo-led social stories, campaigns, catalogs, and product narratives.
+- **Spatial Canvas** (`spatial-canvas`): workshop maps, brainstorms, process maps, and collaboration boards.
+- **Blueprint Infra** (`blueprint-infra`): architecture, infrastructure, API maps, and engineering strategy.
+- **Commerce Editorial** (`commerce-editorial`): retail, catalog, offer, product, and brand explainers.
+- **Motion Premiere** (`motion-premiere`): creative AI, media launches, trailer-like decks, and storyboard narratives.
+- **Performance Machine** (`performance-machine`): automotive, hardware, sport, industrial, and high-performance demos.
+
+Style token fallback files live in:
 
 ```text
 skills/artifactry/styles/
 ```
 
-List styles from the command line:
+List guides and token fallbacks from the command line:
 
 ```bash
 python skills/artifactry/scripts/list_styles.py
 ```
 
-The 71 crawled `DESIGN.md` files are used as an inheritance corpus, not as 71 public style names. Artifactry exposes 10 generic archetypes so users can choose quickly without copying brand names. Each style JSON includes `source_inheritance` metadata that records which corpus groups informed it.
+The crawled `DESIGN.md` files are used as an inheritance corpus, not as public brand style names. Artifactry exposes generic archetypes so users can choose by mood, artifact type, and communication goal without copying brand names.
 
 Artifactry can also adapt a local `DESIGN.md` or fetch one with:
 
@@ -293,7 +309,7 @@ What it creates:
 
 The `output/` folder is intentionally gitignored because generated Office files are large. The PNG previews below are checked in so people can inspect the visual range quickly.
 
-### All 10 Styles
+### Token Preview Gallery
 
 | Style | Preview |
 |---|---|

@@ -37,12 +37,12 @@ Use this default question:
 ```text
 Before I export, choose the target:
 1. Output: DOCX, PDF, PPTX, PNG/JPG carousel, or bundle?
-2. Style: Institutional Clarity, Warm Editorial, Monochrome Precision, Dark Console, Gradient Intelligence, Data Command, Visual Lifestyle, Cinematic Luxury, Playful Productivity, Broadsheet Analysis, or local DESIGN.md?
+2. Style: choose one Artifactry style guide, a deterministic token fallback, or a local DESIGN.md?
 3. Size: A4/Letter, 16:9, 4:5, 1:1, 9:16, or custom?
 4. Priority: editable file, final polished visual, or both?
 ```
 
-List available styles with:
+List available style guides and token fallbacks with:
 
 ```bash
 python skills/artifactry/scripts/list_styles.py
@@ -67,7 +67,9 @@ python skills/artifactry/scripts/list_styles.py
    - If the repo has a `DESIGN.md`, read it and translate it into export tokens.
    - If the user names a getdesign.md style, run or ask to run `npx getdesign@latest add <style>` when network/tooling is available.
    - Use [design-md-adapter.md](references/design-md-adapter.md) to translate web/UI style rules into document, slide, and image systems.
-   - Bundled generic styles are corpus-derived design systems, not simple themes. Apply `style_dna`, `palette`, `typography.scale`, `shape`, `layout`, `components`, `slides`, `document`, `guardrails`, and `export_translation`.
+   - For polished deliverables, prefer the Markdown style guides in [style-guides/INDEX.md](references/style-guides/INDEX.md). Read the chosen guide before planning page roles, slide roles, HTML/CSS, DOCX styling, or PPTX assembly.
+   - The JSON styles in `styles/*.json` are deterministic token fallbacks for scripts. They are not the full creative direction.
+   - Bundled generic token styles are corpus-derived design systems, not simple themes. Apply `style_dna`, `palette`, `typography.scale`, `shape`, `layout`, `components`, `slides`, `document`, `guardrails`, and `export_translation`.
    - Search local export patterns when route/style is unclear:
 
 ```bash
@@ -192,6 +194,7 @@ Reject and revise before final delivery when:
 ## References
 
 - [design-md-adapter.md](references/design-md-adapter.md): translate getdesign.md/DESIGN.md styles into export tokens.
+- [style-guides/INDEX.md](references/style-guides/INDEX.md): 15 public Artifactry style guides synthesized from the local DESIGN.md corpus.
 - [aspect-ratios.md](references/aspect-ratios.md): supported ratios and pixel/PPTX dimensions.
 - [markdown-input-contract.md](references/markdown-input-contract.md): expected Markdown structure for documents, decks, carousels.
 - [output-quality-gates.md](references/output-quality-gates.md): validation checklist and repair actions.
