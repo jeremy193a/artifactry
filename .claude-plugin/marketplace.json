@@ -1,0 +1,15 @@
+{
+  "name": "md-export-skills",
+  "owner": {
+    "name": "Jeremy Nguyen"
+  },
+  "description": "Claude Code marketplace for Markdown export skills.",
+  "version": "0.1.0",
+  "plugins": [
+    {
+      "name": "md-export-skills",
+      "source": ".",
+      "description": "Export Markdown into polished DOCX, PDF, PPTX, PNG/JPG files."
+    }
+  ]
+}

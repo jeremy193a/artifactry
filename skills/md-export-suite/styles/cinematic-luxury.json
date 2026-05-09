@@ -1,0 +1,30 @@
+{
+  "id": "cinematic-luxury",
+  "name": "Cinematic Luxury",
+  "mood": ["dramatic", "premium", "cinematic", "high contrast"],
+  "colors": {
+    "background": "#050505",
+    "ink": "#f8f7f4",
+    "body": "#d6d3cc",
+    "muted": "#a39f96",
+    "primary": "#d6a84f",
+    "surface": "#121212",
+    "line": "#2a2926"
+  },
+  "typography": {
+    "display": "Georgia",
+    "body": "Arial",
+    "mono": "Courier New"
+  },
+  "slides": {
+    "headline_weight": 500,
+    "card_radius": 8,
+    "density": "dramatic sparse",
+    "accent_rule": "Use gold/metal accent sparingly against black canvas."
+  },
+  "document": {
+    "title_size": 27,
+    "heading_color": "primary",
+    "table_header": "#f5efe1"
+  }
+}

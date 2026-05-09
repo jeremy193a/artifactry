@@ -1,0 +1,30 @@
+{
+  "id": "monochrome-precision",
+  "name": "Monochrome Precision",
+  "mood": ["minimal", "technical", "sharp", "controlled"],
+  "colors": {
+    "background": "#ffffff",
+    "ink": "#000000",
+    "body": "#3f3f46",
+    "muted": "#71717a",
+    "primary": "#000000",
+    "surface": "#f4f4f5",
+    "line": "#d4d4d8"
+  },
+  "typography": {
+    "display": "Arial",
+    "body": "Arial",
+    "mono": "Courier New"
+  },
+  "slides": {
+    "headline_weight": 500,
+    "card_radius": 12,
+    "density": "precise",
+    "accent_rule": "Use black, white, and gray only unless data semantics require color."
+  },
+  "document": {
+    "title_size": 25,
+    "heading_color": "ink",
+    "table_header": "#f4f4f5"
+  }
+}

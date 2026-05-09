@@ -1,0 +1,30 @@
+{
+  "id": "dark-console",
+  "name": "Dark Console",
+  "mood": ["developer", "terminal", "dark", "code-first"],
+  "colors": {
+    "background": "#080a0f",
+    "ink": "#f8fafc",
+    "body": "#cbd5e1",
+    "muted": "#94a3b8",
+    "primary": "#22c55e",
+    "surface": "#111827",
+    "line": "#263244"
+  },
+  "typography": {
+    "display": "Arial",
+    "body": "Arial",
+    "mono": "Courier New"
+  },
+  "slides": {
+    "headline_weight": 500,
+    "card_radius": 16,
+    "density": "technical",
+    "accent_rule": "Use green for active command, status, and terminal highlights."
+  },
+  "document": {
+    "title_size": 25,
+    "heading_color": "primary",
+    "table_header": "#111827"
+  }
+}

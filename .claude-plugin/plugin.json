@@ -1,0 +1,14 @@
+{
+  "name": "md-export-skills",
+  "description": "Export Markdown into polished DOCX, PDF, PPTX, PNG/JPG files using Agent Skills and DESIGN.md style systems.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Jeremy Nguyen"
+  },
+  "homepage": "https://github.com/jeremynguyen/md-export-skills",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeremynguyen/md-export-skills"
+  },
+  "license": "MIT"
+}

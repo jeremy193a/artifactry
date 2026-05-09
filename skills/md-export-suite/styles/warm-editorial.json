@@ -1,0 +1,30 @@
+{
+  "id": "warm-editorial",
+  "name": "Warm Editorial",
+  "mood": ["human", "thoughtful", "warm", "readable"],
+  "colors": {
+    "background": "#f7f1e8",
+    "ink": "#1f1a17",
+    "body": "#5f5750",
+    "muted": "#8a8178",
+    "primary": "#b65c3b",
+    "surface": "#fffaf2",
+    "line": "#e5d8ca"
+  },
+  "typography": {
+    "display": "Georgia",
+    "body": "Arial",
+    "mono": "Courier New"
+  },
+  "slides": {
+    "headline_weight": 500,
+    "card_radius": 22,
+    "density": "comfortable",
+    "accent_rule": "Use terracotta for emphasis and section rhythm, not for every heading."
+  },
+  "document": {
+    "title_size": 26,
+    "heading_color": "ink",
+    "table_header": "#f2e5d8"
+  }
+}

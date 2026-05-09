@@ -1,0 +1,30 @@
+{
+  "id": "data-command",
+  "name": "Data Command",
+  "mood": ["analytical", "dense", "operational", "dashboard"],
+  "colors": {
+    "background": "#f8fafc",
+    "ink": "#0f172a",
+    "body": "#475569",
+    "muted": "#64748b",
+    "primary": "#0ea5e9",
+    "surface": "#ffffff",
+    "line": "#cbd5e1"
+  },
+  "typography": {
+    "display": "Arial",
+    "body": "Arial",
+    "mono": "Courier New"
+  },
+  "slides": {
+    "headline_weight": 650,
+    "card_radius": 14,
+    "density": "data dense",
+    "accent_rule": "Use accent colors only for metrics, status, and comparison."
+  },
+  "document": {
+    "title_size": 24,
+    "heading_color": "ink",
+    "table_header": "#e0f2fe"
+  }
+}

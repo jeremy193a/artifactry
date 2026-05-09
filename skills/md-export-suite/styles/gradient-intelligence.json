@@ -1,0 +1,30 @@
+{
+  "id": "gradient-intelligence",
+  "name": "Gradient Intelligence",
+  "mood": ["modern", "ai", "luminous", "premium"],
+  "colors": {
+    "background": "#ffffff",
+    "ink": "#101828",
+    "body": "#667085",
+    "muted": "#98a2b3",
+    "primary": "#7c3aed",
+    "surface": "#f5f3ff",
+    "line": "#e9d7fe"
+  },
+  "typography": {
+    "display": "Arial",
+    "body": "Arial",
+    "mono": "Courier New"
+  },
+  "slides": {
+    "headline_weight": 300,
+    "card_radius": 30,
+    "density": "polished",
+    "accent_rule": "Use gradients as a controlled background or hero accent, not as decoration everywhere."
+  },
+  "document": {
+    "title_size": 26,
+    "heading_color": "primary",
+    "table_header": "#f5f3ff"
+  }
+}

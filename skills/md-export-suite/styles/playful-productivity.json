@@ -1,0 +1,30 @@
+{
+  "id": "playful-productivity",
+  "name": "Playful Productivity",
+  "mood": ["friendly", "modular", "colorful", "approachable"],
+  "colors": {
+    "background": "#ffffff",
+    "ink": "#172033",
+    "body": "#536077",
+    "muted": "#8a94a6",
+    "primary": "#635bff",
+    "surface": "#f6f8fb",
+    "line": "#d9e0ea"
+  },
+  "typography": {
+    "display": "Arial",
+    "body": "Arial",
+    "mono": "Courier New"
+  },
+  "slides": {
+    "headline_weight": 700,
+    "card_radius": 24,
+    "density": "modular friendly",
+    "accent_rule": "Use color blocks for organization, not random decoration."
+  },
+  "document": {
+    "title_size": 25,
+    "heading_color": "primary",
+    "table_header": "#eef0ff"
+  }
+}

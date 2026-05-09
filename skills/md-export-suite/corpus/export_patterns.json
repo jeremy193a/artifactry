@@ -1,0 +1,72 @@
+[
+  {
+    "id": "document-workbook",
+    "title": "Training worksheet to DOCX/PDF",
+    "doctype": "document",
+    "outputs": ["docx", "pdf"],
+    "styles": ["warm-editorial", "playful-productivity", "institutional-clarity"],
+    "keywords": ["worksheet", "handout", "training", "a4", "docx", "pdf", "workbook"],
+    "route": "normalize_markdown --worksheet-lines -> build_reference_docx --style warm-editorial -> pandoc docx -> validate",
+    "notes": "Use for printable exercises, learning worksheets, and workshop handouts. Preserve blank writing lines and checklist items."
+  },
+  {
+    "id": "institutional-presentation",
+    "title": "Institutional 16:9 presentation",
+    "doctype": "slides",
+    "outputs": ["pptx", "png"],
+    "styles": ["institutional-clarity", "monochrome-precision"],
+    "keywords": ["institutional", "clarity", "16:9", "presentation", "pptx", "png", "deck", "business", "executive", "training"],
+    "route": "render_html_deck --style institutional-clarity -> render_images_chrome -> build_pptx_from_images -> validate",
+    "notes": "Use white canvas, one accent color, sparse executive layout, mono numbers, rounded cards, and strong footer/page consistency."
+  },
+  {
+    "id": "social-carousel-4x5",
+    "title": "4:5 social carousel from Markdown",
+    "doctype": "carousel",
+    "outputs": ["png", "jpg", "pptx"],
+    "styles": ["warm-editorial", "gradient-intelligence", "visual-lifestyle", "broadsheet-analysis"],
+    "keywords": ["carousel", "4:5", "social", "linkedin", "instagram", "png", "jpg", "slides"],
+    "route": "slide plan -> render_html_deck --style selected-style -> PNG/JPG -> optional PPTX -> validate",
+    "notes": "Use high-resolution 1638x2048 export, short slide copy, strong hook, safe margins, and mobile-readable typography."
+  },
+  {
+    "id": "developer-docs",
+    "title": "Markdown documentation bundle",
+    "doctype": "docs",
+    "outputs": ["pdf", "html", "docx"],
+    "styles": ["dark-console", "monochrome-precision", "data-command"],
+    "keywords": ["docs", "knowledge base", "technical", "api", "guide", "developer", "html", "pdf", "code"],
+    "route": "expand includes -> normalize heading hierarchy -> docs/pdf output -> validate",
+    "notes": "Use docs route when structure and navigation matter more than slide drama."
+  },
+  {
+    "id": "multi-format-bootcamp",
+    "title": "Training bootcamp bundle",
+    "doctype": "bundle",
+    "outputs": ["pptx", "png", "docx", "pdf"],
+    "styles": ["institutional-clarity", "warm-editorial", "playful-productivity"],
+    "keywords": ["bootcamp", "training", "bundle", "slides", "handout", "pptx", "docx", "pdf", "png"],
+    "route": "split source by artifact -> slide route + document route -> validate all",
+    "notes": "Use when one source should become both presentation slides and participant handouts."
+  },
+  {
+    "id": "metrics-review",
+    "title": "Data-heavy operating review",
+    "doctype": "slides",
+    "outputs": ["pptx", "pdf", "png"],
+    "styles": ["data-command", "institutional-clarity"],
+    "keywords": ["metrics", "kpi", "dashboard", "analytics", "ops", "review", "data", "business intelligence"],
+    "route": "normalize tables -> render_html_deck --style data-command -> images/pptx -> validate",
+    "notes": "Use for KPI reports and operating reviews with dense but legible tables and metrics."
+  },
+  {
+    "id": "premium-narrative",
+    "title": "Premium cinematic narrative",
+    "doctype": "slides",
+    "outputs": ["pptx", "png", "pdf"],
+    "styles": ["cinematic-luxury", "visual-lifestyle"],
+    "keywords": ["premium", "cinematic", "portfolio", "luxury", "hero", "pitch", "story"],
+    "route": "slide plan -> custom visual HTML/CSS -> images -> pptx/pdf -> validate",
+    "notes": "Use for dramatic sparse storytelling, portfolio decks, and premium product narratives."
+  }
+]

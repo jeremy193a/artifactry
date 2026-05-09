@@ -1,0 +1,30 @@
+{
+  "id": "broadsheet-analysis",
+  "name": "Broadsheet Analysis",
+  "mood": ["editorial", "analytical", "dense", "print-like"],
+  "colors": {
+    "background": "#fbfaf7",
+    "ink": "#111111",
+    "body": "#3f3f3f",
+    "muted": "#737373",
+    "primary": "#1d4ed8",
+    "surface": "#ffffff",
+    "line": "#d6d3d1"
+  },
+  "typography": {
+    "display": "Georgia",
+    "body": "Georgia",
+    "mono": "Courier New"
+  },
+  "slides": {
+    "headline_weight": 700,
+    "card_radius": 4,
+    "density": "editorial dense",
+    "accent_rule": "Use mono kickers, hairline dividers, and one ink-blue accent."
+  },
+  "document": {
+    "title_size": 28,
+    "heading_color": "ink",
+    "table_header": "#f5f5f4"
+  }
+}

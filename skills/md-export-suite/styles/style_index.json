@@ -1,0 +1,62 @@
+[
+  {
+    "id": "institutional-clarity",
+    "name": "Institutional Clarity",
+    "summary": "Trustworthy, precise, white-canvas system for executive, financial, and strategy exports.",
+    "best_for": ["executive decks", "business reports", "strategy memos", "financial summaries"]
+  },
+  {
+    "id": "warm-editorial",
+    "name": "Warm Editorial",
+    "summary": "Human, thoughtful, warm reading experience for handouts, training, essays, and course material.",
+    "best_for": ["workbooks", "training handouts", "course material", "long-form docs"]
+  },
+  {
+    "id": "monochrome-precision",
+    "name": "Monochrome Precision",
+    "summary": "Black-and-white technical minimalism for developer docs, product memos, and precise decks.",
+    "best_for": ["technical decks", "developer docs", "product memos", "startup briefs"]
+  },
+  {
+    "id": "dark-console",
+    "name": "Dark Console",
+    "summary": "Terminal-native dark surfaces for code-first workflows, AI agents, APIs, and dev tooling.",
+    "best_for": ["API guides", "agent workflows", "developer presentations", "technical diagrams"]
+  },
+  {
+    "id": "gradient-intelligence",
+    "name": "Gradient Intelligence",
+    "summary": "Modern luminous AI/product launch style with controlled gradients and crisp structure.",
+    "best_for": ["AI product decks", "launch carousels", "feature announcements", "innovation briefs"]
+  },
+  {
+    "id": "data-command",
+    "name": "Data Command",
+    "summary": "Dense analytical dashboard language for metrics, operating reviews, and performance reporting.",
+    "best_for": ["KPI reports", "ops reviews", "analytics decks", "business intelligence"]
+  },
+  {
+    "id": "visual-lifestyle",
+    "name": "Visual Lifestyle",
+    "summary": "Photo-led, friendly, consumer-facing system for campaigns, catalogs, and social stories.",
+    "best_for": ["social posts", "campaign decks", "product catalogs", "brand stories"]
+  },
+  {
+    "id": "cinematic-luxury",
+    "name": "Cinematic Luxury",
+    "summary": "Dramatic black-canvas, high-contrast premium style for hero decks and portfolio narratives.",
+    "best_for": ["premium pitches", "portfolio decks", "luxury product stories", "hero presentations"]
+  },
+  {
+    "id": "playful-productivity",
+    "name": "Playful Productivity",
+    "summary": "Friendly modular SaaS language with colorful structure and approachable UI rhythm.",
+    "best_for": ["onboarding docs", "team training", "SaaS guides", "lightweight presentations"]
+  },
+  {
+    "id": "broadsheet-analysis",
+    "name": "Broadsheet Analysis",
+    "summary": "Editorial magazine density with serif display, mono kickers, and research-led layouts.",
+    "best_for": ["research carousels", "thought leadership", "market analysis", "editorial PDFs"]
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "id": "institutional-clarity",
+  "name": "Institutional Clarity",
+  "mood": ["trustworthy", "precise", "calm", "executive"],
+  "colors": {
+    "background": "#ffffff",
+    "ink": "#0a0b0d",
+    "body": "#5b616e",
+    "muted": "#7c828a",
+    "primary": "#0052ff",
+    "surface": "#f7f7f7",
+    "line": "#dee1e6"
+  },
+  "typography": {
+    "display": "Inter",
+    "body": "Inter",
+    "mono": "JetBrains Mono"
+  },
+  "slides": {
+    "headline_weight": 400,
+    "card_radius": 28,
+    "density": "medium sparse",
+    "accent_rule": "Use primary blue rarely for one key number, route, marker, or action."
+  },
+  "document": {
+    "title_size": 26,
+    "heading_color": "primary",
+    "table_header": "#eef2ff"
+  }
+}

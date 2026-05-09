@@ -1,0 +1,7 @@
+interface:
+  display_name: "MD Export Suite"
+  short_description: "Export Markdown to docs, decks, PDFs, images"
+  brand_color: "#2563EB"
+  default_prompt: "Use $md-export-suite to convert this Markdown into polished export files with the right format, aspect ratio, and style."
+policy:
+  allow_implicit_invocation: true

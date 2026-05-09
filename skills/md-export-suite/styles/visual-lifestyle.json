@@ -1,0 +1,30 @@
+{
+  "id": "visual-lifestyle",
+  "name": "Visual Lifestyle",
+  "mood": ["friendly", "consumer", "photo-led", "warm"],
+  "colors": {
+    "background": "#fff7ed",
+    "ink": "#1c1917",
+    "body": "#57534e",
+    "muted": "#a8a29e",
+    "primary": "#f97316",
+    "surface": "#ffffff",
+    "line": "#fed7aa"
+  },
+  "typography": {
+    "display": "Arial",
+    "body": "Arial",
+    "mono": "Courier New"
+  },
+  "slides": {
+    "headline_weight": 700,
+    "card_radius": 36,
+    "density": "spacious visual",
+    "accent_rule": "Pair friendly accent color with generous image areas and simple captions."
+  },
+  "document": {
+    "title_size": 26,
+    "heading_color": "primary",
+    "table_header": "#ffedd5"
+  }
+}
