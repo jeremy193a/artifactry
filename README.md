@@ -269,6 +269,12 @@ Use includes to split large projects:
 
 Includes are expanded before rendering. Include syntax inside fenced code blocks is left untouched.
 
+## Status
+
+### Next features:
+- Native PPTX export
+- SVG support in PPTX
+
 ## License
 
 MIT

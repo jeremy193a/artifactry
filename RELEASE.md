@@ -12,6 +12,8 @@ This release focuses on making Artifactry usable from real agent workflows, espe
 - **15 style guides**: detailed generic style systems inspired by `DESIGN.md` patterns, without exposing copied brand names.
 - **DOCX showcase**: five downloadable Word document examples showing distinct document styles.
 - **Visual showcase**: signature PNG previews for all 15 style guides.
+- **Style-guide enforcement**: named Markdown style guides now require guide-led layouts instead of generic JSON token fallback output.
+- **Visual audit gate**: HTML/CSS decks and carousels can be audited for off-canvas elements, clipped text, and text overlap before PNG/PPTX export.
 - **Markdown routing**: support for `doctype: document | slides | carousel | docs`.
 - **Includes/partials**: compose larger projects with `{{ include: sections/example.md }}`.
 - **Export validation**: validate DOCX, PDF, PPTX, PNG, and JPG outputs before delivery.
@@ -63,6 +65,8 @@ Use the Artifactry skill. I uploaded a Markdown file. Ask me which output format
 - Added preflight checks for Python packages and system tools.
 - Added include expansion that ignores include syntax inside fenced code blocks.
 - Added stronger Claude Code command prompts for export brief, style selection, routing, rendering, and validation.
+- Added `visual_audit_html.py` to catch rendered layout defects before screenshot export.
+- Added guardrails so public, marketing, showcase, premium, portfolio, and social carousel exports use Markdown style guides as creative direction, not just token themes.
 
 ## Style Guides
 
@@ -89,6 +93,7 @@ Artifactry ships with these public style archetypes:
 - Markdown to DOCX
 - Markdown to styled HTML/PDF
 - Markdown to HTML/CSS slide canvas
+- HTML slide visual audit before screenshot export
 - Slide canvas to PNG/JPG
 - PNG/JPG slides to PPTX
 - Markdown bundles through frontmatter and agent routing
