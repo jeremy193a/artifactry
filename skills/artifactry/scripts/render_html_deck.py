@@ -18,12 +18,21 @@ ASPECTS = {
 }
 
 STYLE_DIR = Path(__file__).resolve().parents[1] / "styles"
+STYLE_GUIDE_DIR = Path(__file__).resolve().parents[1] / "references" / "style-guides"
 INCLUDE_RE = re.compile(r"^\s*\{\{\s*include:\s*([^}]+?)\s*\}\}\s*$")
 
 
 def load_style(style_id: str) -> dict:
     path = STYLE_DIR / f"{style_id}.json"
     if not path.exists():
+        guide = STYLE_GUIDE_DIR / f"{style_id}.md"
+        if guide.exists():
+            raise SystemExit(
+                f"'{style_id}' is a Markdown style guide, not a token fallback. "
+                f"Read {guide.relative_to(Path(__file__).resolve().parents[2])} and create guide-specific "
+                "fixed-canvas HTML/CSS/SVG for polished output. Do not create a JSON fallback just to use "
+                "the generic renderer."
+            )
         choices = ", ".join(sorted(p.stem for p in STYLE_DIR.glob("*.json") if p.name != "style_index.json"))
         raise SystemExit(f"Unknown style '{style_id}'. Available styles: {choices}")
     return json.loads(path.read_text(encoding="utf-8"))

@@ -45,6 +45,8 @@ Check:
 - Representative images have no gray browser bands.
 - Footer and page numbers are visible.
 - Text is not clipped or overlapping.
+- If the user requested one of the 15 Artifactry style guides, the output reflects that guide's specific visual signature, not just colors.
+- Public, marketing, showcase, premium, portfolio, and social carousel outputs use guide-specific composition instead of generic token fallback templates.
 
 Repair:
 
@@ -52,6 +54,7 @@ Repair:
 - Reduce text, increase row height, or split slide.
 - Use PNG for text-heavy output; use JPG only for photo-heavy output.
 - If Chrome headless captures a browser background band, use `render_images_chrome.py`, which renders taller and crops to exact canvas size.
+- If the output feels like a generic theme, read the selected Markdown style guide again, create page roles, and rebuild bespoke HTML/CSS/SVG before rendering.
 
 ## PDF
 

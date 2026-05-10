@@ -4,6 +4,8 @@ This folder contains Artifactry's public style guide layer. These files are not 
 
 Use these Markdown guides before rendering any visual artifact. The existing JSON files are token fallbacks for deterministic scripts; these Markdown guides are the primary creative direction for agents.
 
+Hard rule: when a user asks for a named guide from this folder, do not satisfy the request by creating or selecting a JSON token fallback. Read the Markdown guide and translate it into guide-specific page roles, layout, typography, surfaces, and guardrails. JSON fallback output is acceptable only as a draft scaffold unless the user explicitly asks for a quick/internal export.
+
 ## How Agents Should Use This
 
 1. Ask the user for desired artifact type, audience, tone, output format, and aspect ratio.
@@ -12,6 +14,7 @@ Use these Markdown guides before rendering any visual artifact. The existing JSO
 4. Choose slide/document roles from the guide instead of rendering every page with one generic template.
 5. Translate the guide into deterministic layout: real text, fixed canvas, CSS/SVG/PPTX shapes, validation.
 6. Do not average styles. Pick one dominant guide and borrow at most one secondary trait only when the user asks.
+7. For marketing, launch, showcase, portfolio, premium, or social carousels, final visuals must use bespoke composition derived from the guide. Generic token fallback renderers are not enough.
 
 ## 15 Public Styles
 
@@ -54,3 +57,4 @@ Use these Markdown guides before rendering any visual artifact. The existing JSO
 - Do not add decorative shapes that do not explain the content.
 - Validate output dimensions, clipping, contrast, and file integrity.
 - Vietnamese text must preserve diacritics and remain legible at social preview size.
+- Reject output that uses only a token theme when the user asked for a named Markdown style guide.

@@ -67,8 +67,10 @@ python skills/artifactry/scripts/list_styles.py
    - If the repo has a `DESIGN.md`, read it and translate it into export tokens.
    - If the user names a getdesign.md style, run or ask to run `npx getdesign@latest add <style>` when network/tooling is available.
    - Use [design-md-adapter.md](references/design-md-adapter.md) to translate web/UI style rules into document, slide, and image systems.
-   - For polished deliverables, prefer the Markdown style guides in [style-guides/INDEX.md](references/style-guides/INDEX.md). Read the chosen guide before planning page roles, slide roles, HTML/CSS, DOCX styling, or PPTX assembly.
+   - For polished deliverables, the Markdown style guides in [style-guides/INDEX.md](references/style-guides/INDEX.md) are mandatory. Read the chosen guide before planning page roles, slide roles, HTML/CSS, DOCX styling, or PPTX assembly.
    - The JSON styles in `styles/*.json` are deterministic token fallbacks for scripts. They are not the full creative direction.
+   - Do not create a new JSON token file just to make a named Markdown style guide work with a generic renderer. That downgrades the style. If the user asks for a named guide such as `Black Label Cinema`, read `references/style-guides/black-label-cinema.md` and translate it into a bespoke layout.
+   - For public, marketing, showcase, launch, premium, portfolio, social carousel, or client-facing visuals, generic `render_html_deck.py` output is only acceptable as a draft scaffold. Final output must show guide-specific page roles, composition, spacing, typography, surfaces, and guardrails.
    - Bundled generic token styles are corpus-derived design systems, not simple themes. Apply `style_dna`, `palette`, `typography.scale`, `shape`, `layout`, `components`, `slides`, `document`, `guardrails`, and `export_translation`.
    - Search local export patterns when route/style is unclear:
 
@@ -86,6 +88,7 @@ python skills/artifactry/scripts/search_references.py "institutional clarity 16:
    - For DOCX/PDF documents, prefer `scripts/build_document.py`; it normalizes Markdown, builds a styled reference DOCX, renders print HTML, and can produce PDF through Chrome, soffice, or Pandoc/XeLaTeX.
    - For low-level DOCX control, use Pandoc with a reference docx. Generate one with `scripts/build_reference_docx.py` if needed.
    - For PPTX or image decks, prefer HTML/CSS fixed-canvas rendering, then assemble images into PPTX with `scripts/build_pptx_from_images.py`.
+   - For named Markdown style guides and polished visual outputs, write or adapt bespoke HTML/CSS/SVG from the guide first; then use Chrome/image/PPTX assembly scripts only as rendering and packaging tools.
    - For quick plain PPTX, Pandoc is acceptable only when the user wants a simple editable outline deck.
 
 6. Validate:
@@ -177,13 +180,18 @@ PDF route guidance:
 Use for premium decks and social carousels.
 
 1. Convert Markdown into a slide plan.
-2. Render each slide with HTML/CSS/SVG at fixed dimensions.
-3. Screenshot/export to PNG or JPG.
-4. Assemble PNGs into PPTX when needed.
-5. Validate dimensions and slide count.
+2. If the user named one of the 15 style guides, read that guide and choose page roles before writing layout.
+3. For polished/public output, create guide-specific HTML/CSS/SVG instead of relying on the generic token fallback renderer.
+4. Screenshot/export to PNG or JPG.
+5. Assemble PNGs into PPTX when needed.
+6. Validate dimensions, slide count, clipping, contrast, and style fidelity.
 
 ```bash
+# Draft-only token fallback route:
 python skills/artifactry/scripts/render_html_deck.py input.md --aspect 16:9 --style institutional-clarity --output-dir build/deck
+
+# Final polished route:
+# write guide-specific fixed-canvas HTML/CSS/SVG first, then render/package:
 python skills/artifactry/scripts/render_images_chrome.py build/deck/slides-html --aspect 16:9 --output-dir output/png
 python skills/artifactry/scripts/build_pptx_from_images.py output/png --output output/deck.pptx --aspect 16:9
 python skills/artifactry/scripts/validate_exports.py output/deck.pptx output/png
@@ -209,7 +217,9 @@ Reject and revise before final delivery when:
 - Vietnamese text is missing accents, clipped, or replaced by boxes.
 - Tables overflow the page or slide.
 - Social/deck images show browser background bands, clipped footer, or overlapping text.
-- The final look ignores the selected DESIGN.md style.
+- The final look ignores the selected DESIGN.md or Artifactry Markdown style guide.
+- The user asked for a named style guide but the output looks like a generic token theme.
+- A public/marketing/showcase carousel was rendered only through JSON fallback without guide-specific composition.
 
 ## References
 

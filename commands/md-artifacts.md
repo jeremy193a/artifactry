@@ -48,6 +48,8 @@ When enough details are present:
 5. Run validation before the final response.
 6. Return final file paths, editable source paths, and validation results.
 
+For named Artifactry style guides, read the Markdown guide in `skills/artifactry/references/style-guides/` before rendering. For public, marketing, showcase, premium, portfolio, or social carousel output, do not rely on JSON token fallback alone; create guide-specific fixed-canvas HTML/CSS/SVG and use scripts only to render/package the final files.
+
 Prefer these scripts from the installed skill when available:
 
 ```bash
