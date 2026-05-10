@@ -18,11 +18,11 @@ The core idea is simple: Markdown stays the source of truth, while Artifactry gi
 - Renders slide/carousel images through HTML/CSS and Chrome, then assembles PPTX from those images.
 - Builds DOCX with generated `reference.docx` files and validates DOCX, PDF, PPTX, PNG, and JPG outputs.
 
-Artifactry includes a Claude Code slash command and agent profile:
+Artifactry includes a Claude Code slash command, a legacy alias, and an agent profile:
 
 ```text
-/artifactry
-/md-artifacts
+/artifactry        canonical command
+/md-artifacts     legacy alias for backwards compatibility
 export-designer
 ```
 

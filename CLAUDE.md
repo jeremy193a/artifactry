@@ -49,7 +49,7 @@ Use the bundled slash command:
 /artifactry examples/showcase/board-brief.md as a 16:9 PPTX and PNG deck using Regulated Ledger
 ```
 
-`/md-artifacts` is also available as an alias.
+`/md-artifacts` is also available as a legacy alias for backwards compatibility. Prefer `/artifactry` in new usage.
 
 Update an installed version:
 

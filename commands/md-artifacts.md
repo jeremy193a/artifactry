@@ -3,9 +3,11 @@ description: Convert Markdown into DOCX, PDF, PPTX, PNG, JPG, or multi-format bu
 argument-hint: "[markdown file or export request]"
 ---
 
-# MD Artifacts
+# MD Artifacts Legacy Alias
 
-Use the `export-designer` agent if it is available. Use the `artifactry` skill and its scripts for the actual export workflow.
+This command is a backwards-compatible alias for Artifactry. Do not treat `md-artifacts` as a separate skill or product name.
+
+Use the `export-designer` agent if it is available. Use the `artifactry` skill and its scripts for the actual export workflow. Prefer `/artifactry` and the name "Artifactry" in user-facing responses.
 
 User request:
 
