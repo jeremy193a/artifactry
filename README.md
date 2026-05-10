@@ -34,6 +34,26 @@ diagnose -> ask -> search -> route -> refactor -> render -> validate -> deliver
 
 ## Install
 
+### Claude Chat / Desktop
+
+Claude Chat/Desktop uses a Skill ZIP, not Claude Code plugins.
+
+1. Tell Claude to install Artifactry
+
+![Artifactry Claude Chat](assets/claude-chat-install.jpeg)
+
+2. Download the artifactry.zip file above
+3. Open Claude.ai or Claude Desktop
+4. Click + → Manage Skill → Upload a skill
+5. Upload the downloaded artifactry.zip file
+6. You can use the skill now.
+
+Recommended Claude prompt:
+
+```text
+Use the Artifactry skill. I uploaded a Markdown file. Ask me which output format, style, and size I want, then export and validate the files.
+```
+
 ### Claude Code
 
 Use the HTTPS repo URL exactly:
@@ -44,6 +64,8 @@ Use the HTTPS repo URL exactly:
 ```
 
 Restart Claude Code, then verify `/artifactry` appears in `/help`.
+
+![Artifactry Claude Code](assets/claude-code-command.png)
 
 Example:
 
@@ -65,30 +87,6 @@ Install Artifactry for Claude Code. Use:
 claude plugin marketplace add artifactry https://github.com/jeremy193a/artifactry.git
 claude plugin install artifactry@artifactry
 Then restart Claude Code and confirm /artifactry is available.
-```
-
-### Claude Chat / Desktop
-
-Claude Chat/Desktop uses a Skill ZIP, not Claude Code plugins.
-
-1. Clone this repo.
-2. Run:
-
-```bash
-python scripts/package_claude_skill.py
-```
-
-3. Open Claude.
-4. Go to `Customize` -> `Skills`.
-5. Click `+` -> `Create skill`.
-6. Choose `Upload a skill`.
-7. Upload `dist/artifactry.zip`.
-8. Toggle the skill on and start a new chat.
-
-Recommended Claude prompt:
-
-```text
-Use the Artifactry skill. I uploaded a Markdown file. Ask me which output format, style, and size I want, then export and validate the files.
 ```
 
 ### Codex / OpenCode
@@ -118,7 +116,7 @@ Recommended setup prompt:
 Run python scripts/check_requirements.py. If Python packages are missing, install them with python3 -m pip install -r requirements.txt. If system tools are missing, ask for approval before installing only what this export needs.
 ```
 
-Artifactry may use:
+Artifactry uses:
 
 - Python packages from `requirements.txt`
 - Pandoc for conversion routes
@@ -268,10 +266,6 @@ Use includes to split large projects:
 ```
 
 Includes are expanded before rendering. Include syntax inside fenced code blocks is left untouched.
-
-## Status
-
-Public alpha. The DOCX, styled HTML/PDF, HTML slide, PNG/JPG, PPTX-from-images, include expansion, package, and validation routes are working. Agents can still replace the default layouts with richer project-specific compositions while keeping the same pipeline.
 
 ## License
 
