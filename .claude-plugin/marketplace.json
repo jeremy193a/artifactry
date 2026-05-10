@@ -1,5 +1,5 @@
 {
-  "name": "md-export-skills",
+  "name": "artifactry",
   "owner": {
     "name": "Jeremy Nguyen"
   },
@@ -7,7 +7,7 @@
   "version": "0.3.0",
   "plugins": [
     {
-      "name": "md-export-skills",
+      "name": "artifactry",
       "source": "./",
       "description": "Artifactry converts Markdown into polished DOCX, PDF, PPTX, PNG/JPG files."
     }

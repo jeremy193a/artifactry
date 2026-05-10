@@ -1,5 +1,5 @@
 {
-  "name": "md-export-skills",
+  "name": "artifactry",
   "description": "Artifactry converts Markdown into polished DOCX, PDF, PPTX, PNG/JPG files using Agent Skills and DESIGN.md style systems.",
   "version": "0.3.0",
   "author": {

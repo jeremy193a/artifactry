@@ -39,8 +39,8 @@ diagnose -> ask -> search -> route -> refactor -> render -> validate -> deliver
 Use the HTTPS repo URL exactly:
 
 ```text
-/plugin marketplace add https://github.com/jeremy193a/artifactry.git
-/plugin install md-export-skills@md-export-skills
+/plugin marketplace add artifactry https://github.com/jeremy193a/artifactry.git
+/plugin install artifactry@artifactry
 ```
 
 Restart Claude Code, then verify `/artifactry` appears in `/help`.
@@ -54,16 +54,16 @@ Example:
 Update after a new release:
 
 ```text
-/plugin marketplace update md-export-skills
-/plugin update md-export-skills@md-export-skills
+/plugin marketplace update artifactry
+/plugin update artifactry@artifactry
 ```
 
 Agent install prompt:
 
 ```text
 Install Artifactry for Claude Code. Use:
-claude plugin marketplace add https://github.com/jeremy193a/artifactry.git
-claude plugin install md-export-skills@md-export-skills
+claude plugin marketplace add artifactry https://github.com/jeremy193a/artifactry.git
+claude plugin install artifactry@artifactry
 Then restart Claude Code and confirm /artifactry is available.
 ```
 

@@ -37,8 +37,8 @@ Use $artifactry. Ask me which output, style, and size I want first if I have not
 Claude Code plugin install:
 
 ```text
-/plugin marketplace add https://github.com/jeremy193a/artifactry.git
-/plugin install md-export-skills@md-export-skills
+/plugin marketplace add artifactry https://github.com/jeremy193a/artifactry.git
+/plugin install artifactry@artifactry
 ```
 
 Restart Claude Code after installing.
@@ -54,15 +54,15 @@ Use the bundled slash command:
 Update an installed version:
 
 ```text
-/plugin marketplace update md-export-skills
-/plugin update md-export-skills@md-export-skills
+/plugin marketplace update artifactry
+/plugin update artifactry@artifactry
 ```
 
 Terminal equivalent:
 
 ```bash
-claude plugin marketplace update md-export-skills
-claude plugin update md-export-skills@md-export-skills
+claude plugin marketplace update artifactry
+claude plugin update artifactry@artifactry
 ```
 
 Restart Claude Code after updating.
@@ -71,8 +71,8 @@ Tell an agent to install it:
 
 ```text
 Install Artifactry for Claude Code. Run:
-claude plugin marketplace add https://github.com/jeremy193a/artifactry.git
-claude plugin install md-export-skills@md-export-skills
+claude plugin marketplace add artifactry https://github.com/jeremy193a/artifactry.git
+claude plugin install artifactry@artifactry
 Then restart Claude Code and verify /artifactry appears in /help.
 ```
 
