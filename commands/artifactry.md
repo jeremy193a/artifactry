@@ -38,3 +38,5 @@ Before I export, choose the target:
 Use deterministic text rendering and validate outputs before answering.
 
 If the user asks for one of Artifactry's 15 named style guides, read the Markdown guide in `skills/artifactry/references/style-guides/` before rendering. For public, marketing, showcase, premium, portfolio, or social carousel output, do not rely on JSON token fallback alone; create guide-specific fixed-canvas HTML/CSS/SVG and use scripts only to render/package the final files.
+
+For HTML/CSS slide, carousel, or deck routes, run `python skills/artifactry/scripts/visual_audit_html.py <slides-html> --aspect <ratio>` before screenshot export. Fix every reported overlap, clipping, or off-canvas issue before rendering final PNG/JPG/PPTX.

@@ -50,12 +50,15 @@ When enough details are present:
 
 For named Artifactry style guides, read the Markdown guide in `skills/artifactry/references/style-guides/` before rendering. For public, marketing, showcase, premium, portfolio, or social carousel output, do not rely on JSON token fallback alone; create guide-specific fixed-canvas HTML/CSS/SVG and use scripts only to render/package the final files.
 
+For HTML/CSS slide, carousel, or deck routes, run `python skills/artifactry/scripts/visual_audit_html.py <slides-html> --aspect <ratio>` before screenshot export. Fix every reported overlap, clipping, or off-canvas issue before rendering final PNG/JPG/PPTX.
+
 Prefer these scripts from the installed skill when available:
 
 ```bash
 python skills/artifactry/scripts/normalize_markdown.py
 python skills/artifactry/scripts/build_reference_docx.py
 python skills/artifactry/scripts/render_html_deck.py
+python skills/artifactry/scripts/visual_audit_html.py
 python skills/artifactry/scripts/render_images_chrome.py
 python skills/artifactry/scripts/build_pptx_from_images.py
 python skills/artifactry/scripts/validate_exports.py

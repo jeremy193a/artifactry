@@ -93,6 +93,7 @@ python skills/artifactry/scripts/search_references.py "institutional clarity 16:
 
 6. Validate:
    - Run `scripts/validate_exports.py` on generated files.
+   - For HTML/CSS slide, carousel, or deck routes, run `scripts/visual_audit_html.py` on `slides-html` before rendering screenshots.
    - Inspect representative rendered images for visual artifacts.
    - Fix clipped text, broken Vietnamese marks, wrong dimensions, missing slides/pages, and raw default styling before delivery.
 
@@ -182,9 +183,10 @@ Use for premium decks and social carousels.
 1. Convert Markdown into a slide plan.
 2. If the user named one of the 15 style guides, read that guide and choose page roles before writing layout.
 3. For polished/public output, create guide-specific HTML/CSS/SVG instead of relying on the generic token fallback renderer.
-4. Screenshot/export to PNG or JPG.
-5. Assemble PNGs into PPTX when needed.
-6. Validate dimensions, slide count, clipping, contrast, and style fidelity.
+4. Run visual audit on the HTML/SVG canvases before screenshot export.
+5. Screenshot/export to PNG or JPG.
+6. Assemble PNGs into PPTX when needed.
+7. Validate dimensions, slide count, clipping, contrast, and style fidelity.
 
 ```bash
 # Draft-only token fallback route:
@@ -192,6 +194,7 @@ python skills/artifactry/scripts/render_html_deck.py input.md --aspect 16:9 --st
 
 # Final polished route:
 # write guide-specific fixed-canvas HTML/CSS/SVG first, then render/package:
+python skills/artifactry/scripts/visual_audit_html.py build/deck/slides-html --aspect 16:9
 python skills/artifactry/scripts/render_images_chrome.py build/deck/slides-html --aspect 16:9 --output-dir output/png
 python skills/artifactry/scripts/build_pptx_from_images.py output/png --output output/deck.pptx --aspect 16:9
 python skills/artifactry/scripts/validate_exports.py output/deck.pptx output/png
@@ -215,6 +218,7 @@ Reject and revise before final delivery when:
 - PNG/JPG dimensions do not match the requested aspect ratio.
 - DOCX lacks `word/document.xml` or `word/styles.xml`.
 - Vietnamese text is missing accents, clipped, or replaced by boxes.
+- HTML slide visual audit reports off-canvas elements, clipped text boxes, or text overlap.
 - Tables overflow the page or slide.
 - Social/deck images show browser background bands, clipped footer, or overlapping text.
 - The final look ignores the selected DESIGN.md or Artifactry Markdown style guide.

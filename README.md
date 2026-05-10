@@ -233,6 +233,8 @@ Build slide images:
 
 ```bash
 python skills/artifactry/scripts/render_html_deck.py input.md --style terminal-operator --aspect 16:9 --output-dir output/deck
+python skills/artifactry/scripts/visual_audit_html.py output/deck/slides-html --aspect 16:9
+python skills/artifactry/scripts/render_images_chrome.py output/deck/slides-html --aspect 16:9 --output-dir output/deck/png
 ```
 
 Validate exports:

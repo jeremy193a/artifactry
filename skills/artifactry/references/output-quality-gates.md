@@ -40,6 +40,7 @@ Repair:
 
 Check:
 
+- Run `scripts/visual_audit_html.py` on `slides-html` before screenshot export when the images come from HTML/CSS.
 - Image count is expected.
 - Dimensions match requested aspect.
 - Representative images have no gray browser bands.
@@ -50,6 +51,7 @@ Check:
 
 Repair:
 
+- If visual audit reports off-canvas elements, text overlap, or clipped text boxes, fix the HTML/CSS layout before rendering images.
 - Render taller and crop exact target size.
 - Reduce text, increase row height, or split slide.
 - Use PNG for text-heavy output; use JPG only for photo-heavy output.
